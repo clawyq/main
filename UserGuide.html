@@ -118,6 +118,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
+<p>Some commands have an alias, which you can also use to execute the command e.g. to add a person to the address book, you can type either <code>add n/John Doe</code> or <code>a n/John Doe</code>.</p>
+</li>
+<li>
 <p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
 </li>
 <li>
@@ -143,6 +146,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <h3 id="adding-a-patient-code-add-code"><a class="link" href="#adding-a-patient-code-add-code">3.2. Adding a patient: <code>add</code></a></h3>
 <div class="paragraph">
 <p>Adds a patient to the address book<br>
+Alias: <code>a</code><br>
 Format: <code>add n/NAME ic/IC_NUMBER p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
@@ -175,6 +179,7 @@ A patient can have any number of tags (including 0)
 <h3 id="listing-all-patients-code-list-code"><a class="link" href="#listing-all-patients-code-list-code">3.3. Listing all patients : <code>list</code></a></h3>
 <div class="paragraph">
 <p>Shows a list of all patients in the address book.<br>
+Alias: <code>l</code><br>
 Format: <code>list</code></p>
 </div>
 </div>
@@ -182,6 +187,7 @@ Format: <code>list</code></p>
 <h3 id="editing-a-patient-code-edit-code"><a class="link" href="#editing-a-patient-code-edit-code">3.4. Editing a patient : <code>edit</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing patient in the address book.<br>
+Alias: <code>e</code><br>
 Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
@@ -227,6 +233,7 @@ Edits the name of the 2nd patient to be <code>Betsy Crower</code> and clears all
 <h3 id="locating-patients-by-name-code-find-code"><a class="link" href="#locating-patients-by-name-code-find-code">3.5. Locating patients by name: <code>find</code></a></h3>
 <div class="paragraph">
 <p>Finds patients whose names contain any of the given keywords.<br>
+Alias: <code>f</code><br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
@@ -272,6 +279,7 @@ Returns any patient having names <code>Betsy</code>, <code>Tim</code>, or <code>
 <h3 id="deleting-a-patient-code-delete-code"><a class="link" href="#deleting-a-patient-code-delete-code">3.6. Deleting a patient : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified patient from the address book.<br>
+Alias: <code>d</code><br>
 Format: <code>delete INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -313,6 +321,7 @@ Deletes the 1st patient in the results of the <code>find</code> command.</p>
 <h3 id="selecting-a-patient-code-select-code"><a class="link" href="#selecting-a-patient-code-select-code">3.7. Selecting a patient : <code>select</code></a></h3>
 <div class="paragraph">
 <p>Selects the patient identified by the index number used in the displayed patient list.<br>
+Alias: <code>s</code><br>
 Format: <code>select INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -376,6 +385,7 @@ Generates a MC for the IC number.</p>
 <h3 id="generate-receipt-code-receipt-code"><a class="link" href="#generate-receipt-code-receipt-code">3.9. Generate Receipt : <code>receipt</code></a></h3>
 <div class="paragraph">
 <p>Generates a receipt for the patient’s current visit based on Index Number in the Done List or IC Number.<br>
+Alias: <code>rct</code><br>
 Format: <code>receipt &lt;INDEX&gt;</code> or <code>receipt &lt;IC Number&gt;</code></p>
 </div>
 <div class="paragraph">
@@ -398,6 +408,7 @@ Generates a receipt for the patient with that IC number.</p>
 <h3 id="generate-referral-letter-code-refer-code"><a class="link" href="#generate-referral-letter-code-refer-code">3.10. Generate Referral Letter : <code>refer</code></a></h3>
 <div class="paragraph">
 <p>Create a Referral Letter for the patient based on the IC Number or Index Number from the last list/find command.<br>
+Alias: <code>ref</code><br>
 Format: <code>refer &lt;INDEX&gt; h/&lt;HOSPITAL&gt; d/&lt;DEPARTMENT&gt; r/&lt;REASON&gt; n/&lt;NOTES&gt;</code> or <code>refer &lt;IC Number&gt; h/&lt;HOSPITAL&gt; d/&lt;DEPARTMENT&gt; r/&lt;REASON&gt; n/&lt;NOTES&gt;</code></p>
 </div>
 <div class="paragraph">
@@ -420,6 +431,7 @@ Generates a referral letter for the patient of that IC number with the following
 <h3 id="add-medical-records-of-a-patient-code-addmedicalrecord-code"><a class="link" href="#add-medical-records-of-a-patient-code-addmedicalrecord-code">3.11. Add medical records of a patient : <code>addMedicalRecord</code></a></h3>
 <div class="paragraph">
 <p>Add a medical record for the patient based on the Index Number or IC Number from the last list/find command using any/all of the parameters.<br>
+Alias: <code>aMR</code><br>
 Format: <code>addMedicalRecord &lt;INDEX&gt; &lt;RELEVANT PARAMETERS&gt;</code> or <code>addMedicalRecord &lt;IC Number&gt; &lt;RELEVANT PARAMETERS&gt;</code></p>
 </div>
 <div class="paragraph">
@@ -442,6 +454,7 @@ Adds blood type of the patient with that IC Number.</p>
 <h3 id="adding-extra-notes-to-medical-records-code-addnotetomedicalrecord-code"><a class="link" href="#adding-extra-notes-to-medical-records-code-addnotetomedicalrecord-code">3.12. Adding extra notes to medical records : <code>addNoteToMedicalRecord</code></a></h3>
 <div class="paragraph">
 <p>Add a note to the current medical record of a specified patient. Patient index is referenced from the previous ‘list’ or ‘find’ command.<br>
+Alias: <code>aNMR</code><br>
 Format: <code>addNoteToMedicalRecord &lt;INDEX&gt; m/&lt;MESSAGE&gt;</code> or <code>addNoteToMedicalRecord &lt;IC Number&gt; m/&lt;MESSAGE&gt;</code></p>
 </div>
 <div class="paragraph">
@@ -464,6 +477,7 @@ Adds the message to the patient with that IC number.</p>
 <h3 id="add-a-new-medicine-to-records-code-addmedicine-code"><a class="link" href="#add-a-new-medicine-to-records-code-addmedicine-code">3.13. Add a new medicine to records : <code>addMedicine</code></a></h3>
 <div class="paragraph">
 <p>Adds a new medicine into a record.<br>
+Alias: <code>aM</code><br>
 Format: <code>addMedicine sn/&lt;SERIAL NUMBER&gt; n/&lt;NAME&gt; s/&lt;CURRENT STOCK&gt; p/&lt;PRICE PER PIECE&gt; min/&lt;MINIMUM STOCK QUANTITY&gt;</code></p>
 </div>
 <div class="paragraph">
@@ -482,6 +496,7 @@ Adds a new Medicine called panadol with serial number 1000, stock of 500 units, 
 <h3 id="list-all-medicine-in-stock-code-liststock-code"><a class="link" href="#list-all-medicine-in-stock-code-liststock-code">3.14. List all medicine in stock : <code>listStock</code></a></h3>
 <div class="paragraph">
 <p>List all medical stocks in the clinic.<br>
+Alias: <code>lS</code><br>
 Format: <code>listStock</code></p>
 </div>
 </div>
@@ -489,6 +504,7 @@ Format: <code>listStock</code></p>
 <h3 id="finding-medicine-details-code-findstock-code"><a class="link" href="#finding-medicine-details-code-findstock-code">3.15. Finding medicine details : <code>findStock</code></a></h3>
 <div class="paragraph">
 <p>Find the details of a given medicine from the serial number.
+Alias: <code>fS</code><br>
 Format: <code>findStock &lt;SERIAL NUMBER&gt;</code></p>
 </div>
 <div class="paragraph">
@@ -507,6 +523,7 @@ Finds the details of the medicine tagged with the serial number 1001.</p>
 <h3 id="check-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code"><a class="link" href="#check-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code">3.16. Check the stocks of all medicine that are low in supply : <code>checkStock</code></a></h3>
 <div class="paragraph">
 <p>List all medicines that are low in stock.<br>
+Alias: <code>cS</code><br>
 Format: <code>checkStock</code></p>
 </div>
 </div>
@@ -514,6 +531,7 @@ Format: <code>checkStock</code></p>
 <h3 id="register-patient-to-queue-code-register-code"><a class="link" href="#register-patient-to-queue-code-register-code">3.17. Register Patient to Queue : <code>register</code></a></h3>
 <div class="paragraph">
 <p>Register a new patient that comes to the clinic.<br>
+Alias: <code>reg</code><br>
 Format: <code>register &lt;INDEX&gt;</code></p>
 </div>
 <div class="paragraph">
@@ -532,6 +550,7 @@ Register the patient into the 3rd index.</p>
 <h3 id="serve-the-first-patient-in-the-queue-code-serve-code"><a class="link" href="#serve-the-first-patient-in-the-queue-code-serve-code">3.18. Serve the first patient in the queue : <code>serve</code></a></h3>
 <div class="paragraph">
 <p>Serve the patient first in queue.<br>
+Alias: <code>ser</code><br>
 Format: <code>serve</code></p>
 </div>
 </div>
@@ -539,6 +558,7 @@ Format: <code>serve</code></p>
 <h3 id="remove-a-patient-from-queue-code-dequeue-code"><a class="link" href="#remove-a-patient-from-queue-code-dequeue-code">3.19. Remove a patient from queue : <code>dequeue</code></a></h3>
 <div class="paragraph">
 <p>Remove someone from the queue if he/she leaves before being served.<br>
+Alias: <code>deq</code><br>
 Format: <code>dequeue &lt;INDEX&gt;</code> or <code>dequeue &lt;IC Number&gt;</code></p>
 </div>
 <div class="paragraph">
@@ -561,6 +581,7 @@ Dequeues the patient with that IC Number.</p>
 <h3 id="insert-a-patient-to-queue-code-insert-code"><a class="link" href="#insert-a-patient-to-queue-code-insert-code">3.20. Insert a patient to queue : <code>insert</code></a></h3>
 <div class="paragraph">
 <p>Insert a patient at specified position in the queue.<br>
+Alias: <code>i</code><br>
 Format: <code>insert &lt;INDEX&gt; &lt;POSITION&gt;</code> or <code>insert &lt;IC Number&gt; &lt;POSITION&gt;</code></p>
 </div>
 <div class="paragraph">
@@ -583,6 +604,7 @@ Inserts the patient with that IC number to the 5th index of the queue.</p>
 <h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.21. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
+Alias: <code>h</code><br>
 Format: <code>history</code></p>
 </div>
 <div class="admonitionblock note">
@@ -604,6 +626,7 @@ Format: <code>history</code></p>
 <h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.22. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
 <p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
+Alias: <code>u</code><br>
 Format: <code>undo</code></p>
 </div>
 <div class="admonitionblock note">
@@ -649,6 +672,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 <h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.23. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
+Alias: <code>r</code><br>
 Format: <code>redo</code></p>
 </div>
 <div class="paragraph">
@@ -681,6 +705,7 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 <h3 id="clearing-all-entries-code-deleteall-code"><a class="link" href="#clearing-all-entries-code-deleteall-code">3.24. Clearing all entries : <code>deleteAll</code></a></h3>
 <div class="paragraph">
 <p>Clears all entries from the address book.<br>
+Alias: <code>dA</code><br>
 Format: <code>deleteAll</code></p>
 </div>
 </div>
@@ -810,4 +835,4 @@ e.g. <code>insert 4 5</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-01 03:15:49 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-01 03:16:44 UTC</div></div></div></body></html>
