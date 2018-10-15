@@ -30,9 +30,10 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#adding-a-medicalrecord-to-a-patient">3.2. Adding a MedicalRecord to a Patient</a></li>
+<li><a href="#proposed-data-encryption">3.3. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">3.4. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -78,7 +79,8 @@
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">H.1. Launch and Shutdown</a></li>
 <li><a href="#deleting-a-patient">H.2. Deleting a patient</a></li>
-<li><a href="#saving-data">H.3. Saving data</a></li>
+<li><a href="#adding-a-medicine">H.3. Adding a medicine</a></li>
+<li><a href="#saving-data">H.4. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -804,20 +806,175 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
+<h3 id="adding-a-medicalrecord-to-a-patient"><a class="link" href="#adding-a-medicalrecord-to-a-patient">3.2. Adding a MedicalRecord to a Patient</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>MedicalRecord</code> class is an attribute of the <code>Patient</code> class, and it contains information regarding its <code>Patient</code> 's medical records. The <code>MedicalRecord</code> class structure is as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>has an attribute <code>BloodType</code> which stores the blood type of the <code>Patient</code>. This attribute is marked as <code>final</code> and cannot be changed.</p>
+</li>
+<li>
+<p>contains a <code>List&lt;DrugAllergy&gt;</code> which stores the list of drug allergies that the <code>Patient</code> has.</p>
+</li>
+<li>
+<p>contains a <code>List&lt;Disease&gt;</code> which stores the list of diseases the <code>Patient</code> has.</p>
+</li>
+<li>
+<p>contains a <code>List&lt;Note&gt;</code> which stores the list of notes that belong to the <code>Patient</code>. Each <code>Note</code> further comprises a <code>Message</code> that stores the actual message of the <code>Note</code>, and a <code>Map&lt;SerialNumber, Quantity&gt;</code> attribute which is a record of the <code>SerialNumber</code> of the <code>Medicine</code> as well as the <code>Quantity</code> that had been dispensed to the <code>Patient</code> during that particular visit.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When a new <code>Patient</code> is created with the <code>AddCommand</code>, it is created with a default <code>MedicalRecord</code> object that contains an empty <code>BloodType</code> object, an empty <code>List&lt;DrugAllergy&gt;</code>, an empty <code>List&lt;Disease&gt;</code> and and empty <code>List&lt;Note&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>Users can add more information to a specified <code>Patient</code> 's <code>MedicalRecord</code> by invoking the <code>AddMedicalRecordCommand</code>, and specifying the corresponding arguments to add to the <code>MedicalRecord</code>. The arguments should be prefixed with <code>b/</code> for <code>BloodType</code>, <code>d/</code> for <code>Disease</code>, <code>da/</code> for <code>DrugAllergy</code>, and <code>m/</code> for <code>Note</code>. All the arguments here are optional arguments.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and explanation for the inner workings of the <code>AddMedicalRecordCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 1:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The user creates a new <code>Patient</code> object using the <code>AddCommand</code>. While the user has not provided any arguments for the <code>MedicalRecord</code> of this <code>Patient</code>, a empty <code>MedicalRecord</code> object has been initialised internally and assigned to this created <code>Patient</code>. Contents of this empty <code>MedicalRecord</code> is as detailed above.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/addmedicalrecord-addingnewpatient-example.png" alt="addmedicalrecord addingnewpatient example" width="700">
+</div>
+<div class="title">Figure 10. Adding a new Patient.</div>
+</div>
+<div class="paragraph">
+<p>Step 2:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The user wishes to add a <code>MedicalRecord</code> containing only the <code>BloodType</code> of the <code>Patient</code>, and will do so with the <code>AddMedicalRecord</code> command, and only specifiying the <code>b/</code> prefix for <code>BloodType</code>. Note that <code>BloodType</code> here can only be in a specific format (A[+-], B[+-], O[+-] or AB[+-]).</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/addmedicalrecord-addingbloodtype-example.png" alt="addmedicalrecord addingbloodtype example" width="700">
+</div>
+<div class="title">Figure 11. Adding a new MedicalRecord with only BloodType specified.</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When this command is executed, the program creates a new <code>MedicalRecord</code> object with just the <code>BloodType</code> specified, takes the old <code>MedicalRecord</code> object of the <code>Patient</code> (which is empty), and does a merging of the two objects, returning a new <code>MedicalRecord</code> object. The <code>Patient</code> is then updated with this new combined <code>MedicalRecord</code>. The following figure shows the code section which performs this merging.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">/**
+ * Combines 2 medical records into one.
+ * @param record1
+ * @param record2
+ * @return a single MedicalRecord object which is a combination of the two provided.
+ */</span>
+<span class="directive">public</span> <span class="directive">static</span> MedicalRecord combineMedicalRecords(MedicalRecord record1, MedicalRecord record2) {
+
+    BloodType newBloodType = record1.getBloodType();
+
+    <span class="keyword">if</span> (!record1.getBloodType().equals(record2.getBloodType())
+            &amp;&amp; !record1.getBloodType().value.equals(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>) &amp;&amp; !record2.getBloodType().value.equals(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>)) {
+        <span class="comment">// This is not allowed! Defaulting to original bloodtype...</span>
+    } <span class="keyword">else</span> {
+        newBloodType = record2.getBloodType();
+    }
+
+    <span class="predefined-type">List</span>&lt;DrugAllergy&gt; newDrugAllergies = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;&gt;(record1.getDrugAllergies());
+    <span class="keyword">for</span> (DrugAllergy drugAllergy: record2.getDrugAllergies()) {
+        <span class="keyword">if</span> (!newDrugAllergies.contains(drugAllergy)) {
+            newDrugAllergies.add(drugAllergy);
+        }
+    }
+
+    <span class="predefined-type">List</span>&lt;Disease&gt; newDiseaseHistory = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;&gt;(record1.getDiseaseHistory());
+    <span class="keyword">for</span> (Disease disease: record2.getDiseaseHistory()) {
+        <span class="keyword">if</span> (!newDiseaseHistory.contains(disease)) {
+            newDiseaseHistory.add(disease);
+        }
+    }
+
+    <span class="predefined-type">List</span>&lt;Note&gt; newNotes = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;&gt;(record1.getNotes());
+    <span class="keyword">for</span> (Note note: record2.getNotes()) {
+        <span class="keyword">if</span> (!newNotes.contains(note)) {
+            newNotes.add(note);
+        }
+    }
+
+    MedicalRecord newRecord = <span class="keyword">new</span> MedicalRecord(newBloodType, newDrugAllergies, newDiseaseHistory, newNotes);
+
+    <span class="keyword">return</span> newRecord;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-execution-of-the-command"><a class="link" href="#aspect-execution-of-the-command">Aspect: Execution of the command</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Create a new <code>MedicalRecord</code> object and combine the two.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and better abstraction.</p>
+</li>
+<li>
+<p>Cons: Redundant creation of new object only to discard it immediately</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Add specified arguments of the command directly to the current <code>MedicalRecord</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: No redundant creation of extra objects.</p>
+</li>
+<li>
+<p>Cons: Require access to the existing <code>MedicalRecord</code> from outside the object, which breaks the abstraction barrier.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.3. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -848,7 +1005,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.5. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -914,7 +1071,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 10. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 12. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2341,7 +2498,35 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">H.3. Saving data</a></h3>
+<h3 id="adding-a-medicine"><a class="link" href="#adding-a-medicine">H.3. Adding a medicine</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a medicine to the records</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all medicine using the <code>listStock</code> command. Check that the medicine to be added is not in the list.</p>
+</li>
+<li>
+<p>Test case: <code>add sn/12839400 n/panadol s/122 p/2 min/20</code><br>
+Expected: Medicine is added to the records. Details of the added medicine shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>add</code>, <code>add/e</code> (where e is a unrecognised parameter)<br>
+Expected: No medicine is added. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">H.4. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2364,4 +2549,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-14 08:58:55 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-15 14:10:20 UTC</div></div></div></body></html>
