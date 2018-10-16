@@ -840,14 +840,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>Given below is an example usage scenario and explanation for the inner workings of the <code>AddMedicalRecordCommand</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 1:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The user creates a new <code>Patient</code> object using the <code>AddCommand</code>. While the user has not provided any arguments for the <code>MedicalRecord</code> of this <code>Patient</code>, a empty <code>MedicalRecord</code> object has been initialised internally and assigned to this created <code>Patient</code>. Contents of this empty <code>MedicalRecord</code> is as detailed above.</p>
-</li>
-</ul>
+<p>Step 1. The user creates a new <code>Patient</code> object using the <code>AddCommand</code>. While the user has not provided any arguments for the <code>MedicalRecord</code> of this <code>Patient</code>, a empty <code>MedicalRecord</code> object has been initialised internally and assigned to this created <code>Patient</code>. Contents of this empty <code>MedicalRecord</code> is as detailed above.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -856,14 +849,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="title">Figure 10. Adding a new Patient.</div>
 </div>
 <div class="paragraph">
-<p>Step 2:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The user wishes to add a <code>MedicalRecord</code> containing only the <code>BloodType</code> of the <code>Patient</code>, and will do so with the <code>AddMedicalRecord</code> command, and only specifiying the <code>b/</code> prefix for <code>BloodType</code>. Note that <code>BloodType</code> here can only be in a specific format (A[+-], B[+-], O[+-] or AB[+-]).</p>
-</li>
-</ul>
+<p>Step 2. The user wishes to add a <code>MedicalRecord</code> containing only the <code>BloodType</code> of the <code>Patient</code>, and will do so with the <code>AddMedicalRecord</code> command, and only specifiying the <code>b/</code> prefix for <code>BloodType</code>. Note that <code>BloodType</code> here can only be in a specific format (A[+-], B[+-], O[+-] or AB[+-]).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -871,12 +857,8 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 <div class="title">Figure 11. Adding a new MedicalRecord with only BloodType specified.</div>
 </div>
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>When this command is executed, the program creates a new <code>MedicalRecord</code> object with just the <code>BloodType</code> specified, takes the old <code>MedicalRecord</code> object of the <code>Patient</code> (which is empty), and does a merging of the two objects, returning a new <code>MedicalRecord</code> object. The <code>Patient</code> is then updated with this new combined <code>MedicalRecord</code>. The following figure shows the code section which performs this merging.</p>
-</li>
-</ul>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -974,18 +956,18 @@ issues the medicine.</p>
 <p>Given below is an example of how the medicine class is used:</p>
 </div>
 <div class="paragraph">
-<p>Step 1: A new medicine arrived. The receptionist uses the <code>addMedicine</code> command to add the stock into the records.</p>
+<p>Step 1. A new medicine arrived. The receptionist uses the <code>addMedicine</code> command to add the stock into the records.</p>
 </div>
 <div class="paragraph">
-<p>Step 2: A new stock of medicine that ia available in the clinic has arrived. The receptionist uses <code>editMedicine</code> command
+<p>Step 2. A new stock of medicine that ia available in the clinic has arrived. The receptionist uses <code>editMedicine</code> command
 to update the new stock.</p>
 </div>
 <div class="paragraph">
-<p>Step 3: When a patient pays for the bill, the <code>generateReceipt</code> calls upon the medicine records to determine the price.
+<p>Step 3. When a patient pays for the bill, the <code>generateReceipt</code> calls upon the medicine records to determine the price.
 At this stage, the number of medicine issued will decrease in the records.</p>
 </div>
 <div class="paragraph">
-<p>Step 4: At the end of the day, the receptionist needs to keep track of which stock supply is low. She enters 'checkStock`
+<p>Step 4. At the end of the day, the receptionist needs to keep track of which stock supply is low. She enters 'checkStock`
 which will list out all medicien that are low in supply.</p>
 </div>
 </div>
@@ -2626,4 +2608,4 @@ Expected: No medicine is added. Error details shown in the status message. Statu
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-16 11:34:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-16 14:30:38 UTC</div></div></div></body></html>
