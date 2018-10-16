@@ -31,10 +31,11 @@
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
 <li><a href="#adding-a-medicalrecord-to-a-patient">3.2. Adding a MedicalRecord to a Patient</a></li>
-<li><a href="#patient-queue-management-system">3.3. Patient Queue Management System</a></li>
-<li><a href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.5. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
+<li><a href="#medicine-records">3.3. Medicine records</a></li>
+<li><a href="#patient-queue-management-system">3.4. Patient Queue Management System</a></li>
+<li><a href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">3.6. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -962,7 +963,34 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="patient-queue-management-system"><a class="link" href="#patient-queue-management-system">3.3. Patient Queue Management System</a></h3>
+<h3 id="medicine-records"><a class="link" href="#medicine-records">3.3. Medicine records</a></h3>
+<div class="paragraph">
+<p>The medicine records is used to manage all medicines stored in the clinic. The AddMedicine Command helps users to
+key in a new medicine in the clinic. EditMedicine Command helps users to update the stock. In addition, whenever the
+Receipt Command is called, the records will update the stock automatically when the receptionist generates the receipt and
+issues the medicine.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example of how the medicine class is used:</p>
+</div>
+<div class="paragraph">
+<p>Step 1: A new medicine arrived. The receptionist uses the <code>addMedicine</code> command to add the stock into the records.</p>
+</div>
+<div class="paragraph">
+<p>Step 2: A new stock of medicine that ia available in the clinic has arrived. The receptionist uses <code>editMedicine</code> command
+to update the new stock.</p>
+</div>
+<div class="paragraph">
+<p>Step 3: When a patient pays for the bill, the <code>generateReceipt</code> calls upon the medicine records to determine the price.
+At this stage, the number of medicine issued will decrease in the records.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: At the end of the day, the receptionist needs to keep track of which stock supply is low. She enters 'checkStock`
+which will list out all medicien that are low in supply.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="patient-queue-management-system"><a class="link" href="#patient-queue-management-system">3.4. Patient Queue Management System</a></h3>
 <div class="paragraph">
 <p>The Patient Queue Management System consists of three main classes: <code>PatientQueue</code>, <code>CurrentPatient</code> and <code>ServedPatientQueue</code>. A patient that
 registers to see the doctor is put into the <code>PatientQueue</code>, when it is his turn to see the doctor he will be the <code>CurrentPatient</code>. After
@@ -1010,20 +1038,20 @@ him from the <code>ServedPatientQueue</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1054,7 +1082,7 @@ him from the <code>ServedPatientQueue</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2598,4 +2626,4 @@ Expected: No medicine is added. Error details shown in the status message. Statu
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-15 19:53:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-16 05:24:36 UTC</div></div></div></body></html>
