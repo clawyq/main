@@ -2588,7 +2588,7 @@ for <code>RemarkCommandParser</code>.</p>
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix D: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>CLInic</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
 <h3 id="use-case-patient-arrives-in-the-clinic" class="discrete">Use case: Patient arrives in the clinic</h3>
 <div class="olist arabic">
@@ -2611,7 +2611,7 @@ for <code>RemarkCommandParser</code>.</p>
 <p>Serve patient. Patient will be automatically removed from the head of the queue.</p>
 </li>
 <li>
-<p>Doctor (User) will add notes to the patient’s medical records</p>
+<p>Doctor (User) will add notes, comments and referral details as necessary.</p>
 </li>
 </ol>
 </div>
@@ -2619,7 +2619,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Doctor (User) will indicate that he is done seeing the patient, and patient will be added to a done set.</p>
+<p>Doctor (User) will indicate that he is done seeing the patient, and patient will be added to a served patients list.</p>
 </li>
 <li>
 <p>Receptionist (User) will generate MC for patient (if needed)</p>
@@ -2631,11 +2631,25 @@ for <code>RemarkCommandParser</code>.</p>
 <p>Receptionist (User) will make referral for patient (if needed)</p>
 </li>
 <li>
-<p>Receptionist (User) will remove patient from done set when finished.</p>
+<p>Receptionist (User) will remove patient from served patients list when finished.</p>
 </li>
 </ol>
 </div>
-<h2 id="use-case-receptionist-wants-to-check-medicine-stock-levels" class="discrete">Use Case: Receptionist wants to check medicine stock levels</h2>
+<h3 id="use-case-receptionist-wants-to-add-new-medicine-to-stock" class="discrete">Use case: Receptionist wants to add new medicine to stock</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Receptionist (User) views complete list of medicine.</p>
+</li>
+<li>
+<p>If medicine already in stock, user will edit the stock numbers of the medicine.</p>
+</li>
+<li>
+<p>If it is a new medicine, user will add medicine to the database.</p>
+</li>
+</ol>
+</div>
+<h3 id="use-case-receptionist-wants-to-check-medicine-stock-levels" class="discrete">Use case: Receptionist wants to check medicine stock levels</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2885,4 +2899,4 @@ Expected: No medicine is added. Error details shown in the status message. Statu
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 08:42:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 15:51:33 UTC</div></div></div></body></html>
