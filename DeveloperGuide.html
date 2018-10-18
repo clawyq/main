@@ -32,7 +32,7 @@
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">4.1. Undo/Redo feature</a></li>
 <li><a href="#adding-a-medicalrecord-to-a-patient">4.2. Adding a MedicalRecord to a Patient</a></li>
-<li><a href="#medicine-records">4.3. Medicine records</a></li>
+<li><a href="#medicine-records-system">4.3. Medicine Records System</a></li>
 <li><a href="#patient-queue-management-system">4.4. Patient Queue Management System</a></li>
 <li><a href="#document">4.5. Document</a></li>
 <li><a href="#proposed-data-encryption">4.6. [Proposed] Data Encryption</a></li>
@@ -97,7 +97,7 @@
 <p>CLInic is a desktop application that is created for usage within a clinic, and optimised specifically for clinic receptionists and doctors who <strong>prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
 </div>
 <div class="paragraph">
-<p>If this is your first time on this application, proceed to <a href="#setting-up">Section 2, &#8220;Setting up&#8221;</a> to get started with setting up your development environment. Following which, you can proceed to <strong>Appendix A</strong> to get start on your first task!</p>
+<p>If this is your first time on this application, proceed to <a href="#setting-up">Section 2, &#8220;Setting up&#8221;</a> to get started with setting up your development environment. Following which, you can proceed to <strong>Appendix A</strong> to get started on your first task!</p>
 </div>
 <div class="paragraph">
 <p>If you are already familiar with the basic development environment for this application and wish to understand the inner workings of this application at a higher level, proceed to <a href="#design">Section 3, &#8220;Design&#8221;</a> and <a href="#implementation">Section 4, &#8220;Implementation&#8221;</a>.</p>
@@ -110,6 +110,11 @@
 <div class="sect1">
 <h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
 <div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>This section contains instructions on how to do a one-time set up of the developmental environment on IntelliJ.</pre>
+</div>
+</div>
 <div class="sect2">
 <h3 id="prerequisites"><a class="link" href="#prerequisites">2.1. Prerequisites</a></h3>
 <div class="olist arabic">
@@ -331,6 +336,11 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <div class="sect1">
 <h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>This section contains information about the main architecture and design of various components in CLInic.</pre>
+</div>
+</div>
 <div class="sect2">
 <h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
 <div class="imageblock">
@@ -381,7 +391,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </ul>
 </div>
 <div class="paragraph">
-<p>The rest of the App consists of four components.</p>
+<p>The rest of the App consists of four similarly designed components:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -400,7 +410,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </ul>
 </div>
 <div class="paragraph">
-<p>Each of the four components</p>
+<p>Each of the four components:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -613,7 +623,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect2">
 <h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
 <div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
+<p>For ease of use, classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
 </div>
 </div>
 </div>
@@ -621,8 +631,10 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect1">
 <h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>This section describes some noteworthy details on how certain features are implemented.</p>
+<div class="literalblock">
+<div class="content">
+<pre>This section contains some noteworthy details on how certain features are implemented.</pre>
+</div>
 </div>
 <div class="sect2">
 <h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.1. Undo/Redo feature</a></h3>
@@ -839,7 +851,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="sect3">
 <h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.2.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The <code>MedicalRecord</code> class is an attribute of the <code>Patient</code> class, and it contains information regarding its <code>Patient</code> 's medical records. The <code>MedicalRecord</code> class structure is as follows:</p>
+<p>The <code>MedicalRecord</code> class is an attribute of the <code>Patient</code> class, and it contains information regarding its <code>Patient</code> 's medical records. The <code>MedicalRecord</code> class:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -861,7 +873,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>When a new <code>Patient</code> is created with the <code>AddCommand</code>, it is created with a default <code>MedicalRecord</code> object that contains an empty <code>BloodType</code> object, an empty <code>List&lt;DrugAllergy&gt;</code>, an empty <code>List&lt;Disease&gt;</code> and and empty <code>List&lt;Note&gt;</code>.</p>
 </div>
 <div class="paragraph">
-<p>Users can add more information to a specified <code>Patient</code> 's <code>MedicalRecord</code> by invoking the <code>AddMedicalRecordCommand</code>, and specifying the corresponding arguments to add to the <code>MedicalRecord</code>. The arguments should be prefixed with <code>b/</code> for <code>BloodType</code>, <code>d/</code> for <code>Disease</code>, <code>da/</code> for <code>DrugAllergy</code>, and <code>m/</code> for <code>Note</code>. All the arguments here are optional arguments.</p>
+<p>Users can add more information to a specified <code>Patient</code> 's <code>MedicalRecord</code> by invoking the <code>AddMedicalRecordCommand</code>, and specifying the corresponding arguments to add to the <code>MedicalRecord</code>. The arguments should be prefixed with <code>b/</code> for <code>BloodType</code>, <code>d/</code> for <code>Disease</code>, <code>da/</code> for <code>DrugAllergy</code>, and <code>m/</code> for <code>Note</code>. All the arguments here are optional arguments, however at least one must be present.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and explanation for the inner workings of the <code>AddMedicalRecordCommand</code>.</p>
@@ -941,14 +953,14 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Create a new <code>MedicalRecord</code> object and combine the two.</p>
+<p><strong>Alternative 1 (current choice):</strong> Create a new <code>MedicalRecord</code> object and combine the old <code>MedicalRecord</code> with it.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Easy to implement and better abstraction.</p>
 </li>
 <li>
-<p>Cons: Redundant creation of new object only to discard it immediately</p>
+<p>Cons: Redundant creation of new object only to discard it immediately.</p>
 </li>
 </ul>
 </div>
@@ -972,38 +984,37 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="medicine-records"><a class="link" href="#medicine-records">4.3. Medicine records</a></h3>
+<h3 id="medicine-records-system"><a class="link" href="#medicine-records-system">4.3. Medicine Records System</a></h3>
 <div class="paragraph">
-<p>The medicine records is used to manage all medicines stored in the clinic. The AddMedicine Command helps users to
-key in a new medicine in the clinic. EditMedicine Command helps users to update the stock. In addition, whenever the
-Receipt Command is called, the records will update the stock automatically when the receptionist generates the receipt and
-issues the medicine.</p>
+<p>The medicine records system is used to manage the medicine inventory in the clinic. The <code>addMedicine</code> Command
+creates a new medicine entry in the inventory. <code>editMedicine</code> Command updates the stock level of the specified medicine. In addition, whenever the
+<code>receipt</code> Command is called, the records will update the stock automatically by subtracting the number of each medicine issued to the patient.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example of how the medicine class is used:</p>
+<p>Given below is are examples of how the medicine class is used:</p>
 </div>
 <div class="paragraph">
-<p>Step 1. A new medicine arrived. The receptionist uses the <code>addMedicine</code> command to add the stock into the records.</p>
+<p>Scenario 1. A new medicine arrives. The user uses the <code>addMedicine</code> command to add the stock into the records.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. A new stock of medicine that ia available in the clinic has arrived. The receptionist uses <code>editMedicine</code> command
-to update the new stock.</p>
+<p>Scenario 2. A new shipment of medicine has arrived. The user uses <code>editMedicine</code> command
+to update the new stock levels of exiting medicine.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. When a patient pays for the bill, the <code>generateReceipt</code> calls upon the medicine records to determine the price.
-At this stage, the number of medicine issued will decrease in the records.</p>
+<p>Scenario 3. When a patient is allocated medicine, during payment a <code>receipt</code> command is executed by the user to fetch the prices
+for the medicine that is allocated, in addition, the stock level of the medicine is updated too.</p>
 </div>
 <div class="paragraph">
-<p>Step 4. At the end of the day, the receptionist needs to keep track of which stock supply is low. She enters 'checkStock`
-which will list out all medicien that are low in supply.</p>
+<p>Scenario 4. During closing or whenever needed, the user checks for the stock level. The user executes the <code>checkStock</code> command
+which lists the medicine that are below their Minimum Stock Quantity.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="patient-queue-management-system"><a class="link" href="#patient-queue-management-system">4.4. Patient Queue Management System</a></h3>
 <div class="paragraph">
 <p>The Patient Queue Management System consists of three main classes: <code>PatientQueue</code>, <code>CurrentPatient</code> and <code>ServedPatientQueue</code>. A patient that
-registers to see the doctor is put into the <code>PatientQueue</code>, when it is his turn to see the doctor he will be the <code>CurrentPatient</code>. After
-he is done with seeing the doctor he will be put into the <code>ServedPatientQueue</code> to await payment and document processing.</p>
+registers to see the doctor is put into the <code>PatientQueue</code>. When it is the patient&#8217;s turn to see the doctor, he will become the <code>CurrentPatient</code>. After
+he is done with seeing the doctor, he will be put into the <code>ServedPatientQueue</code> to await payment and document processing.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the Patient Queue Management System is used in each step.</p>
@@ -1033,20 +1044,20 @@ processing later on.</p>
 </div>
 <div class="paragraph">
 <p>Step 4. The <code>CurrentPatient</code> is done with the consultation. The user executes the <code>finish</code> command to transfer this patient to
-the <code>ServedPatientQueue</code>. Afterwards, the user execute <code>serve</code> to get the next patient.</p>
+the <code>ServedPatientQueue</code>. Afterwards, the user executes <code>serve</code> to get the next patient.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/PQMSServedPatientQueue.png" alt="650" width="250">
 </div>
-<div class="title">Figure 22. Complete serving a patient</div>
+<div class="title">Figure 22. Finish serving patient</div>
 </div>
 <div class="paragraph">
 <p>Step 5. The user executes various commands to generate necessary documents for the served patient.</p>
 </div>
 <div class="paragraph">
-<p>Step 6. The user finally executes <code>payment</code> command to generate the receipt and end the patient&#8217;s visit to the clinic, removing
-him from the <code>ServedPatientQueue</code> and adding him into the <code>ServedPatientList</code>.</p>
+<p>Step 6. The user finally executes <code>payment</code> command to generate the receipt and ends the patient&#8217;s visit to the clinic, removing
+him from the <code>ServedPatientQueue</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1054,7 +1065,7 @@ him from the <code>ServedPatientQueue</code> and adding him into the <code>Serve
 <div class="sect3">
 <h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.5.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The <code>Document</code> <code>abstract class</code> covers all the documents that are issued by the clinic. Hence, the <code>Receipt</code>, <code>MedicalCertificate</code> and <code>ReferralLetter</code> classes all inherit from it.<br>
+<p>The <code>Document</code> <code>abstract class</code> represents all documents that can be issued by the clinic. The <code>Receipt</code>, <code>MedicalCertificate</code> and <code>ReferralLetter</code> classes all inherit from it.<br>
 It specifies what general information these documents should have and how they should be formatted. It can be thought of as a template for all its inheriting classes.</p>
 </div>
 <div class="sect4">
@@ -1355,16 +1366,16 @@ Executing <code>refer</code> with an invalid index will <strong>not</strong> res
 <div class="ulist">
 <ul>
 <li>
-<p><code>SEVERE</code> : Critical problem detected which may possibly cause the termination of the application</p>
+<p><code>SEVERE</code> : Critical problem detected which may possibly cause the termination of the application.</p>
 </li>
 <li>
-<p><code>WARNING</code> : Can continue, but with caution</p>
+<p><code>WARNING</code> : Can continue, but with caution.</p>
 </li>
 <li>
-<p><code>INFO</code> : Information showing the noteworthy actions by the App</p>
+<p><code>INFO</code> : Information showing the noteworthy actions by the App.</p>
 </li>
 <li>
-<p><code>FINE</code> : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size</p>
+<p><code>FINE</code> : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size.</p>
 </li>
 </ul>
 </div>
@@ -1380,8 +1391,10 @@ Executing <code>refer</code> with an invalid index will <strong>not</strong> res
 <div class="sect1">
 <h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>We use asciidoc for writing documentation.</p>
+<div class="literalblock">
+<div class="content">
+<pre>This section contains information on how we manage the documentation for CLInic. We use asciidoc for writing documentation.</pre>
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1587,6 +1600,11 @@ The SE-EDU team does not provide support for modified template files.</p>
 <div class="sect1">
 <h2 id="Testing"><a class="link" href="#Testing">6. Testing</a></h2>
 <div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>This section contains information on how to run tests and the different kind of tests in CLInic.</pre>
+</div>
+</div>
 <div class="sect2">
 <h3 id="running-tests"><a class="link" href="#running-tests">6.1. Running Tests</a></h3>
 <div class="paragraph">
@@ -1712,6 +1730,9 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <div class="sect1">
 <h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section contains more information on future developments and the tools we use for different aspects of development.</p>
+</div>
 <div class="sect2">
 <h3 id="build-automation"><a class="link" href="#build-automation">7.1. Build Automation</a></h3>
 <div class="paragraph">
@@ -2928,4 +2949,4 @@ Expected: No medicine is added. Error details shown in the status message. Statu
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 19:00:19 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-18 04:09:55 UTC</div></div></div></body></html>
