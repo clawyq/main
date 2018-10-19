@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 4 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>CLInic - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>AddressBook Level 4 - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>CLInic - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team W16-4</code>      Since: <code>Aug 2018</code>      Licence: <code>MIT</code></p>
@@ -21,28 +21,29 @@
 <li><a href="#locating-patients-by-name-code-find-code">3.1.4. Locating patients by name: <code>find</code></a></li>
 <li><a href="#deleting-a-patient-code-delete-code">3.1.5. Deleting a patient : <code>delete</code></a></li>
 <li><a href="#selecting-a-patient-code-select-code">3.1.6. Selecting a patient : <code>select</code></a></li>
-<li><a href="#add-medical-records-of-a-patient-code-addmedicalrecord-code">3.1.7. Add medical records of a patient : <code>addMedicalRecord</code></a></li>
+<li><a href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">3.1.7. Adding medical records of a patient : <code>addMedicalRecord</code></a></li>
 </ul>
 </li>
 <li><a href="#medicine">3.2. Medicine</a>
 <ul class="sectlevel3">
-<li><a href="#add-a-new-medicine-to-records-code-addmedicine-code">3.2.1. Add a new medicine to records : <code>addMedicine</code></a></li>
-<li><a href="#list-all-medicine-in-stock-code-liststock-code">3.2.2. List all medicine in stock : <code>listStock</code></a></li>
+<li><a href="#adding-a-new-medicine-to-records-code-addmedicine-code">3.2.1. Adding a new medicine to records : <code>addMedicine</code></a></li>
+<li><a href="#listing-all-medicine-in-stock-code-liststock-code">3.2.2. Listing all medicine in stock : <code>listStock</code></a></li>
 <li><a href="#finding-medicine-details-code-findstock-code">3.2.3. Finding medicine details : <code>findStock</code></a></li>
-<li><a href="#check-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code">3.2.4. Check the stocks of all medicine that are low in supply : <code>checkStock</code></a></li>
+<li><a href="#checking-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code">3.2.4. Checking the stocks of all medicine that are low in supply : <code>checkStock</code></a></li>
 </ul>
 </li>
 <li><a href="#queue-management">3.3. Queue Management</a>
 <ul class="sectlevel3">
-<li><a href="#list-all-patients-in-patient-queue-code-queue-code">3.3.1. List all Patients in Patient Queue : <code>queue</code></a></li>
-<li><a href="#register-patient-to-queue-code-register-code">3.3.2. Register Patient to Queue : <code>register</code></a></li>
-<li><a href="#remove-a-patient-from-queue-code-remove-code">3.3.3. Remove a patient from queue : <code>remove</code></a></li>
-<li><a href="#insert-a-patient-to-queue-code-insert-code">3.3.4. Insert a patient to queue : <code>insert</code></a></li>
-<li><a href="#serve-the-first-patient-in-the-queue-code-serve-code">3.3.5. Serve the first patient in the queue : <code>serve</code></a></li>
+<li><a href="#listing-all-patients-in-patient-queue-code-queue-code">3.3.1. Listing all Patients in Patient Queue : <code>queue</code></a></li>
+<li><a href="#registering-patient-to-queue-code-register-code">3.3.2. Registering Patient to Queue : <code>register</code></a></li>
+<li><a href="#removing-a-patient-from-queue-code-remove-code">3.3.3. Removing a patient from queue : <code>remove</code></a></li>
+<li><a href="#inserting-a-patient-to-queue-code-insert-code">3.3.4. Inserting a patient to queue : <code>insert</code></a></li>
+<li><a href="#serving-the-first-patient-in-the-queue-code-serve-code">3.3.5. Serving the first patient in the queue : <code>serve</code></a></li>
 <li><a href="#finish-serving-the-current-patient-code-finish-code">3.3.6. Finish serving the Current Patient : <code>finish</code></a></li>
-<li><a href="#generate-medical-certificate-code-mc-code">3.3.7. Generate Medical Certificate : <code>mc</code></a></li>
-<li><a href="#generate-receipt-code-receipt-code">3.3.8. Generate Receipt : <code>receipt</code></a></li>
-<li><a href="#generate-referral-letter-code-refer-code">3.3.9. Generate Referral Letter : <code>refer</code></a></li>
+<li><a href="#generating-medical-certificate-code-mc-code">3.3.7. Generating Medical Certificate : <code>mc</code></a></li>
+<li><a href="#generating-receipt-code-receipt-code">3.3.8. Generating Receipt : <code>receipt</code></a></li>
+<li><a href="#generating-referral-letter-code-refer-code">3.3.9. Generating Referral Letter : <code>refer</code></a></li>
+<li><a href="#removing-patient-from-served-patient-list-code-payment-code">3.3.10. Removing patient from served patient list : <code>payment</code></a></li>
 </ul>
 </li>
 <li><a href="#miscellaneous">3.4. Miscellaneous</a>
@@ -377,9 +378,9 @@ Selects the 1st patient in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-medical-records-of-a-patient-code-addmedicalrecord-code"><a class="link" href="#add-medical-records-of-a-patient-code-addmedicalrecord-code">3.1.7. Add medical records of a patient : <code>addMedicalRecord</code></a></h4>
+<h4 id="adding-medical-records-of-a-patient-code-addmedicalrecord-code"><a class="link" href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">3.1.7. Adding medical records of a patient : <code>addMedicalRecord</code></a></h4>
 <div class="paragraph">
-<p>Add a medical record for the patient based on the Index Number or IC Number from the last list/find command using any/all of the parameters.<br>
+<p>Adds a medical record for the patient based on the Index Number or IC Number from the last list/find command using any/all of the parameters.<br>
 Alias: <code>aMR</code><br>
 Format: <code>addMedicalRecord &lt;INDEX&gt; &lt;RELEVANT PARAMETERS&gt;</code> or <code>addMedicalRecord &lt;IC Number&gt; &lt;RELEVANT PARAMETERS&gt;</code></p>
 </div>
@@ -403,7 +404,7 @@ Adds blood type of the patient with that IC Number.</p>
 <div class="sect2">
 <h3 id="medicine"><a class="link" href="#medicine">3.2. Medicine</a></h3>
 <div class="sect3">
-<h4 id="add-a-new-medicine-to-records-code-addmedicine-code"><a class="link" href="#add-a-new-medicine-to-records-code-addmedicine-code">3.2.1. Add a new medicine to records : <code>addMedicine</code></a></h4>
+<h4 id="adding-a-new-medicine-to-records-code-addmedicine-code"><a class="link" href="#adding-a-new-medicine-to-records-code-addmedicine-code">3.2.1. Adding a new medicine to records : <code>addMedicine</code></a></h4>
 <div class="paragraph">
 <p>Adds a new medicine into a record.<br>
 Alias: <code>aM</code><br>
@@ -422,9 +423,9 @@ Adds a new Medicine called panadol with serial number 1000, stock of 500 units, 
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-all-medicine-in-stock-code-liststock-code"><a class="link" href="#list-all-medicine-in-stock-code-liststock-code">3.2.2. List all medicine in stock : <code>listStock</code></a></h4>
+<h4 id="listing-all-medicine-in-stock-code-liststock-code"><a class="link" href="#listing-all-medicine-in-stock-code-liststock-code">3.2.2. Listing all medicine in stock : <code>listStock</code></a></h4>
 <div class="paragraph">
-<p>List all medical stocks in the clinic.<br>
+<p>Lists all medical stocks in the clinic.<br>
 Alias: <code>lS</code><br>
 Format: <code>listStock</code></p>
 </div>
@@ -432,7 +433,7 @@ Format: <code>listStock</code></p>
 <div class="sect3">
 <h4 id="finding-medicine-details-code-findstock-code"><a class="link" href="#finding-medicine-details-code-findstock-code">3.2.3. Finding medicine details : <code>findStock</code></a></h4>
 <div class="paragraph">
-<p>Find the details of a given medicine from the serial number.
+<p>Finds the details of a given medicine from the serial number.
 Alias: <code>fS</code><br>
 Format: <code>findStock &lt;SERIAL NUMBER&gt;</code></p>
 </div>
@@ -449,9 +450,9 @@ Finds the details of the medicine tagged with the serial number 1001.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="check-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code"><a class="link" href="#check-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code">3.2.4. Check the stocks of all medicine that are low in supply : <code>checkStock</code></a></h4>
+<h4 id="checking-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code"><a class="link" href="#checking-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code">3.2.4. Checking the stocks of all medicine that are low in supply : <code>checkStock</code></a></h4>
 <div class="paragraph">
-<p>List all medicines that are low in stock.<br>
+<p>Lists all medicines that are low in stock.<br>
 Alias: <code>cS</code><br>
 Format: <code>checkStock</code></p>
 </div>
@@ -460,16 +461,17 @@ Format: <code>checkStock</code></p>
 <div class="sect2">
 <h3 id="queue-management"><a class="link" href="#queue-management">3.3. Queue Management</a></h3>
 <div class="sect3">
-<h4 id="list-all-patients-in-patient-queue-code-queue-code"><a class="link" href="#list-all-patients-in-patient-queue-code-queue-code">3.3.1. List all Patients in Patient Queue : <code>queue</code></a></h4>
+<h4 id="listing-all-patients-in-patient-queue-code-queue-code"><a class="link" href="#listing-all-patients-in-patient-queue-code-queue-code">3.3.1. Listing all Patients in Patient Queue : <code>queue</code></a></h4>
 <div class="paragraph">
-<p>Lists all patients in queue waiting to see the doctor.
+<p>Lists all patients in queue waiting to see the doctor.<br>
+Alias: <code>q</code><br>
 Format: <code>queue</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="register-patient-to-queue-code-register-code"><a class="link" href="#register-patient-to-queue-code-register-code">3.3.2. Register Patient to Queue : <code>register</code></a></h4>
+<h4 id="registering-patient-to-queue-code-register-code"><a class="link" href="#registering-patient-to-queue-code-register-code">3.3.2. Registering Patient to Queue : <code>register</code></a></h4>
 <div class="paragraph">
-<p>Register a new patient that comes to the clinic.<br>
+<p>Registers a new patient that comes to the clinic.<br>
 Alias: <code>reg</code><br>
 Format: <code>register &lt;INDEX&gt;</code> or <code>register &lt;IC Number&gt; [coming soon]</code></p>
 </div>
@@ -486,9 +488,9 @@ Register the patient into the 3rd index.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-a-patient-from-queue-code-remove-code"><a class="link" href="#remove-a-patient-from-queue-code-remove-code">3.3.3. Remove a patient from queue : <code>remove</code></a></h4>
+<h4 id="removing-a-patient-from-queue-code-remove-code"><a class="link" href="#removing-a-patient-from-queue-code-remove-code">3.3.3. Removing a patient from queue : <code>remove</code></a></h4>
 <div class="paragraph">
-<p>Remove someone from the queue if he/she leaves before being served.<br>
+<p>Removes someone from the queue if he/she leaves before being served.<br>
 Alias: <code>rem</code><br>
 Format: <code>remove &lt;INDEX&gt;</code> or <code>remove &lt;IC Number&gt; [coming soon]</code></p>
 </div>
@@ -499,19 +501,19 @@ Format: <code>remove &lt;INDEX&gt;</code> or <code>remove &lt;IC Number&gt; [com
 <ul>
 <li>
 <p><code>remove 5</code><br>
-Removes the 5th patient in the queue.</p>
+Remove the 5th patient in the queue.</p>
 </li>
 <li>
 <p><code>remove S9382839X</code><br>
-Removes patient with IC Number S9382839X from the queue.</p>
+Remove patient with IC Number S9382839X from the queue.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="insert-a-patient-to-queue-code-insert-code"><a class="link" href="#insert-a-patient-to-queue-code-insert-code">3.3.4. Insert a patient to queue : <code>insert</code></a></h4>
+<h4 id="inserting-a-patient-to-queue-code-insert-code"><a class="link" href="#inserting-a-patient-to-queue-code-insert-code">3.3.4. Inserting a patient to queue : <code>insert</code></a></h4>
 <div class="paragraph">
-<p>Insert a patient at specified position in the queue.<br>
+<p>Inserts a patient at specified position in the queue.<br>
 Alias: <code>ins</code><br>
 Format: <code>insert &lt;INDEX&gt; &lt;POSITION&gt;</code> or <code>insert &lt;IC Number&gt; &lt;POSITION&gt; [coming soon]</code></p>
 </div>
@@ -522,19 +524,19 @@ Format: <code>insert &lt;INDEX&gt; &lt;POSITION&gt;</code> or <code>insert &lt;I
 <ul>
 <li>
 <p><code>insert 4 5</code><br>
-Inserts the 4th person of the address book into the 5th index of the queue.</p>
+Insert the 4th person of the address book into the 5th index of the queue.</p>
 </li>
 <li>
 <p><code>insert S9123456A 5</code><br>
-Inserts the patient with that IC number to the 5th index of the queue.</p>
+Insert the patient with that IC number to the 5th index of the queue.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="serve-the-first-patient-in-the-queue-code-serve-code"><a class="link" href="#serve-the-first-patient-in-the-queue-code-serve-code">3.3.5. Serve the first patient in the queue : <code>serve</code></a></h4>
+<h4 id="serving-the-first-patient-in-the-queue-code-serve-code"><a class="link" href="#serving-the-first-patient-in-the-queue-code-serve-code">3.3.5. Serving the first patient in the queue : <code>serve</code></a></h4>
 <div class="paragraph">
-<p>Serve the patient first in queue.<br>
+<p>Serves the patient first in queue.<br>
 Alias: <code>ser</code><br>
 Format: <code>serve</code></p>
 </div>
@@ -547,9 +549,9 @@ Format: <code>finish</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="generate-medical-certificate-code-mc-code"><a class="link" href="#generate-medical-certificate-code-mc-code">3.3.7. Generate Medical Certificate : <code>mc</code></a></h4>
+<h4 id="generating-medical-certificate-code-mc-code"><a class="link" href="#generating-medical-certificate-code-mc-code">3.3.7. Generating Medical Certificate : <code>mc</code></a></h4>
 <div class="paragraph">
-<p>Create a Medical Certificate based on the IC Number or Index Number from the last list/find command.<br>
+<p>Creates a Medical Certificate based on the IC Number or Index Number from the last list/find command.<br>
 Format: <code>mc &lt;INDEX&gt; d/&lt;DATE&gt;-&lt;DATE&gt;</code> or <code>mc &lt;IC Number&gt; d/&lt;DATE&gt;-&lt;DATE&gt;</code> where date is in the format DD-MM-YYYY</p>
 </div>
 <div class="paragraph">
@@ -569,7 +571,7 @@ Generates a MC for the IC number.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="generate-receipt-code-receipt-code"><a class="link" href="#generate-receipt-code-receipt-code">3.3.8. Generate Receipt : <code>receipt</code></a></h4>
+<h4 id="generating-receipt-code-receipt-code"><a class="link" href="#generating-receipt-code-receipt-code">3.3.8. Generating Receipt : <code>receipt</code></a></h4>
 <div class="paragraph">
 <p>Generates a receipt for the patient’s current visit based on Index Number in the Done List or IC Number.<br>
 Alias: <code>rct</code><br>
@@ -592,9 +594,9 @@ Generates a receipt for the patient with that IC number.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="generate-referral-letter-code-refer-code"><a class="link" href="#generate-referral-letter-code-refer-code">3.3.9. Generate Referral Letter : <code>refer</code></a></h4>
+<h4 id="generating-referral-letter-code-refer-code"><a class="link" href="#generating-referral-letter-code-refer-code">3.3.9. Generating Referral Letter : <code>refer</code></a></h4>
 <div class="paragraph">
-<p>Create a Referral Letter for the patient based on the IC Number or Index Number from the last list/find command.<br>
+<p>Generates a Referral Letter for the patient based on the IC Number or Index Number from the last list/find command.<br>
 Alias: <code>ref</code><br>
 Format: <code>refer &lt;INDEX&gt; h/&lt;HOSPITAL&gt; d/&lt;DEPARTMENT&gt; r/&lt;REASON&gt; n/&lt;NOTES&gt;</code> or <code>refer &lt;IC Number&gt; h/&lt;HOSPITAL&gt; d/&lt;DEPARTMENT&gt; r/&lt;REASON&gt; n/&lt;NOTES&gt;</code></p>
 </div>
@@ -610,6 +612,29 @@ Generates a referral letter for the 3rd patient in the address book with the fol
 <li>
 <p><code>refer S7722742C h/SGH d/Emergency r/Internal bleeding n/Patient is dying</code><br>
 Generates a referral letter for the patient of that IC number with the following reason and notes.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="removing-patient-from-served-patient-list-code-payment-code"><a class="link" href="#removing-patient-from-served-patient-list-code-payment-code">3.3.10. Removing patient from served patient list : <code>payment</code></a></h4>
+<div class="paragraph">
+<p>Removes a patient from the served patient list when the patient completes payment.<br>
+Alias: <code>pay</code><br>
+Format: <code>payment &lt;INDEX&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>payment 3</code><br>
+Removes the third patient from the list.</p>
+</li>
+<li>
+<p><code>payment 1</code><br>
+Removes the first patient from the list.</p>
 </li>
 </ul>
 </div>
@@ -853,4 +878,4 @@ e.g. <code>refer 3 h/NUH d/Surgery r/Internal bleeding n/Patient complains heart
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-19 10:49:45 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-19 16:35:09 UTC</div></div></div></body></html>
