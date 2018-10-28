@@ -28,9 +28,10 @@
 <ul class="sectlevel3">
 <li><a href="#adding-a-new-medicine-to-records-code-addmedicine-code">3.2.1. Adding a new medicine to records : <code>addMedicine</code></a></li>
 <li><a href="#editing-a-medicine-code-editmedicine-code">3.2.2. Editing a medicine : <code>editMedicine</code></a></li>
-<li><a href="#listing-all-medicine-in-stock-code-liststock-code">3.2.3. Listing all medicine in stock : <code>listStock</code></a></li>
-<li><a href="#finding-medicine-details-code-findstock-code">3.2.4. Finding medicine details : <code>findStock</code></a></li>
-<li><a href="#checking-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code">3.2.5. Checking the stocks of all medicine that are low in supply : <code>checkStock</code></a></li>
+<li><a href="#restock-a-medicine-code-restock-code">3.2.3. Restock a medicine : <code>restock</code></a></li>
+<li><a href="#listing-all-medicine-in-stock-code-liststock-code">3.2.4. Listing all medicine in stock : <code>listStock</code></a></li>
+<li><a href="#finding-medicine-details-code-findstock-code">3.2.5. Finding medicine details : <code>findStock</code></a></li>
+<li><a href="#checking-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code">3.2.6. Checking the stocks of all medicine that are low in supply : <code>checkStock</code></a></li>
 </ul>
 </li>
 <li><a href="#queue-management">3.3. Queue Management</a>
@@ -438,13 +439,31 @@ Format: <code>editMedicine index sn/&lt;SERIAL NUMBER&gt; n/&lt;NAME&gt; s/&lt;C
 <ul>
 <li>
 <p><code>editMedicine 1 n/hydrazine s/50022 p/20 min/30</code><br>
-Edits the information of the medicine based on the inputs.</p>
+Edits the information of the medicine at index 1 based on the inputs.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-medicine-in-stock-code-liststock-code"><a class="link" href="#listing-all-medicine-in-stock-code-liststock-code">3.2.3. Listing all medicine in stock : <code>listStock</code></a></h4>
+<h4 id="restock-a-medicine-code-restock-code"><a class="link" href="#restock-a-medicine-code-restock-code">3.2.3. Restock a medicine : <code>restock</code></a></h4>
+<div class="paragraph">
+<p>Restocks the medicine in the current records.<br>
+Format: <code>restock index amt/&lt;AMOUNT&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>restock 2 amt/123</code><br>
+Adds 123 to the current stock of medicine at index 2.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-all-medicine-in-stock-code-liststock-code"><a class="link" href="#listing-all-medicine-in-stock-code-liststock-code">3.2.4. Listing all medicine in stock : <code>listStock</code></a></h4>
 <div class="paragraph">
 <p>Lists all medical stocks in the clinic.<br>
 Alias: <code>lS</code><br>
@@ -452,7 +471,7 @@ Format: <code>listStock</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-medicine-details-code-findstock-code"><a class="link" href="#finding-medicine-details-code-findstock-code">3.2.4. Finding medicine details : <code>findStock</code></a></h4>
+<h4 id="finding-medicine-details-code-findstock-code"><a class="link" href="#finding-medicine-details-code-findstock-code">3.2.5. Finding medicine details : <code>findStock</code></a></h4>
 <div class="paragraph">
 <p>Finds the details of a given medicine from the serial number.
 Alias: <code>fS</code><br>
@@ -471,7 +490,7 @@ Finds the details of the medicine tagged with the serial number 1001.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="checking-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code"><a class="link" href="#checking-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code">3.2.5. Checking the stocks of all medicine that are low in supply : <code>checkStock</code></a></h4>
+<h4 id="checking-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code"><a class="link" href="#checking-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code">3.2.6. Checking the stocks of all medicine that are low in supply : <code>checkStock</code></a></h4>
 <div class="paragraph">
 <p>Lists all medicines that are low in stock.<br>
 Alias: <code>cS</code><br>
@@ -966,4 +985,4 @@ e.g. <code>refer 3 h/NUH d/Surgery r/Internal bleeding n/Patient complains heart
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-28 07:42:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-28 12:12:00 UTC</div></div></div></body></html>
