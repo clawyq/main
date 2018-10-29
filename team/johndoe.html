@@ -151,7 +151,8 @@ Format: <code>undo</code></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>deleteAll</code>).</p>
+<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>deleteAll</code>).
+This includes all commands that changes the <code>Patient</code> or <code>Medicine</code> class, PQMS-related commands are not <em>undoable</em>.</p>
 </div>
 </td>
 </tr>
@@ -178,6 +179,10 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 <code>deleteAll</code><br>
 <code>undo</code> (reverses the <code>deleteAll</code> command)<br>
 <code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>addMedicine mn/panadol msq/100 ppu/5 sn/00000001 s/2500</code><br>
+<code>undo</code> (reverses the <code>addMedicine</code> command)</p>
 </li>
 </ul>
 </div>
@@ -462,4 +467,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 15:43:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 17:30:07 UTC</div></div></div></body></html>

@@ -147,7 +147,7 @@ Format: <code>queue</code></p>
 <div class="sect3">
 <h4 id="registering-patient-to-queue-code-register-code"><a class="link" href="#registering-patient-to-queue-code-register-code">Registering Patient to Queue : <code>register</code></a></h4>
 <div class="paragraph">
-<p>Registers a new patient that comes to the clinic.<br>
+<p>Registers a new patient that comes to the clinic, the registered patient is placed inside the Patient Queue<br>
 Alias: <code>reg</code><br>
 Format: <code>register &lt;INDEX&gt;</code> or <code>register &lt;IC Number&gt; [coming soon]</code></p>
 </div>
@@ -157,8 +157,14 @@ Format: <code>register &lt;INDEX&gt;</code> or <code>register &lt;IC Number&gt; 
 <div class="ulist">
 <ul>
 <li>
-<p><code>register 3</code><br>
-Register the patient into the 3rd index.</p>
+<p><code>list</code><br>
+<code>register 3</code><br>
+Registers the 3rd patient in the database.</p>
+</li>
+<li>
+<p><code>find david</code><br>
+<code>register 1</code><br>
+Registers the 1st patient in the results of the <code>find</code> command</p>
 </li>
 </ul>
 </div>
@@ -168,7 +174,7 @@ Register the patient into the 3rd index.</p>
 <div class="paragraph">
 <p>Removes someone from the queue if he/she leaves before being served.<br>
 Alias: <code>rem</code><br>
-Format: <code>remove &lt;INDEX&gt;</code> or <code>remove &lt;IC Number&gt; [coming soon]</code></p>
+Format: <code>remove &lt;POSITION&gt;</code> or <code>remove &lt;IC Number&gt; [coming soon]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -189,7 +195,7 @@ Remove patient with IC Number S9382839X from the queue.</p>
 <div class="sect3">
 <h4 id="inserting-a-patient-to-queue-code-insert-code"><a class="link" href="#inserting-a-patient-to-queue-code-insert-code">Inserting a patient to queue : <code>insert</code></a></h4>
 <div class="paragraph">
-<p>Inserts a patient at specified position in the queue.<br>
+<p>Inserts a patient at a specified position in the queue.<br>
 Alias: <code>ins</code><br>
 Format: <code>insert &lt;INDEX&gt; p/&lt;POSITION&gt;</code> or <code>insert &lt;IC Number&gt; p/&lt;POSITION&gt; [coming soon]</code></p>
 </div>
@@ -199,12 +205,13 @@ Format: <code>insert &lt;INDEX&gt; p/&lt;POSITION&gt;</code> or <code>insert &lt
 <div class="ulist">
 <ul>
 <li>
-<p><code>insert 4 p/5</code><br>
-Insert the 4th person of the address book into the 5th index of the queue.</p>
+<p><code>list</code><br>
+<code>insert 4 p/5</code><br>
+Insert the 4th person of the database into the 5th position in the queue.</p>
 </li>
 <li>
 <p><code>insert S9123456A p/5</code><br>
-Insert the patient with that IC number to the 5th index of the queue.</p>
+Insert the patient with IC number S9123456A to the 5th position in the queue.</p>
 </li>
 </ul>
 </div>
@@ -212,7 +219,7 @@ Insert the patient with that IC number to the 5th index of the queue.</p>
 <div class="sect3">
 <h4 id="serving-the-first-patient-in-the-queue-code-serve-code"><a class="link" href="#serving-the-first-patient-in-the-queue-code-serve-code">Serving the first patient in the queue : <code>serve</code></a></h4>
 <div class="paragraph">
-<p>Serves the patient first in queue.<br>
+<p>Serves the patient first in queue. This places the patient into the Current Patient.<br>
 Alias: <code>ser</code><br>
 Format: <code>serve</code></p>
 </div>
@@ -222,7 +229,7 @@ Format: <code>serve</code></p>
 <div class="paragraph">
 <p>Add documents to the Current Patient<br>
 Alias: <code>da</code><br>
-Format: <code>docAdd [mc/&lt;MC&gt;] [n/&lt;NOTE&gt;] [r/&lt;REFERRAL&gt;]</code></p>
+Format: <code>docAdd [mc/&lt;MC_DAYS&gt;] [n/&lt;NOTE&gt;] [r/&lt;REFERRAL&gt;]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -241,13 +248,27 @@ Format: <code>docAdd [mc/&lt;MC&gt;] [n/&lt;NOTE&gt;] [r/&lt;REFERRAL&gt;]</code
 </div>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The note must be added to the patient to finish serving the patient.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Examples</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>docAdd mc/3 days n/fever</code></p>
+<p><code>docAdd mc/3 n/This patient complains of headache for past 3 days</code></p>
 </li>
 <li>
 <p><code>docAdd r/Ng Teng Fong Hospital</code></p>
@@ -260,14 +281,22 @@ Format: <code>docAdd [mc/&lt;MC&gt;] [n/&lt;NOTE&gt;] [r/&lt;REFERRAL&gt;]</code
 <div class="paragraph">
 <p>Add medicine to the Current Patient<br>
 Alias: <code>dm</code><br>
-Format <code>dispenseMedicine &lt;INDEX&gt; amt/&lt;AMOUNT</code></p>
+Format <code>dispenseMedicine &lt;MEDICINE_INDEX&gt; amt/&lt;AMOUNT</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="paragraph">
-<p>*<code>dispenseMedicine 1 amt/10</code><br>
-*<code>dispenseMedicine 5 amt/2</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>dispenseMedicine 1 amt/10</code><br>
+10x of the 1st medicine in the displayed medicine list will be added to the patient.<br></p>
+</li>
+<li>
+<p><code>dispenseMedicine 5 amt/2</code><br>
+2x of the 5th medicine in the displayed medicine list will be added to the patient.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -359,4 +388,4 @@ him from the <code>ServedPatientQueue</code>.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 15:43:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 17:30:07 UTC</div></div></div></body></html>
