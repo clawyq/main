@@ -16,22 +16,22 @@
 <li><a href="#patient">3.1. Patient</a>
 <ul class="sectlevel3">
 <li><a href="#adding-a-patient-code-add-code">3.1.1. Adding a patient: <code>add</code></a></li>
-<li><a href="#listing-all-patients-code-list-code">3.1.2. Listing all patients : <code>list</code></a></li>
-<li><a href="#editing-a-patient-code-edit-code">3.1.3. Editing a patient : <code>edit</code></a></li>
+<li><a href="#listing-all-patients-code-list-code">3.1.2. Listing all patients: <code>list</code></a></li>
+<li><a href="#editing-a-patient-code-edit-code">3.1.3. Editing a patient: <code>edit</code></a></li>
 <li><a href="#locating-patients-by-name-code-find-code">3.1.4. Locating patients by name: <code>find</code></a></li>
-<li><a href="#deleting-a-patient-code-delete-code">3.1.5. Deleting a patient : <code>delete</code></a></li>
-<li><a href="#selecting-a-patient-code-select-code">3.1.6. Selecting a patient : <code>select</code></a></li>
-<li><a href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">3.1.7. Adding medical records of a patient : <code>addMedicalRecord</code></a></li>
+<li><a href="#deleting-a-patient-code-delete-code">3.1.5. Deleting a patient: <code>delete</code></a></li>
+<li><a href="#selecting-a-patient-code-select-code">3.1.6. Selecting a patient: <code>select</code></a></li>
+<li><a href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">3.1.7. Adding medical records of a patient: <code>addMedicalRecord</code></a></li>
 </ul>
 </li>
 <li><a href="#medicine">3.2. Medicine</a>
 <ul class="sectlevel3">
-<li><a href="#adding-a-new-medicine-to-records-code-addmedicine-code">3.2.1. Adding a new medicine to records : <code>addMedicine</code></a></li>
-<li><a href="#editing-a-medicine-code-editmedicine-code">3.2.2. Editing a medicine : <code>editMedicine</code></a></li>
+<li><a href="#adding-a-medicine-code-addmedicine-code">3.2.1. Adding a medicine: <code>addMedicine</code></a></li>
+<li><a href="#editing-a-medicine-code-editmedicine-code">3.2.2. Editing a medicine: <code>editMedicine</code></a></li>
 <li><a href="#restocking-a-medicine-code-restock-code">3.2.3. Restocking a medicine : <code>restock</code></a></li>
-<li><a href="#listing-all-medicine-in-stock-code-liststock-code">3.2.4. Listing all medicine in stock : <code>listStock</code></a></li>
-<li><a href="#finding-medicine-details-code-findstock-code">3.2.5. Finding medicine details : <code>findStock</code></a></li>
-<li><a href="#checking-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code">3.2.6. Checking the stocks of all medicine that are low in supply : <code>checkStock</code></a></li>
+<li><a href="#listing-all-medicines-code-liststock-code">3.2.4. Listing all medicines: <code>listStock</code></a></li>
+<li><a href="#finding-details-of-a-medicine-code-findstock-code">3.2.5. Finding details of a medicine: <code>findStock</code></a></li>
+<li><a href="#listing-medicines-that-are-low-in-supply-code-checkstock-code">3.2.6. Listing medicines that are low in supply: <code>checkStock</code></a></li>
 </ul>
 </li>
 <li><a href="#queue-management">3.3. Queue Management</a>
@@ -44,21 +44,26 @@
 <li><a href="#adding-documents-to-current-patient-code-docadd-code">3.3.6. Adding documents to Current Patient : <code>docAdd</code></a></li>
 <li><a href="#dispensing-medicine-to-current-patient-code-dispensemedicine-code">3.3.7. Dispensing Medicine to Current Patient : <code>dispenseMedicine</code></a></li>
 <li><a href="#finish-serving-the-current-patient-code-finish-code">3.3.8. Finish serving the Current Patient : <code>finish</code></a></li>
-<li><a href="#generating-medical-certificate-code-mc-code">3.3.9. Generating Medical Certificate : <code>mc</code></a></li>
-<li><a href="#generating-receipt-code-receipt-code">3.3.10. Generating Receipt : <code>receipt</code></a></li>
-<li><a href="#generating-referral-letter-code-refer-code">3.3.11. Generating Referral Letter : <code>refer</code></a></li>
-<li><a href="#removing-patient-from-served-patient-list-code-payment-code">3.3.12. Removing patient from served patient list : <code>payment</code></a></li>
+<li><a href="#removing-patient-from-served-patient-list-code-payment-code">3.3.9. Removing patient from served patient list : <code>payment</code></a></li>
 </ul>
 </li>
-<li><a href="#miscellaneous">3.4. Miscellaneous</a>
+<li><a href="#document-generation">3.4. Document Generation</a>
 <ul class="sectlevel3">
-<li><a href="#viewing-help-code-help-code">3.4.1. Viewing help : <code>help</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.4.2. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.4.3. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.4.4. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.4.5. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.4.6. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.4.7. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#generating-medical-certificate-code-mc-code">3.4.1. Generating Medical Certificate : <code>mc</code></a></li>
+<li><a href="#generating-receipt-code-receipt-code">3.4.2. Generating Receipt : <code>receipt</code></a></li>
+<li><a href="#generating-referral-letter-code-refer-code">3.4.3. Generating Referral Letter : <code>refer</code></a></li>
+<li><a href="#removing-patient-from-served-patient-list-code-payment-code-2">3.4.4. Removing patient from served patient list : <code>payment</code></a></li>
+</ul>
+</li>
+<li><a href="#miscellaneous">3.5. Miscellaneous</a>
+<ul class="sectlevel3">
+<li><a href="#viewing-help-code-help-code">3.5.1. Viewing help : <code>help</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">3.5.2. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.5.3. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.5.4. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.5.5. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.5.6. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.5.7. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 </ul>
@@ -73,8 +78,8 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>CLInic</strong> is a desktop application that is created for clinics and optimised specifically for clinic receptionists and doctors who <strong>prefer to work with a Command Line Interface (CLI)</strong> while still having the benefits of a Graphical User Interface (GUI).
-If you have average to high typing speed and are in need of a clinic management application, CLInic can get your clinic management tasks more efficiently than traditional GUI apps.
-You will have <strong>all the tools</strong> needed to manage your patient and medicine data, completed with an efficient queue management system. Interested? Jump to <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+If you have average to high typing speed and are in need of a clinic management application, CLInic can administer your clinic management tasks more efficiently than traditional GUI apps.
+You will have <strong>all the tools</strong> needed to manage your patient and medicine data, complete with an efficient queue management system. Interested? Jump to <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -87,7 +92,7 @@ You will have <strong>all the tools</strong> needed to manage your patient and m
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Check that you have Java version <code>9</code> or later installed in your Computer.</p>
+<p>Ensure you have Java version <code>9</code> or later installed in your computer.</p>
 </li>
 <li>
 <p>Download the latest <code>CLInic.jar</code> <a href="https://github.com/se-edu/addressbook-level4/releases">here</a>.</p>
@@ -96,7 +101,7 @@ You will have <strong>all the tools</strong> needed to manage your patient and m
 <p>Copy the file to the folder you want to use as the home folder for your CLInic application.</p>
 </li>
 <li>
-<p>Double-click the file to start the app. The GUI will appear in a few seconds.</p>
+<p>Double-click the file to start the application. The GUI should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/Ui.png" alt="Ui" width="790">
@@ -104,30 +109,30 @@ You will have <strong>all the tools</strong> needed to manage your patient and m
 </div>
 </li>
 <li>
-<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
-e.g. type <strong><code>help</code></strong> and press <kbd>Enter</kbd> will open the help window.</p>
+<p>Type a command in the command box and press <kbd>Enter</kbd> to execute it.<br>
+e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
 </li>
 <li>
 <p>Some example commands you can try:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
+<p><strong><code>list</code></strong> : shows a list all patients in the database.</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe ic/S1234567X p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a patient named <code>John Doe</code> to the CLInic database.</p>
+<p><strong><code>add</code></strong><code>n/John Doe ic/S1234567X p/98765432 e/johnd@example.com a/John Street, Block 123, #01-01</code> : adds a patient named <code>John Doe</code> to the database, along with his personal details (more details in <a href="#patient">Section 3.1, &#8220;Patient&#8221;</a>).</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd patient shown in the current list.</p>
 </li>
 <li>
-<p><strong><code>exit</code></strong> : exits the app</p>
+<p><strong><code>exit</code></strong> : exits the application.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
+<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for the details of each command.</p>
 </li>
 </ol>
 </div>
@@ -144,22 +149,27 @@ e.g. type <strong><code>help</code></strong> and press <kbd>Enter</kbd> will ope
 <div class="ulist">
 <ul>
 <li>
-<p>Some commands have an alias, which you can also use to execute the command e.g. to add a person to the address book, you can type either <code>add n/John Doe</code> or <code>a n/John Doe</code>.</p>
+<p>Some commands have an alias, which you can also use to execute the command<br>
+e.g. to add a person to the address book, you can type either <code>add n/John Doe</code> or <code>a n/John Doe</code>.</p>
 </li>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user<br>
+e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>[b/BLOOD_TYPE] [da/DRUG_ALLERGY]</code> can be used as <code>b/A+ da/Panadol</code> or as <code>b/A+</code>.</p>
+<p>Items in square brackets are optional<br>
+e.g. <code>[b/BLOOD_TYPE] [da/DRUG_ALLERGY]</code> can be used as <code>b/A+ da/Panadol</code> or as <code>b/A+</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[da/DRUG_ALLERGY]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>da/Panadol</code>, <code>da/Panadol da/Zyrtec</code> etc.</p>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times<br>
+e.g. <code>[da/DRUG_ALLERGY]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>da/Panadol</code>, <code>da/Panadol da/Zyrtec</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order<br>
+e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
 </li>
 <li>
-<p>&lt;INDEX&gt; refers to the index number shown in the displayed patient or medicine list.</p>
+<p>&lt;INDEX&gt; refers to the index number shown in the current displayed patient or medicine list.</p>
 </li>
 </ul>
 </div>
@@ -170,7 +180,7 @@ e.g. type <strong><code>help</code></strong> and press <kbd>Enter</kbd> will ope
 <div class="sect3">
 <h4 id="adding-a-patient-code-add-code"><a class="link" href="#adding-a-patient-code-add-code">3.1.1. Adding a patient: <code>add</code></a></h4>
 <div class="paragraph">
-<p>Adds a patient to the CLInic database<br>
+<p>Adds a patient to the CLInic database.<br>
 Alias: <code>a</code><br>
 Format: <code>add n/NAME ic/IC_NUMBER p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
 </div>
@@ -181,7 +191,19 @@ Format: <code>add n/NAME ic/IC_NUMBER p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A patient can have any number of tags (including 0)
+A patient can have any number of tags (including 0).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Mandatory parameters can be keyed in any order.
 </td>
 </tr>
 </table>
@@ -192,16 +214,16 @@ A patient can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
+<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John Street, block 123, #01-01</code></p>
 </li>
 <li>
-<p><code>add n/Betsy Crowe e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+<p><code>add n/Betsy Crowe e/betsycrowe@example.com a/Newgate Drive p/12345678 t/pioneer</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-patients-code-list-code"><a class="link" href="#listing-all-patients-code-list-code">3.1.2. Listing all patients : <code>list</code></a></h4>
+<h4 id="listing-all-patients-code-list-code"><a class="link" href="#listing-all-patients-code-list-code">3.1.2. Listing all patients: <code>list</code></a></h4>
 <div class="paragraph">
 <p>Shows a list of all patients in the CLInic database.<br>
 Alias: <code>l</code><br>
@@ -209,9 +231,9 @@ Format: <code>list</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-patient-code-edit-code"><a class="link" href="#editing-a-patient-code-edit-code">3.1.3. Editing a patient : <code>edit</code></a></h4>
+<h4 id="editing-a-patient-code-edit-code"><a class="link" href="#editing-a-patient-code-edit-code">3.1.3. Editing a patient: <code>edit</code></a></h4>
 <div class="paragraph">
-<p>Edits an existing patient in the CLInic database.<br>
+<p>Edits an existing patient record in the CLInic database.<br>
 Alias: <code>e</code><br>
 Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
 </div>
@@ -220,19 +242,19 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Edits the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
 </li>
 <li>
-<p>At least one of the optional fields must be provided.</p>
+<p>At least one of the optional parameters must be provided.</p>
 </li>
 <li>
-<p>Existing values will be updated to the input values.</p>
+<p>Existing values will be updated with the newly input values of the corresponding field.</p>
 </li>
 <li>
-<p>When editing tags, the existing tags of the patient will be removed i.e adding of tags is not cumulative.</p>
+<p>When editing tags, the existing tags of the patient will be removed i.e. adding of tags is not cumulative.</p>
 </li>
 <li>
-<p>You can remove all the patient&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+<p>You can remove all the patient&#8217;s tags by typing <code>t/</code> without specifying any tags after the prefix.</p>
 </li>
 </ul>
 </div>
@@ -245,11 +267,11 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <ul>
 <li>
 <p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st patient to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+Edits the phone number and e-mail address of the 1st patient in the list to <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
 </li>
 <li>
-<p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd patient to be <code>Betsy Crower</code> and clears all existing tags.</p>
+<p><code>edit 2 n/Betsy Crowe t/</code><br>
+Edits the name of the 2nd patient in the list to <code>Betsy Crowe</code> and clears all her existing tags.</p>
 </li>
 </ul>
 </div>
@@ -266,19 +288,23 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+<p>The search is case insensitive<br>
+e.g. <code>hans</code> will match <code>Hans</code>.</p>
 </li>
 <li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+<p>The order of the keywords does not matter<br>
+e.g. <code>Hans Bo</code> will match <code>Bo Hans</code>.</p>
 </li>
 <li>
-<p>Only the name is searched.</p>
+<p>Only the patient&#8217;s name is searched</p>
 </li>
 <li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+<p>Only full words will be matched<br>
+e.g. <code>Han</code> will not match <code>Hans</code>.</p>
 </li>
 <li>
-<p>Patients matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+<p>Patients matching at least one keyword will be returned<br>
+e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code>.</p>
 </li>
 </ul>
 </div>
@@ -301,7 +327,7 @@ Returns any patient having names <code>Betsy</code>, <code>Tim</code>, or <code>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-patient-code-delete-code"><a class="link" href="#deleting-a-patient-code-delete-code">3.1.5. Deleting a patient : <code>delete</code></a></h4>
+<h4 id="deleting-a-patient-code-delete-code"><a class="link" href="#deleting-a-patient-code-delete-code">3.1.5. Deleting a patient: <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified patient from the CLInic database.<br>
 Alias: <code>d</code><br>
@@ -343,7 +369,7 @@ Deletes the 1st patient in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="selecting-a-patient-code-select-code"><a class="link" href="#selecting-a-patient-code-select-code">3.1.6. Selecting a patient : <code>select</code></a></h4>
+<h4 id="selecting-a-patient-code-select-code"><a class="link" href="#selecting-a-patient-code-select-code">3.1.6. Selecting a patient: <code>select</code></a></h4>
 <div class="paragraph">
 <p>Selects the patient identified by the index number used in the displayed patient list.<br>
 Alias: <code>s</code><br>
@@ -357,7 +383,7 @@ Format: <code>select INDEX</code></p>
 <p>The index refers to the index number shown in the displayed patient list.</p>
 </li>
 <li>
-<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+<p>The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
 </li>
 </ul>
 </div>
@@ -371,22 +397,23 @@ Format: <code>select INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>select 2</code><br>
-Selects the 2nd patient in the database.</p>
+Selects the 2nd patient in the whole database.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
 <code>select 1</code><br>
-Selects the 1st patient in the results of the <code>find</code> command.</p>
+Selects the 1st patient in the resulting list of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-medical-records-of-a-patient-code-addmedicalrecord-code"><a class="link" href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">3.1.7. Adding medical records of a patient : <code>addMedicalRecord</code></a></h4>
+<h4 id="adding-medical-records-of-a-patient-code-addmedicalrecord-code"><a class="link" href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">3.1.7. Adding medical records of a patient: <code>addMedicalRecord</code></a></h4>
 <div class="paragraph">
-<p>Adds a medical record for the patient based on the Index Number or IC Number from the last list/find command using any/all of the parameters.<br>
-Alias: <code>aMR</code><br>
-Format: <code>addMedicalRecord &lt;INDEX&gt; &lt;RELEVANT PARAMETERS&gt;</code> or <code>addMedicalRecord &lt;IC Number&gt; &lt;RELEVANT PARAMETERS&gt;</code></p>
+<p>Updates a patient&#8217;s medical record based on his NRIC or index number in the displayed patient list.<br>
+Alias: <code>amr</code><br>
+Format: <code>addMedicalRecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASE]&#8230;&#8203; [da/DRUG_ALLERGY]&#8230;&#8203; [m/NOTE]&#8230;&#8203;</code> or<br>
+<code>addMedicalRecord NRIC [b/BLOOD_TYPE] [d/PAST_DISEASE]&#8230;&#8203; [da/DRUG_ALLERGY]&#8230;&#8203; [m/NOTE]&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -394,12 +421,12 @@ Format: <code>addMedicalRecord &lt;INDEX&gt; &lt;RELEVANT PARAMETERS&gt;</code> 
 <div class="ulist">
 <ul>
 <li>
-<p><code>addMedicalRecord 5 b/A+ d/Paracetamol p/Diabetes</code><br>
-Adds Paracetamol and Diabetes to the 5th patient details.</p>
+<p><code>addMedicalRecord 5 b/A+ da/Paracetamol d/Diabetes</code><br>
+Adds 'Paracetamol' (under <em>Drug Allergy</em>) and 'Diabetes' (under <em>Past Disease</em>) to the 5th patient&#8217;s medical record.</p>
 </li>
 <li>
 <p><code>aMR S94738123X b/B+</code><br>
-Adds blood type of the patient with that IC Number.</p>
+Adds 'B+' (under <em>Blood Type</em>) to the medical record of the patient with that NRIC.</p>
 </li>
 </ul>
 </div>
@@ -408,11 +435,11 @@ Adds blood type of the patient with that IC Number.</p>
 <div class="sect2">
 <h3 id="medicine"><a class="link" href="#medicine">3.2. Medicine</a></h3>
 <div class="sect3">
-<h4 id="adding-a-new-medicine-to-records-code-addmedicine-code"><a class="link" href="#adding-a-new-medicine-to-records-code-addmedicine-code">3.2.1. Adding a new medicine to records : <code>addMedicine</code></a></h4>
+<h4 id="adding-a-medicine-code-addmedicine-code"><a class="link" href="#adding-a-medicine-code-addmedicine-code">3.2.1. Adding a medicine: <code>addMedicine</code></a></h4>
 <div class="paragraph">
-<p>Adds a new medicine into a record.<br>
-Alias: <code>aM</code><br>
-Format: <code>addMedicine sn/&lt;SERIAL NUMBER&gt; n/&lt;NAME&gt; s/&lt;CURRENT STOCK&gt; p/&lt;PRICE PER PIECE&gt; min/&lt;MINIMUM STOCK QUANTITY&gt;</code></p>
+<p>Adds a medicine to the CLInic inventory.<br>
+Alias: <code>am</code><br>
+Format: <code>addMedicine mn/MEDICINE_NAME msq/MINIMUM_STOCK_QUANTITY ppu/PRICE_PER_UNIT sn/SERIAL_NUMBER s/STOCK</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -420,17 +447,18 @@ Format: <code>addMedicine sn/&lt;SERIAL NUMBER&gt; n/&lt;NAME&gt; s/&lt;CURRENT 
 <div class="ulist">
 <ul>
 <li>
-<p><code>addMedicine sn/1000 n/panadol s/500 p/0.50 min/50</code><br>
-Adds a new Medicine called panadol with serial number 1000, stock of 500 units, price of 0.50 per unit and minimum stock to maintain set at 50 units.</p>
+<p><code>addMedicine mn/panadol msq/500 ppu/0.50 sn/1234 s/1000</code><br>
+Adds 'panadol' with <em>minimum stock quantity</em> of '500' units, <em>price per unit</em> of $'0.50', <em>serial number</em> '1234', and <em>stock</em> of '500' units to the CLInic inventory.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-medicine-code-editmedicine-code"><a class="link" href="#editing-a-medicine-code-editmedicine-code">3.2.2. Editing a medicine : <code>editMedicine</code></a></h4>
+<h4 id="editing-a-medicine-code-editmedicine-code"><a class="link" href="#editing-a-medicine-code-editmedicine-code">3.2.2. Editing a medicine: <code>editMedicine</code></a></h4>
 <div class="paragraph">
-<p>Edits the medicine in the current records.<br>
-Format: <code>editMedicine index sn/&lt;SERIAL NUMBER&gt; n/&lt;NAME&gt; s/&lt;CURRENT STOCK&gt; p/&lt;PRICE PER PIECE&gt; min/&lt;MINIMUM STOCK QUANTITY&gt;</code></p>
+<p>Edits the details of an existing medicine identified by the index number used in the displayed medicine list.<br>
+Alias: <code>em</code><br>
+Format: <code>editMedicine INDEX [mn/MEDICINE_NAME] [msq/MINIMUM_STOCK_QUANTITY] [ppu/PRICE_PER_UNIT] [sn/SERIAL_NUMBER] [s/STOCK]</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -439,7 +467,7 @@ Format: <code>editMedicine index sn/&lt;SERIAL NUMBER&gt; n/&lt;NAME&gt; s/&lt;C
 <ul>
 <li>
 <p><code>editMedicine 1 n/hydrazine s/50022 p/20 min/30</code><br>
-Edits the information of the medicine at index 1 based on the inputs.</p>
+Edits the details of the medicine at index 1 in the displayed medicine list based on the new input parameters.</p>
 </li>
 </ul>
 </div>
@@ -447,8 +475,9 @@ Edits the information of the medicine at index 1 based on the inputs.</p>
 <div class="sect3">
 <h4 id="restocking-a-medicine-code-restock-code"><a class="link" href="#restocking-a-medicine-code-restock-code">3.2.3. Restocking a medicine : <code>restock</code></a></h4>
 <div class="paragraph">
-<p>Restocks the medicine in the current records.<br>
-Format: <code>restock index amt/&lt;AMOUNT&gt;</code></p>
+<p>Restocks an existing medicine identified by the index number used in the displayed medicine list.<br>
+Alias: <code>rs</code><br>
+Format: <code>restock index amt/AMOUNT</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -457,25 +486,25 @@ Format: <code>restock index amt/&lt;AMOUNT&gt;</code></p>
 <ul>
 <li>
 <p><code>restock 2 amt/123</code><br>
-Adds 123 to the current stock of medicine at index 2.</p>
+Updates the stock of medicine at index 2 with an <strong>additional</strong> quantity of 123.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-medicine-in-stock-code-liststock-code"><a class="link" href="#listing-all-medicine-in-stock-code-liststock-code">3.2.4. Listing all medicine in stock : <code>listStock</code></a></h4>
+<h4 id="listing-all-medicines-code-liststock-code"><a class="link" href="#listing-all-medicines-code-liststock-code">3.2.4. Listing all medicines: <code>listStock</code></a></h4>
 <div class="paragraph">
-<p>Lists all medical stocks in the clinic.<br>
-Alias: <code>lS</code><br>
+<p>Lists all medicine stocks in the CLInic inventory.<br>
+Alias: <code>ls</code><br>
 Format: <code>listStock</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-medicine-details-code-findstock-code"><a class="link" href="#finding-medicine-details-code-findstock-code">3.2.5. Finding medicine details : <code>findStock</code></a></h4>
+<h4 id="finding-details-of-a-medicine-code-findstock-code"><a class="link" href="#finding-details-of-a-medicine-code-findstock-code">3.2.5. Finding details of a medicine: <code>findStock</code></a></h4>
 <div class="paragraph">
-<p>Finds the details of a given medicine from the serial number.
-Alias: <code>fS</code><br>
-Format: <code>findStock &lt;SERIAL NUMBER&gt;</code></p>
+<p>Finds the details of a medicine from its serial number.<br>
+Alias: <code>fs</code><br>
+Format: <code>findStock SERIAL_NUMBER</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -483,17 +512,17 @@ Format: <code>findStock &lt;SERIAL NUMBER&gt;</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>findStock 1001</code>
+<p><code>findStock 1001</code><br>
 Finds the details of the medicine tagged with the serial number 1001.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="checking-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code"><a class="link" href="#checking-the-stocks-of-all-medicine-that-are-low-in-supply-code-checkstock-code">3.2.6. Checking the stocks of all medicine that are low in supply : <code>checkStock</code></a></h4>
+<h4 id="listing-medicines-that-are-low-in-supply-code-checkstock-code"><a class="link" href="#listing-medicines-that-are-low-in-supply-code-checkstock-code">3.2.6. Listing medicines that are low in supply: <code>checkStock</code></a></h4>
 <div class="paragraph">
 <p>Lists all medicines that are low in stock.<br>
-Alias: <code>cS</code><br>
+Alias: <code>cs</code><br>
 Format: <code>checkStock</code></p>
 </div>
 </div>
@@ -685,9 +714,35 @@ Format: <code>finish</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="generating-medical-certificate-code-mc-code"><a class="link" href="#generating-medical-certificate-code-mc-code">3.3.9. Generating Medical Certificate : <code>mc</code></a></h4>
+<h4 id="removing-patient-from-served-patient-list-code-payment-code"><a class="link" href="#removing-patient-from-served-patient-list-code-payment-code">3.3.9. Removing patient from served patient list : <code>payment</code></a></h4>
 <div class="paragraph">
-<p>Creates a Medical Certificate based on the IC Number or Index Number from the last list/find command.<br>
+<p>Removes a patient from the served patient list when the patient completes payment.<br>
+Alias: <code>pay</code><br>
+Format: <code>payment &lt;INDEX&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>payment 3</code><br>
+Removes the third patient from the list.</p>
+</li>
+<li>
+<p><code>payment 1</code><br>
+Removes the first patient from the list.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="document-generation"><a class="link" href="#document-generation">3.4. Document Generation</a></h3>
+<div class="sect3">
+<h4 id="generating-medical-certificate-code-mc-code"><a class="link" href="#generating-medical-certificate-code-mc-code">3.4.1. Generating Medical Certificate : <code>mc</code></a></h4>
+<div class="paragraph">
+<p>Generates a Medical Certificate based on the IC Number or Index Number from the last list/find command.<br>
 Format: <code>mc &lt;INDEX&gt; d/&lt;DATE&gt;-&lt;DATE&gt;</code> or <code>mc &lt;IC Number&gt; d/&lt;DATE&gt;-&lt;DATE&gt;</code> where date is in the format DD-MM-YYYY</p>
 </div>
 <div class="paragraph">
@@ -707,7 +762,7 @@ Generates a MC for the IC number.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="generating-receipt-code-receipt-code"><a class="link" href="#generating-receipt-code-receipt-code">3.3.10. Generating Receipt : <code>receipt</code></a></h4>
+<h4 id="generating-receipt-code-receipt-code"><a class="link" href="#generating-receipt-code-receipt-code">3.4.2. Generating Receipt : <code>receipt</code></a></h4>
 <div class="paragraph">
 <p>Generates a receipt for the patient’s current visit based on Index Number in the Done List or IC Number.<br>
 Alias: <code>rct</code><br>
@@ -730,7 +785,7 @@ Generates a receipt for the patient with that IC number.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="generating-referral-letter-code-refer-code"><a class="link" href="#generating-referral-letter-code-refer-code">3.3.11. Generating Referral Letter : <code>refer</code></a></h4>
+<h4 id="generating-referral-letter-code-refer-code"><a class="link" href="#generating-referral-letter-code-refer-code">3.4.3. Generating Referral Letter : <code>refer</code></a></h4>
 <div class="paragraph">
 <p>Generates a Referral Letter for the patient based on the IC Number or Index Number from the last list/find command.<br>
 Alias: <code>ref</code><br>
@@ -753,7 +808,7 @@ Generates a referral letter for the patient of that IC number with the following
 </div>
 </div>
 <div class="sect3">
-<h4 id="removing-patient-from-served-patient-list-code-payment-code"><a class="link" href="#removing-patient-from-served-patient-list-code-payment-code">3.3.12. Removing patient from served patient list : <code>payment</code></a></h4>
+<h4 id="removing-patient-from-served-patient-list-code-payment-code-2"><a class="link" href="#removing-patient-from-served-patient-list-code-payment-code-2">3.4.4. Removing patient from served patient list : <code>payment</code></a></h4>
 <div class="paragraph">
 <p>Removes a patient from the served patient list when the patient completes payment.<br>
 Alias: <code>pay</code><br>
@@ -777,15 +832,15 @@ Removes the 1st patient from the served patient list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="miscellaneous"><a class="link" href="#miscellaneous">3.4. Miscellaneous</a></h3>
+<h3 id="miscellaneous"><a class="link" href="#miscellaneous">3.5. Miscellaneous</a></h3>
 <div class="sect3">
-<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.4.1. Viewing help : <code>help</code></a></h4>
+<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.5.1. Viewing help : <code>help</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.4.2. Listing entered commands : <code>history</code></a></h4>
+<h4 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.5.2. Listing entered commands : <code>history</code></a></h4>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Alias: <code>h</code><br>
@@ -807,7 +862,7 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.4.3. Undoing previous command : <code>undo</code></a></h4>
+<h4 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.5.3. Undoing previous command : <code>undo</code></a></h4>
 <div class="paragraph">
 <p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
 Alias: <code>u</code><br>
@@ -858,7 +913,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </div>
 </div>
 <div class="sect3">
-<h4 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.4.4. Redoing the previously undone command : <code>redo</code></a></h4>
+<h4 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.5.4. Redoing the previously undone command : <code>redo</code></a></h4>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Alias: <code>r</code><br>
@@ -891,21 +946,21 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.4.5. Exiting the program : <code>exit</code></a></h4>
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.5.5. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.4.6. Saving the data</a></h4>
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.5.6. Saving the data</a></h4>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.4.7. Encrypting data files <code>[coming in v2.0]</code></a></h4>
+<h4 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.5.7. Encrypting data files <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -1019,4 +1074,4 @@ e.g. <code>refer 3 h/NUH d/Surgery r/Internal bleeding n/Patient complains heart
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 18:42:55 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 03:32:05 UTC</div></div></div></body></html>
