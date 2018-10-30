@@ -243,28 +243,65 @@ Format: <code>list</code></p>
 Alias: <code>e</code><br>
 Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Edits the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-<li>
-<p>At least one of the optional parameters must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated with the newly input values of the corresponding field.</p>
-</li>
-<li>
-<p>When editing tags, the existing tags of the patient will be removed i.e. adding of tags is not cumulative.</p>
-</li>
-<li>
-<p>You can remove all the patient&#8217;s tags by typing <code>t/</code> without specifying any tags after the prefix.</p>
-</li>
-</ul>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Edits the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+At least one of the optional parameters must be provided.
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Existing values will be updated with the newly input values of the corresponding field.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+When editing tags, the existing tags of the patient will be removed i.e. adding of tags is not cumulative.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can remove all the patient&#8217;s tags by typing <code>t/</code> without specifying any tags after the prefix.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -289,32 +326,64 @@ Edits the name of the 2nd patient in the list to <code>Betsy Crowe</code> and cl
 Alias: <code>f</code><br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
+<div class="ulist TIP">
+<ul class="TIP">
 <li>
 <p>The search is case insensitive<br>
 e.g. <code>hans</code> will match <code>Hans</code>.</p>
 </li>
-<li>
-<p>The order of the keywords does not matter<br>
-e.g. <code>Hans Bo</code> will match <code>Bo Hans</code>.</p>
-</li>
-<li>
-<p>Only the patient&#8217;s name is searched</p>
-</li>
-<li>
-<p>Only full words will be matched<br>
-e.g. <code>Han</code> will not match <code>Hans</code>.</p>
-</li>
-<li>
-<p>Patients matching at least one keyword will be returned<br>
-e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code>.</p>
-</li>
 </ul>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The order of the keywords does not matter<br>
+e.g. <code>Hans Bo</code> will match <code>Bo Hans</code>.
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Only the patient&#8217;s name is searched
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Only full words will be matched<br>
+e.g. <code>Han</code> will not match <code>Hans</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Patients matching at least one keyword will be returned<br>
+e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -339,16 +408,17 @@ Returns any patient having names <code>Betsy</code>, <code>Tim</code>, or <code>
 Alias: <code>d</code><br>
 Format: <code>delete INDEX</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Deletes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -375,16 +445,17 @@ Deletes the 1st patient in the resulting list of the <code>find</code> command.<
 Alias: <code>s</code><br>
 Format: <code>select INDEX</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Selects the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Selects the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -411,25 +482,53 @@ Selects the 1st patient in the resulting list of the <code>find</code> command.<
 Alias: <code>amr</code><br>
 Format: <code>addMedicalRecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASE]&#8230;&#8203; [da/DRUG_ALLERGY]&#8230;&#8203; [m/NOTE]&#8230;&#8203;</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Updates the medical records of a patient based on the specified <code>INDEX</code>. The index refers to the index number shown in the filtered patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-<li>
-<p>At least one of the optional parameters must be provided.</p>
-</li>
-<li>
-<p>Newly input values will be appended to the existing values of the patient, except <code>BloodType</code>. <code>BloodType</code> cannot be changed, and thus you can only add <code>BloodType</code> to a patient the very first time, and it will be permanent.</p>
-</li>
-<li>
-<p>A <code>Note</code> usually consists of a <code>Message</code> and a <code>Prescription</code>. However, using this command does not allow you add any <code>Prescription</code>, since it is not meant to be used during the doctor&#8217;s consultation. Hence, using this command will just add a <code>Note</code> with the specified <code>Message</code>, but an empty <code>Prescription</code>.</p>
-</li>
-</ul>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Updates the medical records of a patient based on his <code>IC_NUMBER</code> or the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+At least one of the optional parameters must be provided.
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Newly input values will be appended to the existing values of the patient, except <code>BloodType</code>. <code>BloodType</code> cannot be changed, and thus you can only add <code>BloodType</code> to a patient the very first time, and it will be permanent.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A <code>Note</code> usually consists of a <code>Message</code> and a <code>Prescription</code>. However, using this command does not allow you add any <code>Prescription</code>, since it is not meant to be used during the doctor&#8217;s consultation. Hence, using this command will just add a <code>Note</code> with the specified <code>Message</code>, but an empty <code>Prescription</code>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -476,25 +575,53 @@ Adds 'panadol' with <em>minimum stock quantity</em> of '500' units, <em>price pe
 Alias: <code>em</code><br>
 Format: <code>editMedicine INDEX [mn/MEDICINE_NAME] [msq/MINIMUM_STOCK_QUANTITY] [ppu/PRICE_PER_UNIT] [sn/SERIAL_NUMBER] [s/STOCK]</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Edits the medicine details at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-<li>
-<p>At least one of the optional parameters must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated with the newly input values of the corresponding field.</p>
-</li>
-<li>
-<p>You can remove any of the medicine details by typing the prefixes <code>msq/</code> <code>ppu/</code> <code>sn/</code> <code>s/</code> without specifying any contents after the prefix.</p>
-</li>
-</ul>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Edits the medicine details at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+At least one of the optional parameters must be provided.
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Existing values will be updated with the newly input values of the corresponding field.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can remove any of the medicine details by typing the prefixes <code>msq/</code> <code>ppu/</code> <code>sn/</code> <code>s/</code> without specifying any contents after the prefix.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -515,16 +642,17 @@ Edits the details of the medicine at index 1 in the displayed medicine list base
 Alias: <code>rs</code><br>
 Format: <code>restock INDEX amt/AMOUNT</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Restocks the medicine at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Restocks the medicine at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -583,16 +711,17 @@ Format: <code>checkStock</code></p>
 Alias: <code>reg</code><br>
 Format: <code>register INDEX</code> or <code>register IC_NUMBER [coming soon]</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Registers the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Registers the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -627,16 +756,17 @@ Format: <code>queue</code></p>
 Alias: <code>rem</code><br>
 Format: <code>remove INDEX</code> or <code>remove IC_NUMBER [coming soon]</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Removes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The <code>INDEX</code> <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Removes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The <code>INDEX</code> <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -661,16 +791,17 @@ Removes patient with IC number S9382839X from the queue.</p>
 Alias: <code>ins</code><br>
 Format: <code>insert INDEX p/POSITION</code> or <code>insert IC_NUMBER p/POSITION [coming soon]</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Inserts the patient at the specified <code>INDEX</code> in the displayed patient list into the specified <code>POSITION</code> in the Waiting queue. Both the index and position <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Inserts the patient at the specified <code>INDEX</code> in the displayed patient list into the specified <code>POSITION</code> in the Waiting queue. Both the index and position <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -704,25 +835,44 @@ Format: <code>serve</code></p>
 Alias: <code>da</code><br>
 Format: <code>docAdd [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>At least one of the optional parameters must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated with the newly input values of the corresponding field.</p>
-</li>
-<li>
-<p>You can remove any of the patient&#8217;s document contents by typing the prefixes <code>mc/</code> <code>n/</code> <code>r/</code> without specifying any contents after the prefix.</p>
-</li>
-</ul>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+At least one of the optional parameters must be provided.
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Existing values will be updated with the newly input values of the corresponding field.
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can remove any of the patient&#8217;s document contents by typing the prefixes <code>mc/</code> <code>n/</code> <code>r/</code> without specifying any contents after the prefix.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Examples</p>
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -744,16 +894,17 @@ Adds referral to the Current Patient.</p>
 Alias: <code>dm</code><br>
 Format <code>dispenseMedicine MEDICINE_INDEX amt/AMOUNT</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current Patient. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current Patient. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -777,16 +928,14 @@ Format <code>dispenseMedicine MEDICINE_INDEX amt/AMOUNT</code></p>
 <p>Transfers the Current Patient to the Served Patient queue.<br>
 Format: <code>finish</code></p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>This command cannot be called if no notes have been added to the patient. Use <code>docAdd</code> command with prefix <code>n/</code> to add <code>NOTES</code>.</p>
-</div>
+This command cannot be called if no notes have been added to the patient. Use <code>docAdd</code> command with prefix <code>n/</code> to add <code>NOTES</code>.
 </td>
 </tr>
 </table>
@@ -799,16 +948,17 @@ Format: <code>finish</code></p>
 Alias: <code>pay</code><br>
 Format: <code>payment INDEX</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Removes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Removes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -835,16 +985,17 @@ Removes the 1st patient from the queue.</p>
 <p>Generates medical certificate for a Served Patient.<br>
 Format: <code>mc INDEX</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Generates a medical certificate for the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Generates a medical certificate for the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -865,16 +1016,17 @@ Generates a medical certificate for the 1st patient in the Served Patient queue.
 Alias: <code>rct</code><br>
 Format: <code>receipt INDEX</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Generates a receipt for the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Generates a receipt for the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -895,16 +1047,17 @@ Generates a receipt for the 5th patient in the Served Patient queue.</p>
 Alias: <code>rl</code><br>
 Format: <code>refer INDEX</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Generates a referral letter for the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Generates a referral letter for the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -934,16 +1087,14 @@ Generates a receipt for the 7th patient in the Served Patient queue.</p>
 Alias: <code>h</code><br>
 Format: <code>history</code></p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
-</div>
+Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.
 </td>
 </tr>
 </table>
@@ -1350,4 +1501,4 @@ There is no need to save manually.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 12:34:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 12:51:16 UTC</div></div></div></body></html>
