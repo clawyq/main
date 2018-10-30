@@ -18,7 +18,7 @@
 <li><a href="#adding-a-patient-code-add-code">3.1.1. Adding a patient: <code>add</code></a></li>
 <li><a href="#listing-all-patients-code-list-code">3.1.2. Listing all patients: <code>list</code></a></li>
 <li><a href="#editing-a-patient-code-edit-code">3.1.3. Editing a patient: <code>edit</code></a></li>
-<li><a href="#locating-patients-by-name-code-find-code">3.1.4. Locating patients by name: <code>find</code></a></li>
+<li><a href="#locating-a-patient-by-name-code-find-code">3.1.4. Locating a patient by name: <code>find</code></a></li>
 <li><a href="#deleting-a-patient-code-delete-code">3.1.5. Deleting a patient: <code>delete</code></a></li>
 <li><a href="#selecting-a-patient-code-select-code">3.1.6. Selecting a patient: <code>select</code></a></li>
 <li><a href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">3.1.7. Adding medical records of a patient: <code>addMedicalRecord</code></a></li>
@@ -28,7 +28,7 @@
 <ul class="sectlevel3">
 <li><a href="#adding-a-medicine-code-addmedicine-code">3.2.1. Adding a medicine: <code>addMedicine</code></a></li>
 <li><a href="#editing-a-medicine-code-editmedicine-code">3.2.2. Editing a medicine: <code>editMedicine</code></a></li>
-<li><a href="#restocking-a-medicine-code-restock-code">3.2.3. Restocking a medicine : <code>restock</code></a></li>
+<li><a href="#restocking-a-medicine-code-restock-code">3.2.3. Restocking a medicine: <code>restock</code></a></li>
 <li><a href="#listing-all-medicines-code-liststock-code">3.2.4. Listing all medicines: <code>listStock</code></a></li>
 <li><a href="#finding-details-of-a-medicine-code-findstock-code">3.2.5. Finding details of a medicine: <code>findStock</code></a></li>
 <li><a href="#listing-medicines-that-are-low-in-supply-code-checkstock-code">3.2.6. Listing medicines that are low in supply: <code>checkStock</code></a></li>
@@ -36,40 +36,46 @@
 </li>
 <li><a href="#queue-management">3.3. Queue Management</a>
 <ul class="sectlevel3">
-<li><a href="#listing-all-patients-in-patient-queue-code-queue-code">3.3.1. Listing all Patients in Patient Queue : <code>queue</code></a></li>
-<li><a href="#registering-patient-to-queue-code-register-code">3.3.2. Registering Patient to Queue : <code>register</code></a></li>
-<li><a href="#removing-a-patient-from-queue-code-remove-code">3.3.3. Removing a patient from queue : <code>remove</code></a></li>
-<li><a href="#inserting-a-patient-to-queue-code-insert-code">3.3.4. Inserting a patient to queue : <code>insert</code></a></li>
-<li><a href="#serving-the-first-patient-in-the-queue-code-serve-code">3.3.5. Serving the first patient in the queue : <code>serve</code></a></li>
-<li><a href="#adding-documents-to-current-patient-code-docadd-code">3.3.6. Adding documents to Current Patient : <code>docAdd</code></a></li>
-<li><a href="#dispensing-medicine-to-current-patient-code-dispensemedicine-code">3.3.7. Dispensing Medicine to Current Patient : <code>dispenseMedicine</code></a></li>
-<li><a href="#finish-serving-the-current-patient-code-finish-code">3.3.8. Finish serving the Current Patient : <code>finish</code></a></li>
-<li><a href="#removing-patient-from-served-patient-list-code-payment-code">3.3.9. Removing patient from served patient list : <code>payment</code></a></li>
+<li><a href="#registering-a-patient-to-waiting-queue-code-register-code">3.3.1. Registering a patient to Waiting queue: <code>register</code></a></li>
+<li><a href="#listing-all-patients-in-waiting-queue-code-queue-code">3.3.2. Listing all patients in Waiting queue: <code>queue</code></a></li>
+<li><a href="#removing-a-patient-from-waiting-queue-code-remove-code">3.3.3. Removing a patient from Waiting queue: <code>remove</code></a></li>
+<li><a href="#inserting-a-patient-to-waiting-queue-code-insert-code">3.3.4. Inserting a patient to Waiting queue: <code>insert</code></a></li>
+<li><a href="#serving-the-first-patient-in-waiting-queue-code-serve-code">3.3.5. Serving the first patient in Waiting queue: <code>serve</code></a></li>
+<li><a href="#adding-document-contents-to-current-patient-code-docadd-code">3.3.6. Adding document contents to Current Patient: <code>docAdd</code></a></li>
+<li><a href="#dispensing-medicine-to-current-patient-code-dispensemedicine-code">3.3.7. Dispensing medicine to Current Patient: <code>dispenseMedicine</code></a></li>
+<li><a href="#finishing-service-of-the-current-patient-code-finish-code">3.3.8. Finishing service of the Current Patient: <code>finish</code></a></li>
+<li><a href="#removing-patient-from-served-patient-queue-code-payment-code">3.3.9. Removing patient from Served Patient queue: <code>payment</code></a></li>
 </ul>
 </li>
 <li><a href="#document-generation">3.4. Document Generation</a>
 <ul class="sectlevel3">
-<li><a href="#generating-medical-certificate-code-mc-code">3.4.1. Generating Medical Certificate : <code>mc</code></a></li>
-<li><a href="#generating-receipt-code-receipt-code">3.4.2. Generating Receipt : <code>receipt</code></a></li>
-<li><a href="#generating-referral-letter-code-refer-code">3.4.3. Generating Referral Letter : <code>refer</code></a></li>
-<li><a href="#removing-patient-from-served-patient-list-code-payment-code-2">3.4.4. Removing patient from served patient list : <code>payment</code></a></li>
+<li><a href="#generating-medical-certificate-code-mc-code">3.4.1. Generating medical certificate: <code>mc</code></a></li>
+<li><a href="#generating-receipt-code-receipt-code">3.4.2. Generating receipt: <code>receipt</code></a></li>
+<li><a href="#generating-referral-letter-code-refer-code">3.4.3. Generating referral letter: <code>refer</code></a></li>
 </ul>
 </li>
 <li><a href="#miscellaneous">3.5. Miscellaneous</a>
 <ul class="sectlevel3">
-<li><a href="#viewing-help-code-help-code">3.5.1. Viewing help : <code>help</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.5.2. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.5.3. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.5.4. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.5.5. Exiting the program : <code>exit</code></a></li>
+<li><a href="#viewing-help-code-help-code">3.5.1. Viewing help: <code>help</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">3.5.2. Listing entered commands: <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.5.3. Undoing previous command: <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.5.4. Redoing the previously undone command: <code>redo</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.5.5. Exiting the program: <code>exit</code></a></li>
 <li><a href="#saving-the-data">3.5.6. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.5.7. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a></li>
+<li><a href="#command-summary">5. Command Summary</a>
+<ul class="sectlevel2">
+<li><a href="#patient-2">5.1. Patient</a></li>
+<li><a href="#medicine-2">5.2. Medicine</a></li>
+<li><a href="#queue-management-2">5.3. Queue Management</a></li>
+<li><a href="#document-generation-2">5.4. Document Generation</a></li>
+<li><a href="#miscellaneous-2">5.5. Miscellaneous</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -277,9 +283,9 @@ Edits the name of the 2nd patient in the list to <code>Betsy Crowe</code> and cl
 </div>
 </div>
 <div class="sect3">
-<h4 id="locating-patients-by-name-code-find-code"><a class="link" href="#locating-patients-by-name-code-find-code">3.1.4. Locating patients by name: <code>find</code></a></h4>
+<h4 id="locating-a-patient-by-name-code-find-code"><a class="link" href="#locating-a-patient-by-name-code-find-code">3.1.4. Locating a patient by name: <code>find</code></a></h4>
 <div class="paragraph">
-<p>Finds patients whose names contain any of the given keywords.<br>
+<p>Finds a patient whose name contains any of the given keywords.<br>
 Alias: <code>f</code><br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
@@ -338,13 +344,7 @@ Format: <code>delete INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the patient at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed patient list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Deletes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
 </li>
 </ul>
 </div>
@@ -363,7 +363,7 @@ Deletes the 2nd patient in the database.</p>
 <li>
 <p><code>find Betsy</code><br>
 <code>delete 1</code><br>
-Deletes the 1st patient in the results of the <code>find</code> command.</p>
+Deletes the 1st patient in the resulting list of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
@@ -371,7 +371,7 @@ Deletes the 1st patient in the results of the <code>find</code> command.</p>
 <div class="sect3">
 <h4 id="selecting-a-patient-code-select-code"><a class="link" href="#selecting-a-patient-code-select-code">3.1.6. Selecting a patient: <code>select</code></a></h4>
 <div class="paragraph">
-<p>Selects the patient identified by the index number used in the displayed patient list.<br>
+<p>Selects a patient to view his profile.<br>
 Alias: <code>s</code><br>
 Format: <code>select INDEX</code></p>
 </div>
@@ -380,10 +380,7 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>The index refers to the index number shown in the displayed patient list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+<p>Selects the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
 </li>
 </ul>
 </div>
@@ -410,10 +407,30 @@ Selects the 1st patient in the resulting list of the <code>find</code> command.<
 <div class="sect3">
 <h4 id="adding-medical-records-of-a-patient-code-addmedicalrecord-code"><a class="link" href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">3.1.7. Adding medical records of a patient: <code>addMedicalRecord</code></a></h4>
 <div class="paragraph">
-<p>Updates a patient&#8217;s medical record based on his NRIC or index number in the displayed patient list.<br>
+<p>Updates the medical records of a patient.<br>
 Alias: <code>amr</code><br>
 Format: <code>addMedicalRecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASE]&#8230;&#8203; [da/DRUG_ALLERGY]&#8230;&#8203; [m/NOTE]&#8230;&#8203;</code> or<br>
-<code>addMedicalRecord NRIC [b/BLOOD_TYPE] [d/PAST_DISEASE]&#8230;&#8203; [da/DRUG_ALLERGY]&#8230;&#8203; [m/NOTE]&#8230;&#8203;</code></p>
+<code>addMedicalRecord IC_NUMBER [b/BLOOD_TYPE] [d/PAST_DISEASE]&#8230;&#8203; [da/DRUG_ALLERGY]&#8230;&#8203; [m/NOTE]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Updates the medical records of a patient based on his <code>IC_NUMBER</code> or the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+<li>
+<p>At least one of the optional parameters must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated with the newly input values of the corresponding field.</p>
+</li>
+<li>
+<p>You can remove any of the patient&#8217;s records by typing the prefixes <code>b/</code> <code>d/</code> <code>da/</code> <code>m/</code> without specifying any contents after the prefix.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -425,8 +442,8 @@ Format: <code>addMedicalRecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASE]&#8230;&#820
 Adds 'Paracetamol' (under <em>Drug Allergy</em>) and 'Diabetes' (under <em>Past Disease</em>) to the 5th patient&#8217;s medical record.</p>
 </li>
 <li>
-<p><code>aMR S94738123X b/B+</code><br>
-Adds 'B+' (under <em>Blood Type</em>) to the medical record of the patient with that NRIC.</p>
+<p><code>addMedicalRecord S94738123X b/B+</code><br>
+Adds 'B+' (under <em>Blood Type</em>) to the medical record of the patient with that IC number.</p>
 </li>
 </ul>
 </div>
@@ -456,9 +473,29 @@ Adds 'panadol' with <em>minimum stock quantity</em> of '500' units, <em>price pe
 <div class="sect3">
 <h4 id="editing-a-medicine-code-editmedicine-code"><a class="link" href="#editing-a-medicine-code-editmedicine-code">3.2.2. Editing a medicine: <code>editMedicine</code></a></h4>
 <div class="paragraph">
-<p>Edits the details of an existing medicine identified by the index number used in the displayed medicine list.<br>
+<p>Edits the details of an existing medicine.<br>
 Alias: <code>em</code><br>
 Format: <code>editMedicine INDEX [mn/MEDICINE_NAME] [msq/MINIMUM_STOCK_QUANTITY] [ppu/PRICE_PER_UNIT] [sn/SERIAL_NUMBER] [s/STOCK]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the medicine details at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+<li>
+<p>At least one of the optional parameters must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated with the newly input values of the corresponding field.</p>
+</li>
+<li>
+<p>You can remove any of the medicine details by typing the prefixes <code>msq/</code> <code>ppu/</code> <code>sn/</code> <code>s/</code> without specifying any contents after the prefix.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -473,11 +510,22 @@ Edits the details of the medicine at index 1 in the displayed medicine list base
 </div>
 </div>
 <div class="sect3">
-<h4 id="restocking-a-medicine-code-restock-code"><a class="link" href="#restocking-a-medicine-code-restock-code">3.2.3. Restocking a medicine : <code>restock</code></a></h4>
+<h4 id="restocking-a-medicine-code-restock-code"><a class="link" href="#restocking-a-medicine-code-restock-code">3.2.3. Restocking a medicine: <code>restock</code></a></h4>
 <div class="paragraph">
-<p>Restocks an existing medicine identified by the index number used in the displayed medicine list.<br>
+<p>Restocks an existing medicine with <strong>additional</strong> quantity.<br>
 Alias: <code>rs</code><br>
-Format: <code>restock index amt/AMOUNT</code></p>
+Format: <code>restock INDEX amt/AMOUNT</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Restocks the medicine at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -521,7 +569,7 @@ Finds the details of the medicine tagged with the serial number 1001.</p>
 <div class="sect3">
 <h4 id="listing-medicines-that-are-low-in-supply-code-checkstock-code"><a class="link" href="#listing-medicines-that-are-low-in-supply-code-checkstock-code">3.2.6. Listing medicines that are low in supply: <code>checkStock</code></a></h4>
 <div class="paragraph">
-<p>Lists all medicines that are low in stock.<br>
+<p>Lists all medicines that are low in supply.<br>
 Alias: <code>cs</code><br>
 Format: <code>checkStock</code></p>
 </div>
@@ -530,19 +578,22 @@ Format: <code>checkStock</code></p>
 <div class="sect2">
 <h3 id="queue-management"><a class="link" href="#queue-management">3.3. Queue Management</a></h3>
 <div class="sect3">
-<h4 id="listing-all-patients-in-patient-queue-code-queue-code"><a class="link" href="#listing-all-patients-in-patient-queue-code-queue-code">3.3.1. Listing all Patients in Patient Queue : <code>queue</code></a></h4>
+<h4 id="registering-a-patient-to-waiting-queue-code-register-code"><a class="link" href="#registering-a-patient-to-waiting-queue-code-register-code">3.3.1. Registering a patient to Waiting queue: <code>register</code></a></h4>
 <div class="paragraph">
-<p>Lists all patients in queue waiting to see the doctor.<br>
-Alias: <code>q</code><br>
-Format: <code>queue</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="registering-patient-to-queue-code-register-code"><a class="link" href="#registering-patient-to-queue-code-register-code">3.3.2. Registering Patient to Queue : <code>register</code></a></h4>
-<div class="paragraph">
-<p>Registers a new patient that comes to the clinic, the registered patient is placed inside the Patient Queue<br>
+<p>Registers a patient to the back of the Waiting queue.<br>
 Alias: <code>reg</code><br>
-Format: <code>register &lt;INDEX&gt;</code> or <code>register &lt;IC Number&gt; [coming soon]</code></p>
+Format: <code>register INDEX</code> or <code>register IC_NUMBER [coming soon]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Registers the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -557,17 +608,36 @@ Registers the 3rd patient in the database.</p>
 <li>
 <p><code>find david</code><br>
 <code>register 1</code><br>
-Registers the 1st patient in the results of the <code>find</code> command</p>
+Registers the 1st patient in the resulting list of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="removing-a-patient-from-queue-code-remove-code"><a class="link" href="#removing-a-patient-from-queue-code-remove-code">3.3.3. Removing a patient from queue : <code>remove</code></a></h4>
+<h4 id="listing-all-patients-in-waiting-queue-code-queue-code"><a class="link" href="#listing-all-patients-in-waiting-queue-code-queue-code">3.3.2. Listing all patients in Waiting queue: <code>queue</code></a></h4>
 <div class="paragraph">
-<p>Removes someone from the queue if he/she leaves before being served.<br>
+<p>Lists all patients in the Waiting queue.<br>
+Alias: <code>q</code><br>
+Format: <code>queue</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="removing-a-patient-from-waiting-queue-code-remove-code"><a class="link" href="#removing-a-patient-from-waiting-queue-code-remove-code">3.3.3. Removing a patient from Waiting queue: <code>remove</code></a></h4>
+<div class="paragraph">
+<p>Removes a patient from the Waiting queue if he leaves before being served.<br>
 Alias: <code>rem</code><br>
-Format: <code>remove &lt;POSITION&gt;</code> or <code>remove &lt;IC Number&gt; [coming soon]</code></p>
+Format: <code>remove INDEX</code> or <code>remove IC_NUMBER [coming soon]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Removes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The <code>INDEX</code> <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -576,21 +646,32 @@ Format: <code>remove &lt;POSITION&gt;</code> or <code>remove &lt;IC Number&gt; [
 <ul>
 <li>
 <p><code>remove 5</code><br>
-Remove the 5th patient in the queue.</p>
+Removes the 5th patient in the queue.</p>
 </li>
 <li>
 <p><code>remove S9382839X</code><br>
-Remove patient with IC Number S9382839X from the queue.</p>
+Removes patient with IC number S9382839X from the queue.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="inserting-a-patient-to-queue-code-insert-code"><a class="link" href="#inserting-a-patient-to-queue-code-insert-code">3.3.4. Inserting a patient to queue : <code>insert</code></a></h4>
+<h4 id="inserting-a-patient-to-waiting-queue-code-insert-code"><a class="link" href="#inserting-a-patient-to-waiting-queue-code-insert-code">3.3.4. Inserting a patient to Waiting queue: <code>insert</code></a></h4>
 <div class="paragraph">
-<p>Inserts a patient at a specified position in the queue.<br>
+<p>Inserts a patient into the specified position in the Waiting queue.<br>
 Alias: <code>ins</code><br>
-Format: <code>insert &lt;INDEX&gt; p/&lt;POSITION&gt;</code> or <code>insert &lt;IC Number&gt; p/&lt;POSITION&gt; [coming soon]</code></p>
+Format: <code>insert INDEX p/POSITION</code> or <code>insert IC_NUMBER p/POSITION [coming soon]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Inserts the patient at the specified <code>INDEX</code> in the displayed patient list into the specified <code>POSITION</code> in the Waiting queue. Both the index and position <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -600,60 +681,46 @@ Format: <code>insert &lt;INDEX&gt; p/&lt;POSITION&gt;</code> or <code>insert &lt
 <li>
 <p><code>list</code><br>
 <code>insert 4 p/5</code><br>
-Insert the 4th person of the database into the 5th position in the queue.</p>
+Inserts the 4th patient in the database into the 5th position in the queue.</p>
 </li>
 <li>
 <p><code>insert S9123456A p/5</code><br>
-Insert the patient with IC number S9123456A to the 5th position in the queue.</p>
+Inserts the patient with IC number S9123456A into the 5th position in the queue.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="serving-the-first-patient-in-the-queue-code-serve-code"><a class="link" href="#serving-the-first-patient-in-the-queue-code-serve-code">3.3.5. Serving the first patient in the queue : <code>serve</code></a></h4>
+<h4 id="serving-the-first-patient-in-waiting-queue-code-serve-code"><a class="link" href="#serving-the-first-patient-in-waiting-queue-code-serve-code">3.3.5. Serving the first patient in Waiting queue: <code>serve</code></a></h4>
 <div class="paragraph">
-<p>Serves the patient first in queue. This places the patient into the Current Patient.<br>
+<p>Serves the first patient in the Waiting queue. The patient being served is the Current Patient.<br>
 Alias: <code>ser</code><br>
 Format: <code>serve</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-documents-to-current-patient-code-docadd-code"><a class="link" href="#adding-documents-to-current-patient-code-docadd-code">3.3.6. Adding documents to Current Patient : <code>docAdd</code></a></h4>
+<h4 id="adding-document-contents-to-current-patient-code-docadd-code"><a class="link" href="#adding-document-contents-to-current-patient-code-docadd-code">3.3.6. Adding document contents to Current Patient: <code>docAdd</code></a></h4>
 <div class="paragraph">
-<p>Add documents to the Current Patient<br>
+<p>Adds document contents to the Current Patient.<br>
 Alias: <code>da</code><br>
-Format: <code>docAdd [mc/&lt;MC_DAYS&gt;] [n/&lt;NOTE&gt;] [r/&lt;REFERRAL&gt;]</code></p>
+Format: <code>docAdd [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>At least one of the optional fields must be provided.</p>
+<p>At least one of the optional parameters must be provided.</p>
 </li>
 <li>
-<p>Existing values will be updated to the input values.</p>
+<p>Existing values will be updated with the newly input values of the corresponding field.</p>
 </li>
 <li>
-<p>You can remove any of the patient’s documents by typing prefix/ without specifying any document after it.</p>
+<p>You can remove any of the patient&#8217;s document contents by typing the prefixes <code>mc/</code> <code>n/</code> <code>r/</code> without specifying any contents after the prefix.</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The note must be added to the patient to finish serving the patient.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
 <p>Examples</p>
@@ -661,20 +728,33 @@ Format: <code>docAdd [mc/&lt;MC_DAYS&gt;] [n/&lt;NOTE&gt;] [r/&lt;REFERRAL&gt;]<
 <div class="ulist">
 <ul>
 <li>
-<p><code>docAdd mc/3 n/This patient complains of headache for past 3 days</code></p>
+<p><code>docAdd mc/3 n/This patient complains of headache for the past 3 days</code><br>
+Adds MC duration and notes to the Current Patient.</p>
 </li>
 <li>
-<p><code>docAdd r/Ng Teng Fong Hospital</code></p>
+<p><code>docAdd r/Ng Teng Fong Hospital</code><br>
+Adds referral to the Current Patient.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="dispensing-medicine-to-current-patient-code-dispensemedicine-code"><a class="link" href="#dispensing-medicine-to-current-patient-code-dispensemedicine-code">3.3.7. Dispensing Medicine to Current Patient : <code>dispenseMedicine</code></a></h4>
+<h4 id="dispensing-medicine-to-current-patient-code-dispensemedicine-code"><a class="link" href="#dispensing-medicine-to-current-patient-code-dispensemedicine-code">3.3.7. Dispensing medicine to Current Patient: <code>dispenseMedicine</code></a></h4>
 <div class="paragraph">
-<p>Add medicine to the Current Patient<br>
+<p>Dispenses the specified quantity of medicine to the Current Patient.<br>
 Alias: <code>dm</code><br>
-Format <code>dispenseMedicine &lt;MEDICINE_INDEX&gt; amt/&lt;AMOUNT</code></p>
+Format <code>dispenseMedicine MEDICINE_INDEX amt/AMOUNT</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current Patient. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -683,19 +763,19 @@ Format <code>dispenseMedicine &lt;MEDICINE_INDEX&gt; amt/&lt;AMOUNT</code></p>
 <ul>
 <li>
 <p><code>dispenseMedicine 1 amt/10</code><br>
-10x of the 1st medicine in the displayed medicine list will be added to the patient.<br></p>
+10 units of the 1st medicine in the displayed medicine list will be added to the Current Patient.<br></p>
 </li>
 <li>
 <p><code>dispenseMedicine 5 amt/2</code><br>
-2x of the 5th medicine in the displayed medicine list will be added to the patient.</p>
+2 units of the 5th medicine in the displayed medicine list will be added to the Current Patient.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finish-serving-the-current-patient-code-finish-code"><a class="link" href="#finish-serving-the-current-patient-code-finish-code">3.3.8. Finish serving the Current Patient : <code>finish</code></a></h4>
+<h4 id="finishing-service-of-the-current-patient-code-finish-code"><a class="link" href="#finishing-service-of-the-current-patient-code-finish-code">3.3.8. Finishing service of the Current Patient: <code>finish</code></a></h4>
 <div class="paragraph">
-<p>Transfers the current patient to the Served Patient Queue.<br>
+<p>Transfers the Current Patient to the Served Patient queue.<br>
 Format: <code>finish</code></p>
 </div>
 <div class="admonitionblock note">
@@ -706,7 +786,7 @@ Format: <code>finish</code></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This command cannot be called if no note has been added to the patient. Use <code>docAdd</code> command to add notes.</p>
+<p>This command cannot be called if no notes have been added to the patient. Use <code>docAdd</code> command with prefix <code>n/</code> to add <code>NOTES</code>.</p>
 </div>
 </td>
 </tr>
@@ -714,11 +794,22 @@ Format: <code>finish</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="removing-patient-from-served-patient-list-code-payment-code"><a class="link" href="#removing-patient-from-served-patient-list-code-payment-code">3.3.9. Removing patient from served patient list : <code>payment</code></a></h4>
+<h4 id="removing-patient-from-served-patient-queue-code-payment-code"><a class="link" href="#removing-patient-from-served-patient-queue-code-payment-code">3.3.9. Removing patient from Served Patient queue: <code>payment</code></a></h4>
 <div class="paragraph">
-<p>Removes a patient from the served patient list when the patient completes payment.<br>
+<p>Removes a patient from the Served Patient queue when the patient completes payment.<br>
 Alias: <code>pay</code><br>
-Format: <code>payment &lt;INDEX&gt;</code></p>
+Format: <code>payment INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Removes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -727,11 +818,11 @@ Format: <code>payment &lt;INDEX&gt;</code></p>
 <ul>
 <li>
 <p><code>payment 3</code><br>
-Removes the third patient from the list.</p>
+Removes the 3rd patient from the queue.</p>
 </li>
 <li>
 <p><code>payment 1</code><br>
-Removes the first patient from the list.</p>
+Removes the 1st patient from the queue.</p>
 </li>
 </ul>
 </div>
@@ -740,10 +831,21 @@ Removes the first patient from the list.</p>
 <div class="sect2">
 <h3 id="document-generation"><a class="link" href="#document-generation">3.4. Document Generation</a></h3>
 <div class="sect3">
-<h4 id="generating-medical-certificate-code-mc-code"><a class="link" href="#generating-medical-certificate-code-mc-code">3.4.1. Generating Medical Certificate : <code>mc</code></a></h4>
+<h4 id="generating-medical-certificate-code-mc-code"><a class="link" href="#generating-medical-certificate-code-mc-code">3.4.1. Generating medical certificate: <code>mc</code></a></h4>
 <div class="paragraph">
-<p>Generates a Medical Certificate based on the IC Number or Index Number from the last list/find command.<br>
-Format: <code>mc &lt;INDEX&gt; d/&lt;DATE&gt;-&lt;DATE&gt;</code> or <code>mc &lt;IC Number&gt; d/&lt;DATE&gt;-&lt;DATE&gt;</code> where date is in the format DD-MM-YYYY</p>
+<p>Generates medical certificate for a Served Patient.<br>
+Format: <code>mc INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Generates a medical certificate for the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -751,22 +853,29 @@ Format: <code>mc &lt;INDEX&gt; d/&lt;DATE&gt;-&lt;DATE&gt;</code> or <code>mc &l
 <div class="ulist">
 <ul>
 <li>
-<p><code>mc 1 d/02-09-2018-04-09-2018</code><br>
-Generates a MC for the 1st patient in the address book.</p>
-</li>
-<li>
-<p><code>mc S7473920X d/02-09-2018-02-09-2018</code><br>
-Generates a MC for the IC number.</p>
+<p><code>mc 1</code><br>
+Generates a medical certificate for the 1st patient in the Served Patient queue.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="generating-receipt-code-receipt-code"><a class="link" href="#generating-receipt-code-receipt-code">3.4.2. Generating Receipt : <code>receipt</code></a></h4>
+<h4 id="generating-receipt-code-receipt-code"><a class="link" href="#generating-receipt-code-receipt-code">3.4.2. Generating receipt: <code>receipt</code></a></h4>
 <div class="paragraph">
-<p>Generates a receipt for the patient’s current visit based on Index Number in the Done List or IC Number.<br>
+<p>Generates receipt for a Served Patient.<br>
 Alias: <code>rct</code><br>
-Format: <code>receipt &lt;INDEX&gt;</code> or <code>receipt &lt;IC Number&gt;</code></p>
+Format: <code>receipt INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Generates a receipt for the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -775,21 +884,28 @@ Format: <code>receipt &lt;INDEX&gt;</code> or <code>receipt &lt;IC Number&gt;</c
 <ul>
 <li>
 <p><code>receipt 5</code><br>
-Generates a receipt for the 5th patient in the address book.</p>
-</li>
-<li>
-<p><code>receipt S8847383L</code><br>
-Generates a receipt for the patient with that IC number.</p>
+Generates a receipt for the 5th patient in the Served Patient queue.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="generating-referral-letter-code-refer-code"><a class="link" href="#generating-referral-letter-code-refer-code">3.4.3. Generating Referral Letter : <code>refer</code></a></h4>
+<h4 id="generating-referral-letter-code-refer-code"><a class="link" href="#generating-referral-letter-code-refer-code">3.4.3. Generating referral letter: <code>refer</code></a></h4>
 <div class="paragraph">
-<p>Generates a Referral Letter for the patient based on the IC Number or Index Number from the last list/find command.<br>
-Alias: <code>ref</code><br>
-Format: <code>refer &lt;INDEX&gt; h/&lt;HOSPITAL&gt; d/&lt;DEPARTMENT&gt; r/&lt;REASON&gt; n/&lt;NOTES&gt;</code> or <code>refer &lt;IC Number&gt; h/&lt;HOSPITAL&gt; d/&lt;DEPARTMENT&gt; r/&lt;REASON&gt; n/&lt;NOTES&gt;</code></p>
+<p>Generates referral letter for a Served Patient.<br>
+Alias: <code>rl</code><br>
+Format: <code>refer INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Generates a referral letter for the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -797,35 +913,8 @@ Format: <code>refer &lt;INDEX&gt; h/&lt;HOSPITAL&gt; d/&lt;DEPARTMENT&gt; r/&lt;
 <div class="ulist">
 <ul>
 <li>
-<p><code>refer 3 h/NUH d/Surgery r/Internal bleeding n/Patient complains heart is in pain</code><br>
-Generates a referral letter for the 3rd patient in the address book with the following reason and notes.</p>
-</li>
-<li>
-<p><code>refer S7722742C h/SGH d/Emergency r/Internal bleeding n/Patient is dying</code><br>
-Generates a referral letter for the patient of that IC number with the following reason and notes.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="removing-patient-from-served-patient-list-code-payment-code-2"><a class="link" href="#removing-patient-from-served-patient-list-code-payment-code-2">3.4.4. Removing patient from served patient list : <code>payment</code></a></h4>
-<div class="paragraph">
-<p>Removes a patient from the served patient list when the patient completes payment.<br>
-Alias: <code>pay</code><br>
-Format: <code>payment &lt;POSITION&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>payment 3</code><br>
-Removes the 3rd patient from the served patient list.</p>
-</li>
-<li>
-<p><code>payment 1</code><br>
-Removes the 1st patient from the served patient list.</p>
+<p><code>refer 7</code><br>
+Generates a receipt for the 7th patient in the Served Patient queue.</p>
 </li>
 </ul>
 </div>
@@ -834,15 +923,15 @@ Removes the 1st patient from the served patient list.</p>
 <div class="sect2">
 <h3 id="miscellaneous"><a class="link" href="#miscellaneous">3.5. Miscellaneous</a></h3>
 <div class="sect3">
-<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.5.1. Viewing help : <code>help</code></a></h4>
+<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.5.1. Viewing help: <code>help</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.5.2. Listing entered commands : <code>history</code></a></h4>
+<h4 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.5.2. Listing entered commands: <code>history</code></a></h4>
 <div class="paragraph">
-<p>Lists all the commands that you have entered in reverse chronological order.<br>
+<p>Lists all the commands entered in reverse chronological order.<br>
 Alias: <code>h</code><br>
 Format: <code>history</code></p>
 </div>
@@ -862,7 +951,7 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.5.3. Undoing previous command : <code>undo</code></a></h4>
+<h4 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.5.3. Undoing previous command: <code>undo</code></a></h4>
 <div class="paragraph">
 <p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
 Alias: <code>u</code><br>
@@ -876,8 +965,8 @@ Format: <code>undo</code></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>deleteAll</code>).
-This includes all commands that changes the <code>Patient</code> or <code>Medicine</code> class, PQMS-related commands are not <em>undoable</em>.</p>
+<p>Undoable commands: those commands that modify the database&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>deleteAll</code>).
+This includes all commands that change the <code>Patient</code> or <code>Medicine</code> class, and PQMS-related commands.</p>
 </div>
 </td>
 </tr>
@@ -913,7 +1002,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </div>
 </div>
 <div class="sect3">
-<h4 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.5.4. Redoing the previously undone command : <code>redo</code></a></h4>
+<h4 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.5.4. Redoing the previously undone command: <code>redo</code></a></h4>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Alias: <code>r</code><br>
@@ -946,7 +1035,7 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.5.5. Exiting the program : <code>exit</code></a></h4>
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.5.5. Exiting the program: <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
@@ -955,14 +1044,8 @@ Format: <code>exit</code></p>
 <div class="sect3">
 <h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.5.6. Saving the data</a></h4>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
+<p>CLInic data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.5.7. Encrypting data files <code>[coming in v2.0]</code></a></h4>
-<div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
 </div>
 </div>
@@ -972,106 +1055,300 @@ There is no need to save manually.</p>
 <h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous CLInic folder.</p>
+<p><strong>Q</strong>: How do I transfer my data to another computer?<br>
+<strong>A</strong>: Install the application in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous CLInic folder.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
-</li>
-<li>
-<p><strong>List</strong> : <code>list</code></p>
-</li>
-<li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
-</li>
-<li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
-</li>
-<li>
-<p><strong>Select</strong> : <code>select INDEX</code><br>
-e.g.<code>select 2</code></p>
-</li>
-<li>
-<p><strong>Add a medical record</strong> : <code>addMedicalRecord &lt;INDEX&gt; &lt;RELEVANT PARAMETERS&gt;</code><br>
-e.g. <code>addMedicalRecord 5 b/A+ d/Paracetamol p/Diabetes</code></p>
-</li>
-<li>
-<p><strong>Add a medicine</strong> : <code>addMedicine sn/&lt;SERIAL NUMBER&gt; n/&lt;NAME&gt; s/&lt;CURRENT STOCK&gt; p/&lt;PRICE PER PIECE&gt; min/&lt;MINIMUM STOCK QUANTITY&gt;</code><br>
-e.g. <code>addMedicine sn/1000 n/panadol s/500 p/0.50 min/50</code></p>
-</li>
-<li>
-<p><strong>List medicine stock</strong> : <code>listStock</code></p>
-</li>
-<li>
-<p><strong>Find medicine stock</strong> : <code>findStock &lt;SERIAL NUMBER&gt;</code><br>
-e.g. <code>findStock 1001</code></p>
-</li>
-<li>
-<p><strong>Check medicine stock</strong> : <code>checkStock</code></p>
-</li>
-<li>
-<p><strong>Display queue</strong> : <code>queue</code></p>
-</li>
-<li>
-<p><strong>Register patient to queue</strong> : <code>register &lt;INDEX&gt;</code><br>
-e.g. <code>register 3</code></p>
-</li>
-<li>
-<p><strong>Remove patient from queue</strong> : <code>remove &lt;INDEX&gt;</code><br>
-e.g. <code>remove 2</code></p>
-</li>
-<li>
-<p><strong>Insert patient to queue</strong> : <code>insert &lt;INDEX&gt; &lt;POSITION&gt;</code><br>
-e.g. <code>insert 4 5</code></p>
-</li>
-<li>
-<p><strong>Serve patient</strong> : <code>serve</code></p>
-</li>
-<li>
-<p><strong>Finish serving patient</strong> : <code>finish</code></p>
-</li>
-<li>
-<p><strong>Generate MC</strong> : <code>mc &lt;INDEX&gt; d/&lt;DATE&gt;-&lt;DATE&gt;</code><br>
-e.g. <code>mc 1 d/02-09-2018-04-09-2018</code></p>
-</li>
-<li>
-<p><strong>Generate receipt</strong> : <code>receipt INDEX</code><br>
-e.g. <code>receipt 5</code></p>
-</li>
-<li>
-<p><strong>Generate referral letter</strong> : <code>refer &lt;INDEX&gt; h/&lt;HOSPITAL&gt; d/&lt;DEPARTMENT&gt; r/&lt;REASON&gt; n/&lt;NOTES&gt;</code><br>
-e.g. <code>refer 3 h/NUH d/Surgery r/Internal bleeding n/Patient complains heart is in pain</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-<li>
-<p><strong>History</strong> : <code>history</code></p>
-</li>
-<li>
-<p><strong>Undo</strong> : <code>undo</code></p>
-</li>
-<li>
-<p><strong>Redo</strong> : <code>redo</code></p>
-</li>
-<li>
-<p><strong>Exit</strong> : <code>exit</code></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="patient-2"><a class="link" href="#patient-2">5.1. Patient</a></h3>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 5.0505%;">
+<col style="width: 2.0202%;">
+<col style="width: 50.505%;">
+<col style="width: 42.4243%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Commands Words</th>
+<th class="tableblock halign-left valign-top">Commands Alias</th>
+<th class="tableblock halign-left valign-top">Format</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add n/NAME ic/IC_NUMBER p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add n/John Doe p/98765432 e/johnd@example.com a/John Street, block 123, #01-01</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>l</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>e</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit 1 p/91234567 e/johndoe@example.com</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>f</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find KEYWORD [MORE_KEYWORDS]​</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find Betsy Tim John</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>d</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete 2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>s</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>select INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>select 3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addMedicalRecord</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>amr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addMedicalRecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASE]…​ [da/DRUG_ALLERGY]…​ [m/NOTE]…</code>​ or<br>
+                            <code>addMedicalRecord IC_NUMBER [b/BLOOD_TYPE] [d/PAST_DISEASE]…​ [da/DRUG_ALLERGY]…​ [m/NOTE]…​​</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addMedicalRecord 5 b/A+ da/Paracetamol d/Diabetes</code> or<br>
+                            <code>addMedicalRecord S94738123X b/B+</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="medicine-2"><a class="link" href="#medicine-2">5.2. Medicine</a></h3>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 5.0505%;">
+<col style="width: 2.0202%;">
+<col style="width: 50.505%;">
+<col style="width: 42.4243%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Commands Words</th>
+<th class="tableblock halign-left valign-top">Commands Alias</th>
+<th class="tableblock halign-left valign-top">Format</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addMedicine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>am</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>​addMedicine mn/MEDICINE_NAME msq/MINIMUM_STOCK_QUANTITY ppu/PRICE_PER_UNIT sn/SERIAL_NUMBER s/STOCK</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addMedicine mn/panadol msq/500 ppu/0.50 sn/1234 s/1000</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">editMedicine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>em</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>editMedicine INDEX [mn/MEDICINE_NAME] [msq/MINIMUM_STOCK_QUANTITY] [ppu/PRICE_PER_UNIT] [sn/SERIAL_NUMBER] [s/STOCK]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>editMedicine 1 n/hydrazine s/50022 p/20 min/30</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">restock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>restock INDEX amt/AMOUNT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>restock 2 amt/123</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">listStock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ls</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>listStock</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>listStock</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">findStock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>findStock SERIAL_NUMBER</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>findStock 1001</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">checkStock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>checkStock</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>checkStock</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="queue-management-2"><a class="link" href="#queue-management-2">5.3. Queue Management</a></h3>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 5.0505%;">
+<col style="width: 2.0202%;">
+<col style="width: 50.505%;">
+<col style="width: 42.4243%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Commands Words</th>
+<th class="tableblock halign-left valign-top">Commands Alias</th>
+<th class="tableblock halign-left valign-top">Format</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">register</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>register INDEX​</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>register 1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">queue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>q</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>queue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>queue</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rem</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>remove INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>remove 2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">insert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ins</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert INDEX p/POSITION</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert 3 p/4</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">serve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ser</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>serve</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>serve</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">docAdd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>da</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>docAdd [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>docAdd mc/3 n/This patient complains of headache for the past 3 days</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dispenseMedicine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dm</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dispenseMedicine MEDICINE_INDEX amt/AMOUNT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dispenseMedicine 5 amt/10</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">finish</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>finish</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>finish</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">payment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pay</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>payment INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>payment 6</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="document-generation-2"><a class="link" href="#document-generation-2">5.4. Document Generation</a></h3>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 5.0505%;">
+<col style="width: 2.0202%;">
+<col style="width: 50.505%;">
+<col style="width: 42.4243%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Commands Words</th>
+<th class="tableblock halign-left valign-top">Commands Alias</th>
+<th class="tableblock halign-left valign-top">Format</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mc INDEX​</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mc 1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">receipt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rec</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>receipt INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>receipt 2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">refer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ref</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>refer INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>refer 3</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="miscellaneous-2"><a class="link" href="#miscellaneous-2">5.5. Miscellaneous</a></h3>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 5.0505%;">
+<col style="width: 2.0202%;">
+<col style="width: 50.505%;">
+<col style="width: 42.4243%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Commands Words</th>
+<th class="tableblock halign-left valign-top">Commands Alias</th>
+<th class="tableblock halign-left valign-top">Format</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help​</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>h</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>history</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>history</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>u</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>undo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>undo</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>r</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>redo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>redo</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 06:55:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 07:04:42 UTC</div></div></div></body></html>
