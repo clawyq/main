@@ -165,7 +165,7 @@ Format: <code>addMedicalRecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASE]&#8230;&#820
 <p>Newly input values will be appended to the existing values of the patient, except <code>BloodType</code>. <code>BloodType</code> cannot be changed, and thus you can only add <code>BloodType</code> to a patient the very first time, and it will be permanent.</p>
 </li>
 <li>
-<p>A <code>Note</code> usually consists of a <code>Message</code> and a <code>Prescription</code>. However, using this command does not allow you add any <code>Precription</code>, since it is not meant to be used during the doctor&#8217;s consultation. Hence, using this command will just add a <code>Note</code> with the specified <code>Message</code>, but an empty <code>Prescription</code>.</p>
+<p>A <code>Note</code> usually consists of a <code>Message</code> and a <code>Prescription</code>. However, using this command does not allow you add any <code>Prescription</code>, since it is not meant to be used during the doctor&#8217;s consultation. Hence, using this command will just add a <code>Note</code> with the specified <code>Message</code>, but an empty <code>Prescription</code>.</p>
 </li>
 </ul>
 </div>
@@ -177,12 +177,12 @@ Format: <code>addMedicalRecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASE]&#8230;&#820
 <div class="ulist">
 <ul>
 <li>
-<p><code>addMedicalRecord 5 b/A+ da/Paracetamol d/Diabetes</code><br>
-Adds 'Paracetamol' (under <em>Drug Allergy</em>) and 'Diabetes' (under <em>Past Disease</em>) to the 5th patient&#8217;s medical record.</p>
+<p><code>addMedicalRecord 5 da/Paracetamol d/Diabetes</code><br>
+Adds 'Paracetamol' (under <em>Drug Allergy</em>) and 'Diabetes' (under <em>Past Disease</em>) to the <code>MedicalRecord</code> of the 5th <code>Patient</code>.</p>
 </li>
 <li>
-<p><code>addMedicalRecord S94738123X b/B+</code><br>
-Adds 'B+' (under <em>Blood Type</em>) to the medical record of the patient with that IC number.</p>
+<p><code>addMedicalRecord 3 b/B+</code><br>
+Adds 'B+' (under <em>Blood Type</em>) to the <code>MedicalRecord</code> of the 3rd <code>Patient</code>.</p>
 </li>
 </ul>
 </div>
@@ -340,4 +340,4 @@ Adds 'B+' (under <em>Blood Type</em>) to the medical record of the patient with 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 12:09:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 12:11:21 UTC</div></div></div></body></html>
