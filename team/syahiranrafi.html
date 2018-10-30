@@ -117,8 +117,8 @@ Format: <code>undo</code></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Undoable commands: those commands that modify the database&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>deleteAll</code>).
-This includes all commands that change the <code>Patient</code> or <code>Medicine</code> class, and PQMS-related commands.</p>
+<p>Undoable commands: those commands that modify the database&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).
+This includes all commands that change the <code>Patient</code> or <code>Medicine</code> class but <strong>not</strong> <a href="#pqms">PQMS-related</a> commands.</p>
 </div>
 </td>
 </tr>
@@ -142,13 +142,13 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </li>
 <li>
 <p><code>delete 1</code><br>
-<code>deleteAll</code><br>
-<code>undo</code> (reverses the <code>deleteAll</code> command)<br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
 <code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
 </li>
 <li>
-<p><code>addMedicine mn/panadol msq/100 ppu/5 sn/00000001 s/2500</code><br>
-<code>undo</code> (reverses the <code>addMedicine</code> command)</p>
+<p><code>addmedicine mn/panadol msq/100 ppu/5 sn/00000001 s/2500</code><br>
+<code>undo</code> (reverses the <code>addmedicine</code> command)</p>
 </li>
 </ul>
 </div>
@@ -177,11 +177,11 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </li>
 <li>
 <p><code>delete 1</code><br>
-<code>deleteAll</code><br>
-<code>undo</code> (reverses the <code>deleteAll</code> command)<br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
 <code>undo</code> (reverses the <code>delete 1</code> command)<br>
 <code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>deleteAll</code> command)<br></p>
+<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
 </li>
 </ul>
 </div>
@@ -479,4 +479,4 @@ Executing <code>refer</code> with an invalid index will <strong>not</strong> res
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 13:40:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 15:31:56 UTC</div></div></div></body></html>

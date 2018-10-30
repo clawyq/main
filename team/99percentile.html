@@ -255,17 +255,29 @@ Inserts the patient with IC number S9123456A into the 5th position in the queue.
 <div class="sect3">
 <h4 id="serving-the-first-patient-in-waiting-queue-code-serve-code"><a class="link" href="#serving-the-first-patient-in-waiting-queue-code-serve-code">Serving the first patient in Waiting queue: <code>serve</code></a></h4>
 <div class="paragraph">
-<p>Serves the first patient in the Waiting queue. The patient being served is the Current Patient.<br>
+<p>Serves the first patient in the Waiting queue. The patient being served is now the Current Patient.<br>
 Alias: <code>ser</code><br>
 Format: <code>serve</code></p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The medicine list will be displayed when this command is used for easy reference for medicine dispensing.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
-<h4 id="adding-document-contents-to-current-patient-code-docadd-code"><a class="link" href="#adding-document-contents-to-current-patient-code-docadd-code">Adding document contents to Current Patient: <code>docAdd</code></a></h4>
+<h4 id="adddocument"><a class="link" href="#adddocument">Adding document contents to Current Patient: <code>adddocument</code></a></h4>
 <div class="paragraph">
 <p>Adds document contents to the Current Patient.<br>
-Alias: <code>da</code><br>
-Format: <code>docAdd [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p>
+Alias: <code>ad</code><br>
+Format: <code>adddocument [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -303,28 +315,48 @@ You can remove any of the patient&#8217;s document contents by typing the prefix
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+At least the note field must be added before executing the <a href="#finish"><code>finish</code></a> command.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>docAdd mc/3 n/This patient complains of headache for the past 3 days</code><br>
+<p><code>adddocument mc/3 n/This patient complains of headache for the past 3 days</code><br>
 Adds MC duration and notes to the Current Patient.</p>
 </li>
 <li>
-<p><code>docAdd r/Ng Teng Fong Hospital</code><br>
+<p><code>adddocument r/Ng Teng Fong Hospital</code><br>
 Adds referral to the Current Patient.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="dispensing-medicine-to-current-patient-code-dispensemedicine-code"><a class="link" href="#dispensing-medicine-to-current-patient-code-dispensemedicine-code">Dispensing medicine to Current Patient: <code>dispenseMedicine</code></a></h4>
+<h4 id="displaying-document-contents-for-current-patient-code-displaydocuments-code"><a class="link" href="#displaying-document-contents-for-current-patient-code-displaydocuments-code">Displaying document contents for Current Patient: <code>displaydocuments</code></a></h4>
+<div class="paragraph">
+<p>Displays document contents for the Current Patient.<br>
+Alias: <code>dd</code>
+Format: <code>displaydocuments</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="dispensing-medicine-to-current-patient-code-dispensemedicine-code"><a class="link" href="#dispensing-medicine-to-current-patient-code-dispensemedicine-code">Dispensing medicine to Current Patient: <code>dispensemedicine</code></a></h4>
 <div class="paragraph">
 <p>Dispenses the specified quantity of medicine to the Current Patient.<br>
 Alias: <code>dm</code><br>
-Format <code>dispenseMedicine MEDICINE_INDEX amt/AMOUNT</code></p>
+Format <code>dispensemedicine MEDICINE_INDEX amt/AMOUNT</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -344,18 +376,18 @@ Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current P
 <div class="ulist">
 <ul>
 <li>
-<p><code>dispenseMedicine 1 amt/10</code><br>
+<p><code>dispensemedicine 1 amt/10</code><br>
 10 units of the 1st medicine in the displayed medicine list will be added to the Current Patient.<br></p>
 </li>
 <li>
-<p><code>dispenseMedicine 5 amt/2</code><br>
+<p><code>dispensemedicine 5 amt/2</code><br>
 2 units of the 5th medicine in the displayed medicine list will be added to the Current Patient.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finishing-service-of-the-current-patient-code-finish-code"><a class="link" href="#finishing-service-of-the-current-patient-code-finish-code">Finishing service of the Current Patient: <code>finish</code></a></h4>
+<h4 id="finish"><a class="link" href="#finish">Finishing service of the Current Patient: <code>finish</code></a></h4>
 <div class="paragraph">
 <p>Transfers the Current Patient to the Served Patient queue.<br>
 Format: <code>finish</code></p>
@@ -367,7 +399,19 @@ Format: <code>finish</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-This command cannot be called if no notes have been added to the patient. Use <code>docAdd</code> command with prefix <code>n/</code> to add <code>NOTES</code>.
+This command cannot be called if no notes have been added to the patient. Use <a href="#adddocument"><code>adddocument</code></a> command with prefix <code>n/</code> to add <code>NOTES</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Upon successful call of this command, the patient list will be displayed.
 </td>
 </tr>
 </table>
@@ -489,4 +533,4 @@ him from the <code>ServedPatientQueue</code>.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 13:40:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 15:31:56 UTC</div></div></div></body></html>

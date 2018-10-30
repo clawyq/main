@@ -145,7 +145,7 @@ It required the creation of an <code>XmlAdapted-</code> version of each model ob
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="adding-medical-records-of-a-patient-code-addmedicalrecord-code"><a class="link" href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">Adding medical records of a patient: <code>addMedicalRecord</code></a></h4>
+<h4 id="adding-medical-records-of-a-patient-code-addmedicalrecord-code"><a class="link" href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">Adding medical records of a patient: <code>addmedicalrecord</code></a></h4>
 <div class="paragraph">
 <p>Updates the medical records of a patient.<br>
 Alias: <code>amr</code><br>
@@ -182,7 +182,7 @@ At least one of the optional parameters must be provided.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Newly input values will be appended to the existing values of the patient, except <code>BloodType</code>. <code>BloodType</code> cannot be changed, and thus you can only add <code>BloodType</code> to a patient the very first time, and it will be permanent.
+Newly input values will be appended to the existing values of the patient, except <code>BloodType</code>. <code>BloodType</code> cannot be changed, you can only add <code>BloodType</code> to a patient once, and it will be permanent.
 </td>
 </tr>
 </table>
@@ -205,11 +205,11 @@ Adding a <code>Note</code> with this command will yield a <code>Note</code> with
 <div class="ulist">
 <ul>
 <li>
-<p><code>addMedicalRecord 5 da/Paracetamol d/Diabetes</code><br>
+<p><code>addmedicalrecord 5 da/Paracetamol d/Diabetes</code><br>
 Adds 'Paracetamol' (under <em>Drug Allergy</em>) and 'Diabetes' (under <em>Past Disease</em>) to the <code>MedicalRecord</code> of the 5th <code>Patient</code>.</p>
 </li>
 <li>
-<p><code>addMedicalRecord 3 b/B+</code><br>
+<p><code>addmedicalrecord 3 b/B+</code><br>
 Adds 'B+' (under <em>Blood Type</em>) to the <code>MedicalRecord</code> of the 3rd <code>Patient</code>.</p>
 </li>
 </ul>
@@ -368,4 +368,4 @@ Adds 'B+' (under <em>Blood Type</em>) to the <code>MedicalRecord</code> of the 3
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 13:40:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 15:31:56 UTC</div></div></div></body></html>
