@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Bryan Lew - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Bryan Lew - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-clinic"><a class="link" href="#project-clinic">PROJECT: CLInic</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>CLInic is a desktop application made for clinics. The CLI in CLInic stands for Command Line Interface, which is the main method to use this application.
+CLInic also has a Graphical User Interface (GUI) to display information in a structured and user-friendly manner. This application uses Java as the
+programming language and uses JavaFX, HTML and CSS for the GUI.</p>
+</div>
+<div class="paragraph">
+<p>My main responsibility for this project was to implement the UI and storage for the application, amidst some other smaller tasks,
+such as the development of the <code>MedicalRecord</code> attribute of the <code>Patient</code>.</p>
+</div>
+<div class="paragraph">
+<p>The project scope for CLInic is to morph the given addressbook-level4 into a clinic management application that allows users to manage patient
+information and medicine information and additionally manage the clinic queue.</p>
+</div>
+<div class="paragraph">
+<p>The team consists of four year-2 and one year-3 student in School of Computing, NUS.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: Added the <strong>GUI for the Patient Queue Management System (PQMS)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: This GUI window, which resides near the top of the application window, displays to the user the current state of the PQMS.</p>
+</li>
+<li>
+<p>Justification: Having a responsive GUI allows users to be able to refer to and read the queue easily, and to perform any commands on the queue quickly, without having to always call a <code>queue</code> command to retrieve required queue information.</p>
+</li>
+<li>
+<p>Highlights: This feature was implemented with the help of a little HTML for the display and Javascript that allowed the updating of the information in the GUI after each command.
+It required a lot of synchronization between the command results, model objects and the display.
+This was largely handled with some event handling and scripting.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major enhancement</strong>: Added <strong>storage capabilities</strong> for the <code>MedicalRecord</code> model and the <code>Medicine</code> model.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: This allows the user to be able to add and retrieve <code>MedicalRecord</code> and <code>Medicine</code> objects to the database easily and efficiently.</p>
+</li>
+<li>
+<p>Justification: Before this enhancement, any user action that added <code>MedicalRecord</code> and <code>Medicine</code> to the database will not be saved once the user closes the application.
+We wanted the user to be able to save these information for future use as well.</p>
+</li>
+<li>
+<p>Highlights: This feature was implemented with the use of XML, similar to how <code>Patient</code> objects were saved to the file in the original <em>addressbook-level4</em> application.
+It required the creation of an <code>XmlAdapted-</code> version of each model object as well as careful handling of the adding and retrieval for each model object.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancements</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added ability for each <code>Document</code> to appear in a pop-up window after the respective <code>Document</code> commands.</p>
+</li>
+<li>
+<p>Added the GUI display for all the <code>Medicine</code> objects in the database. This GUI display replaces the left panel displaying the <code>Patient</code> objects whenever a <code>Medicine</code> related command is called.</p>
+</li>
+<li>
+<p>Added <code>addMedicalRecordCommand</code> that allows user to add a <code>MedicalRecord</code> to a specified <code>Patient</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Improved the navigability and readability of the User Guide by separating Section 3 (Features) into sub-sections.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated the GUI display under <code>BrowserPanel</code> to show other information such as <code>CurrentPatient</code>, PQMS, and <code>Patient</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Testing:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote tests for all UI features to increase coverage from 75% to 79% (Pull request <a href="https://github.com/CS2103-AY1819S1-W16-4/main/pull/111">#111</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>{you can add/remove categories in the list above}</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="adding-medical-records-of-a-patient-code-addmedicalrecord-code"><a class="link" href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">Adding medical records of a patient: <code>addMedicalRecord</code></a></h4>
+<div class="paragraph">
+<p>Updates a patient&#8217;s medical record based on his NRIC or index number in the displayed patient list.<br>
+Alias: <code>amr</code><br>
+Format: <code>addMedicalRecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASE]&#8230;&#8203; [da/DRUG_ALLERGY]&#8230;&#8203; [m/NOTE]&#8230;&#8203;</code> or<br>
+<code>addMedicalRecord NRIC [b/BLOOD_TYPE] [d/PAST_DISEASE]&#8230;&#8203; [da/DRUG_ALLERGY]&#8230;&#8203; [m/NOTE]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addMedicalRecord 5 b/A+ da/Paracetamol d/Diabetes</code><br>
+Adds 'Paracetamol' (under <em>Drug Allergy</em>) and 'Diabetes' (under <em>Past Disease</em>) to the 5th patient&#8217;s medical record.</p>
+</li>
+<li>
+<p><code>aMR S94738123X b/B+</code><br>
+Adds 'B+' (under <em>Blood Type</em>) to the medical record of the patient with that NRIC.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="adding-a-medicalrecord-to-a-patient"><a class="link" href="#adding-a-medicalrecord-to-a-patient">Adding a MedicalRecord to a Patient</a></h3>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>MedicalRecord</code> class is an attribute of the <code>Patient</code> class, and it contains information regarding its <code>Patient</code> 's medical records. The <code>MedicalRecord</code> class:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>has an attribute <code>BloodType</code> which stores the blood type of the <code>Patient</code>. This attribute is marked as <code>final</code> and cannot be changed.</p>
+</li>
+<li>
+<p>contains a <code>List&lt;DrugAllergy&gt;</code> which stores the list of drug allergies that the <code>Patient</code> has.</p>
+</li>
+<li>
+<p>contains a <code>List&lt;Disease&gt;</code> which stores the list of diseases the <code>Patient</code> has.</p>
+</li>
+<li>
+<p>contains a <code>List&lt;Note&gt;</code> which stores the list of notes that belong to the <code>Patient</code>. Each <code>Note</code> further comprises a <code>Message</code> that stores the actual message of the <code>Note</code>, and a <code>Map&lt;SerialNumber, Quantity&gt;</code> attribute which is a record of the <code>SerialNumber</code> of the <code>Medicine</code> as well as the <code>Quantity</code> that had been dispensed to the <code>Patient</code> during that particular visit.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When a new <code>Patient</code> is created with the <code>AddCommand</code>, it is created with a default <code>MedicalRecord</code> object that contains an empty <code>BloodType</code> object, an empty <code>List&lt;DrugAllergy&gt;</code>, an empty <code>List&lt;Disease&gt;</code> and and empty <code>List&lt;Note&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>Users can add more information to a specified <code>Patient</code> 's <code>MedicalRecord</code> by invoking the <code>AddMedicalRecordCommand</code>, and specifying the corresponding arguments to add to the <code>MedicalRecord</code>. The arguments should be prefixed with <code>b/</code> for <code>BloodType</code>, <code>d/</code> for <code>Disease</code>, <code>da/</code> for <code>DrugAllergy</code>, and <code>m/</code> for <code>Note</code>. All the arguments here are optional arguments, however at least one must be present.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and explanation for the inner workings of the <code>AddMedicalRecordCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user creates a new <code>Patient</code> object using the <code>AddCommand</code>. While the user has not provided any arguments for the <code>MedicalRecord</code> of this <code>Patient</code>, a empty <code>MedicalRecord</code> object has been initialised internally and assigned to this created <code>Patient</code>. Contents of this empty <code>MedicalRecord</code> is as detailed above.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/addmedicalrecord-addingnewpatient-example.png" alt="addmedicalrecord addingnewpatient example" width="700">
+</div>
+<div class="title">Figure 1. Adding a new Patient.</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user wishes to add a <code>MedicalRecord</code> containing only the <code>BloodType</code> of the <code>Patient</code>, and will do so with the <code>AddMedicalRecord</code> command, and only specifiying the <code>b/</code> prefix for <code>BloodType</code>. Note that <code>BloodType</code> here can only be in a specific format (A[+-], B[+-], O[+-] or AB[+-]).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/addmedicalrecord-addingbloodtype-example.png" alt="addmedicalrecord addingbloodtype example" width="700">
+</div>
+<div class="title">Figure 2. Adding a new MedicalRecord with only BloodType specified.</div>
+</div>
+<div class="paragraph">
+<p>When this command is executed, the program creates a new <code>MedicalRecord</code> object with just the <code>BloodType</code> specified, takes the old <code>MedicalRecord</code> object of the <code>Patient</code> (which is empty), and does a merging of the two objects, returning a new <code>MedicalRecord</code> object. The <code>Patient</code> is then updated with this new combined <code>MedicalRecord</code>. The following figure shows the code section which performs this merging.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">/**
+ * Combines 2 medical records into one.
+ * @param record1
+ * @param record2
+ * @return a single MedicalRecord object which is a combination of the two provided.
+ */</span>
+<span class="directive">public</span> <span class="directive">static</span> MedicalRecord combineMedicalRecords(MedicalRecord record1, MedicalRecord record2) {
+
+    BloodType newBloodType = record1.getBloodType();
+
+    <span class="keyword">if</span> (!record1.getBloodType().equals(record2.getBloodType())
+            &amp;&amp; !record1.getBloodType().value.equals(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>) &amp;&amp; !record2.getBloodType().value.equals(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>)) {
+        <span class="comment">// This is not allowed! Defaulting to original bloodtype...</span>
+    } <span class="keyword">else</span> {
+        newBloodType = record2.getBloodType();
+    }
+
+    <span class="predefined-type">List</span>&lt;DrugAllergy&gt; newDrugAllergies = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;&gt;(record1.getDrugAllergies());
+    <span class="keyword">for</span> (DrugAllergy drugAllergy: record2.getDrugAllergies()) {
+        <span class="keyword">if</span> (!newDrugAllergies.contains(drugAllergy)) {
+            newDrugAllergies.add(drugAllergy);
+        }
+    }
+
+    <span class="predefined-type">List</span>&lt;Disease&gt; newDiseaseHistory = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;&gt;(record1.getDiseaseHistory());
+    <span class="keyword">for</span> (Disease disease: record2.getDiseaseHistory()) {
+        <span class="keyword">if</span> (!newDiseaseHistory.contains(disease)) {
+            newDiseaseHistory.add(disease);
+        }
+    }
+
+    <span class="predefined-type">List</span>&lt;Note&gt; newNotes = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;&gt;(record1.getNotes());
+    <span class="keyword">for</span> (Note note: record2.getNotes()) {
+        <span class="keyword">if</span> (!newNotes.contains(note)) {
+            newNotes.add(note);
+        }
+    }
+
+    MedicalRecord newRecord = <span class="keyword">new</span> MedicalRecord(newBloodType, newDrugAllergies, newDiseaseHistory, newNotes);
+
+    <span class="keyword">return</span> newRecord;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-execution-of-the-command"><a class="link" href="#aspect-execution-of-the-command">Aspect: Execution of the command</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Create a new <code>MedicalRecord</code> object and combine the old <code>MedicalRecord</code> with it.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and better abstraction.</p>
+</li>
+<li>
+<p>Cons: Redundant creation of new object only to discard it immediately.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Add specified arguments of the command directly to the current <code>MedicalRecord</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: No redundant creation of extra objects.</p>
+</li>
+<li>
+<p>Cons: Require access to the existing <code>MedicalRecord</code> from outside the object, which breaks the abstraction barrier.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 06:47:06 UTC</div></div></div></body></html>
