@@ -153,99 +153,42 @@ abstractions that helped 'finalise' the information to be used for the generatio
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="document-generation"><a class="link" href="#document-generation">Document Generation</a></h3>
-<div class="sect3">
-<h4 id="generating-medical-certificate-code-mc-code"><a class="link" href="#generating-medical-certificate-code-mc-code">Generating medical certificate: <code>mc</code></a></h4>
-<div class="paragraph">
-<p>Generates medical certificate for a Served Patient.<br>
-Format: <code>mc INDEX</code></p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Generates a medical certificate for the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
 </div>
+<div class="sect1">
+<h2 id="introduction-2"><a class="link" href="#introduction-2">Introduction</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Examples:</p>
+<p>Welcome to <strong>CLInic</strong>! <strong>CLInic</strong> is a desktop application designed to streamline and expedite operations in clinics.
+Regardless of whether you are a doctor or a receptionist at a clinic , merely having an average to high typing
+speed is the only pre-requisite required to reap its numerous benefits, which includes:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>mc 1</code><br>
-Generates a medical certificate for the 1st patient in the Served Patient queue.</p>
+<p>Easy management of large databases of patient and medicine information</p>
 </li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="generating-receipt-code-receipt-code"><a class="link" href="#generating-receipt-code-receipt-code">Generating receipt: <code>receipt</code></a></h4>
-<div class="paragraph">
-<p>Generates receipt for a Served Patient.<br>
-Alias: <code>rec</code><br>
-Format: <code>receipt INDEX</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Generates a receipt for the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p><code>receipt 5</code><br>
-Generates a receipt for the 5th patient in the Served Patient queue.</p>
+<p>Efficient generation of official documents including receipts and medical certificates</p>
 </li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="generating-referral-letter-code-refer-code"><a class="link" href="#generating-referral-letter-code-refer-code">Generating referral letter: <code>refer</code></a></h4>
-<div class="paragraph">
-<p>Generates referral letter for a Served Patient.<br>
-Format: <code>refer INDEX</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Generates a referral letter for the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p><code>refer 7</code><br>
-Generates a receipt for the 7th patient in the Served Patient queue.</p>
+<p>Ease of use through helpful graphical displays of obscure technical information</p>
+</li>
+<li>
+<p>User friendly commands that make complicated tasks intuitive</p>
+</li>
+<li>
+<p>Packaged with an elegant queue system that displays the real-time states of the separate queues in the clinic
+for staff and patients to see</p>
 </li>
 </ul>
 </div>
-</div>
+<div class="paragraph">
+<p>If you wish for a clinic management application that can radically enhance your productivity, then look no further
+than <strong>CLInic</strong>! <strong>CLInic</strong> <em>will</em> take care of the nitty-gritty complexities of your workflow, allowing you to
+focus instead on what truly matters to you as a health care professional: <strong>providing quality healthcare services efficiently.</strong><br>
+You will have <strong>all the tools</strong> needed for running a world-class clinic at <strong>your</strong> fingertips (literally!).
+Interested? Continue scrolling to hop onboard with us and get started!<br></p>
 </div>
 </div>
 </div>
@@ -262,6 +205,13 @@ Generates a receipt for the 7th patient in the Served Patient queue.</p>
 </tr>
 </tbody>
 </table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Introduction to the <code>Document</code> Section</p>
+</li>
+</ol>
+</div>
 <div class="sect2">
 <h3 id="document"><a class="link" href="#document">Document</a></h3>
 <div class="sect3">
@@ -270,6 +220,13 @@ Generates a receipt for the 7th patient in the Served Patient queue.</p>
 <p>The <code>Document</code>  class represents all documents that can be issued by the clinic. The <code>Receipt</code>, <code>MedicalCertificate</code> and <code>ReferralLetter</code> classes all inherit from it.<br>
 It specifies what general information these documents should have and how they should be formatted. It can be thought of as the formatting template for all the information
 belonging to its inheriting classes.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Implementation of the <code>Receipt</code> class</p>
+</li>
+</ol>
 </div>
 <div class="sect4">
 <h5 id="implementation-of-code-receipt-code"><a class="link" href="#implementation-of-code-receipt-code">Implementation of <code>Receipt</code></a></h5>
@@ -343,114 +300,12 @@ Executing <code>receipt</code> with an invalid index will <strong>not</strong> r
 </div>
 <div class="title">Figure 3. Result of executing <code>receipt</code> with an invalid index.</div>
 </div>
-</div>
-<div class="sect4">
-<h5 id="implementation-of-code-medicalcertificate-code"><a class="link" href="#implementation-of-code-medicalcertificate-code">Implementation of <code>MedicalCertificate</code></a></h5>
-<div class="paragraph">
-<p>The <code>MedicalCertificate</code> class structure is as follows:</p>
-</div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic" start="3">
 <li>
-<p>has attributes of the <code>Served Patient</code> it is generated from, which includes the served patient&#8217;s <code>name</code> and <code>IcNumber</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>These attributes are marked as <code>final</code> as they should not be changed.</p>
+<p>Design considerations of the <code>Document</code> class</p>
 </li>
-</ul>
-</div>
-</li>
-<li>
-<p>contains additional information like the <code>startDate</code> and <code>startDate</code> of their medical leave
-as well as the name of the issuing doctor <code>doctorName</code>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Users can generate a <code>MedicalCertificate</code> for a specific <code>ServedPatient</code> by invoking the <code>MedicalCertificateCommand</code> accompanied by the served patient&#8217;s index in the <code>ServedPatientList</code>.<br></p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and explanation for the inner workings of the <code>MedicalCertificateCommand</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user executes the <code>serve</code> command to serve the first <code>Patient</code> in the <code>PatientQueue</code>.<br>
-This creates a new <code>ServedPatient</code> object that is added to the <code>ServedPatientList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ServePatient.png" alt="ServePatient" width="650">
-</div>
-<div class="title">Figure 4. Serving a <code>Patient</code> in the <code>PatientQueue</code>. Note that the <code>Patient</code> <strong>Bryan Lew</strong> is the only <code>Patient</code> in the <code>ServedPatientList</code> and hence has an index of <code>1</code>.</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>mc 1</code> command to generate a <code>MedicalCertificate</code> with the relevant object. Up till this milestone v1.2, the contents of the <code>MedicalCertificate</code> will be reflected in the <code>ResultDisplay</code> as shown below.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Executing <code>mc</code> with an invalid index will <strong>not</strong> result in the generation of a <code>MedicalCertificate</code>.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect4">
-<h5 id="implementation-of-code-referralletter-code"><a class="link" href="#implementation-of-code-referralletter-code">Implementation of <code>ReferralLetter</code></a></h5>
-<div class="paragraph">
-<p>The <code>ReferralLetter</code> class structure is as follows:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>has attributes of the <code>Served Patient</code> it is generated from, which includes the served patient&#8217;s <code>name</code> and <code>IcNumber</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>These attributes are marked as <code>final</code> and cannot be changed.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>contains additional information like the issuing doctor&#8217;s <code>notes</code>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Users can generate a <code>ReferralLetter</code> for a specific <code>ServedPatient</code> by invoking the <code>ReferralLetterCommand</code> accompanied by the served patient&#8217;s index in the <code>ServedPatientList</code>.<br></p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and explanation for the inner workings of the <code>ReferralLetterCommand</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user executes the <code>serve</code> command to serve the first <code>Patient</code> in the <code>PatientQueue</code>.<br>
-This creates a new <code>ServedPatient</code> object that is added to the <code>ServedPatientList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ServePatient.png" alt="ServePatient" width="650">
-</div>
-<div class="title">Figure 5. Serving a <code>Patient</code> in the <code>PatientQueue</code>. Note that the <code>Patient</code> <strong>Bryan Lew</strong> is the only <code>Patient</code> in the <code>ServedPatientList</code> and hence has an index of <code>1</code>.</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>refer 1</code> command to generate a <code>ReferralLetter</code> with the relevant object. Up till this milestone v1.2, the contents of the <code>ReferralLetter</code> will be reflected in the <code>ResultDisplay</code> as shown below.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Executing <code>refer</code> with an invalid index will <strong>not</strong> result in the generation of a <code>ReferralLetter</code>.
-</td>
-</tr>
-</table>
+</ol>
 </div>
 </div>
 </div>
@@ -503,7 +358,7 @@ Executing <code>refer</code> with an invalid index will <strong>not</strong> res
 <div class="ulist">
 <ul>
 <li>
-<p>For example, an <code>enum</code> will prevent the issuing of a <code>Medical Certificate</code> that excuses a person from work/school for <strong>1,000,000 days</strong>!</p>
+<p>For example, an <code>enum</code> will prevent the issuing of a <code>Medical Certificate</code> that excuses a person from work/school for 10 <strong>years</strong>!</p>
 </li>
 </ul>
 </div>
@@ -540,4 +395,4 @@ Executing <code>refer</code> with an invalid index will <strong>not</strong> res
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 19:17:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 03:18:46 UTC</div></div></div></body></html>
