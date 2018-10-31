@@ -145,7 +145,7 @@ Registers the 3rd patient in the database.</p>
 </li>
 <li>
 <p><code>find david</code><br>
-<code>register 1</code><br>
+<code>reg 1</code><br>
 Registers the 1st patient in the resulting list of the <code>find</code> command.</p>
 </li>
 </ul>
@@ -188,7 +188,7 @@ Removes the patient at the specified <code>INDEX</code>. The index refers to the
 Removes the 5th patient in the queue.</p>
 </li>
 <li>
-<p><code>remove S9382839X</code><br>
+<p><code>rem S9382839X</code><br>
 Removes patient with IC number S9382839X from the queue.</p>
 </li>
 </ul>
@@ -224,7 +224,7 @@ Inserts the patient at the specified <code>INDEX</code> in the displayed patient
 Inserts the 4th patient in the database into the 5th position in the queue.</p>
 </li>
 <li>
-<p><code>insert S9123456A p/5</code><br>
+<p><code>ins S9123456A p/5</code><br>
 Inserts the patient with IC number S9123456A into the 5th position in the queue.</p>
 </li>
 </ul>
@@ -305,6 +305,18 @@ At least the note field must be added before executing the <a href="#finish"><co
 </tr>
 </table>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The parameter for <code>mc/</code> must be a <strong>non-zero, positive integer</strong>!
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
@@ -317,6 +329,10 @@ Adds MC duration and notes to the Current Patient.</p>
 <li>
 <p><code>adddocument r/Ng Teng Fong Hospital</code><br>
 Adds referral to the Current Patient.</p>
+</li>
+<li>
+<p><code>ad mc/hello</code>
+MC duration is <strong>not updated</strong> as the parameter provided is invalid.</p>
 </li>
 </ul>
 </div>
@@ -358,7 +374,7 @@ Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current P
 10 units of the 1st medicine in the displayed medicine list will be added to the Current Patient.<br></p>
 </li>
 <li>
-<p><code>dispensemedicine 5 amt/2</code><br>
+<p><code>dm 5 amt/2</code><br>
 2 units of the 5th medicine in the displayed medicine list will be added to the Current Patient.</p>
 </li>
 </ul>
@@ -511,4 +527,4 @@ him from the <code>ServedPatientQueue</code>.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 03:21:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 08:04:38 UTC</div></div></div></body></html>
