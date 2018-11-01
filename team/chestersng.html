@@ -29,7 +29,7 @@ after every enhancement or change.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of Contributions</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -58,7 +58,7 @@ are made to be as intuitive as possible.</p>
 <p>Integration of <code>Patient</code> and <code>Document</code> class with PQMS through <code>DocumentAddCommand</code> and <code>DocumentDisplayCommand</code></p>
 </li>
 <li>
-<p>Integration of <code>Medicine</code> class and PQMS through <code>DispenseMedicineCommand</code></p>
+<p>Integration of <code>Patient</code> and <code>Medicine</code> class through <code>DispenseMedicineCommand</code></p>
 </li>
 </ul>
 </div>
@@ -97,6 +97,26 @@ are made to be as intuitive as possible.</p>
 </div>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-gui-design"><a class="link" href="#contributions-to-the-gui-design">Contributions to the GUI Design</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below is the mockup of the GUI that I designed. It showcases to visualise an end-product.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui" width="790">
+</div>
 </div>
 </div>
 </div>
@@ -287,11 +307,23 @@ Inserts the 3rd patient into the 5th position in the patient queue.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="serving-the-first-patient-in-waiting-queue-code-serve-code"><a class="link" href="#serving-the-first-patient-in-waiting-queue-code-serve-code">Serving the first patient in Waiting Queue: <code>serve</code></a></h4>
+<h4 id="serve"><a class="link" href="#serve">Serving the first patient in Waiting queue: <code>serve</code></a></h4>
 <div class="paragraph">
-<p>Serves the first patient in the Waiting Queue. The patient being served is now the Current Patient.<br>
+<p>Serves the first patient in the Waiting queue. The patient being served is now the Current Patient.<br>
 Alias: <code>ser</code><br>
 Format: <code>serve</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Upon successful call of this command, the medicine list will be displayed.
+</td>
+</tr>
+</table>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -305,18 +337,6 @@ Format: <code>serve</code></p>
 </div>
 <div class="title">Figure 7. After <code>serve</code> command</div>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The medicine list will be displayed when this command is used for easy reference for dispensing medicine.
-</td>
-</tr>
-</table>
-</div>
 </div>
 <div class="sect3">
 <h4 id="adddocument"><a class="link" href="#adddocument">Adding document contents to Current Patient: <code>adddocument</code></a></h4>
@@ -324,6 +344,18 @@ The medicine list will be displayed when this command is used for easy reference
 <p>Adds document contents to the Current Patient.<br>
 Alias: <code>ad</code><br>
 Format: <code>adddocument [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+There must be a Current Patient. Use the <a href="#serve"><code>serve</code></a> command first.
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -391,16 +423,28 @@ The parameter for <code>mc/</code> must be a <strong>non-zero, positive integer<
 <div class="ulist">
 <ul>
 <li>
-<p><code>adddocument mc/3 n/This patient complains of headaches for the past 2 days</code><br>
-Adds a MC duration of 3 days and a note to the current patient being served reflecting the patient suffering from headaches for the past 2 days.</p>
+<p><code>adddocument mc/3 n/Headache for the past 2 days</code><br>
+Adds MC duration and notes to the Current Patient.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BeforeAddDocumentCommand.png" alt="BeforeAddDocumentCommand" width="750">
+</div>
+<div class="title">Figure 8. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AfterAddDocumentCommand.png" alt="AfterAddDocumentCommand" width="750">
+</div>
+<div class="title">Figure 9. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>ad r/Ng Teng Fong Hospital</code><br>
-Adds a referral letter to the current patient being served to seek further health care at <code>Ng Teng Fong Hospital</code> as recommended by the doctor in the current clinic..</p>
-</li>
-<li>
-<p><code>ad mc/hello</code>
-MC duration is <strong>not updated</strong> as the parameter provided is invalid.</p>
+Adds referral to the Current Patient.</p>
 </li>
 </ul>
 </div>
@@ -439,11 +483,27 @@ Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current P
 <ul>
 <li>
 <p><code>dispensemedicine 1 amt/10</code><br>
-Adds <code>10</code> units of the 1st medicine in the displayed medicine list to the current patient being served.<br></p>
+10 units of the 1st medicine in the displayed medicine list will be added to the Current Patient.<br></p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BeforeDispenseMedicineCommand.png" alt="BeforeDispenseMedicineCommand" width="750">
+</div>
+<div class="title">Figure 10. Before <code>dispensemedicine 1 amt/10</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AfterDispenseMedicineCommand.png" alt="AfterDispenseMedicineCommand" width="750">
+</div>
+<div class="title">Figure 11. After <code>dispensemedicine 1 amt/10</code></div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>dm 5 amt/2</code><br>
-Adds <code>2</code> units of the 5th medicine in the displayed medicine list to the current patient being served.</p>
+2 units of the 5th medicine in the displayed medicine list will be added to the Current Patient.</p>
 </li>
 </ul>
 </div>
@@ -507,6 +567,22 @@ Removes the patient at the specified <code>INDEX</code>. The index refers to the
 <p><code>payment 3</code><br>
 Removes the 3rd patient from the Served Patient Queue.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BeforePaymentCommand.png" alt="BeforePaymentCommand" width="750">
+</div>
+<div class="title">Figure 12. Before <code>payment 3</code> command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AfterPaymentCommand.png" alt="AfterPaymentCommand" width="750">
+</div>
+<div class="title">Figure 13. After <code>payment 3</code> command</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>pay 1</code><br>
 Removes the 1st patient from the Served Patient Queue.</p>
@@ -535,11 +611,149 @@ Removes the 1st patient from the Served Patient Queue.</p>
 <div class="paragraph">
 <p>The Patient Queue Management System (PQMS) consists of three main classes: <code>PatientQueue</code>, <code>CurrentPatient</code> and <code>ServedPatientQueue</code>. A patient that
 registers to see the doctor is put into the <code>PatientQueue</code>. When it is the patient&#8217;s turn to see the doctor, he will become the <code>CurrentPatient</code>. After
-he is done with seeing the doctor, he will be put into the <code>ServedPatientQueue</code> to await payment and document processing.
-Given below is an example usage scenario and how the PQMS is used in each step.</p>
+he is done with seeing the doctor, he will become a <code>ServedPatient</code> and put into the  <code>ServedPatientQueue</code> to await payment and document processing.</p>
 </div>
 <div class="paragraph">
 <p>The PQMS consists of the <code>register</code>, <code>insert</code>, <code>remove</code>, <code>serve</code>, <code>docAdd</code>, <code>docDisplay</code>, <code>dispenseMedicine</code>, <code>finish</code>, <code>payment</code> and <code>Document</code> commands.</p>
+</div>
+<div class="paragraph">
+<p>The following code snippet shows how the <code>ServedPatient</code> is implemented:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="Java"><span class="comment">/**
+ * Represents a patient that has already consulted the doctor in the address book.
+ * It has all the necessary data needed to generate any object that inherits from document.
+ */</span>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">ServedPatient</span> {
+
+    <span class="directive">private</span> Patient patient;
+    <span class="directive">private</span> <span class="predefined-type">String</span> noteContent;
+    <span class="directive">private</span> <span class="predefined-type">String</span> referralContent;
+    <span class="directive">private</span> <span class="predefined-type">String</span> mcContent;
+    <span class="directive">private</span> <span class="predefined-type">Map</span>&lt;Medicine, QuantityToDispense&gt; medicineAllocated;
+
+    <span class="comment">/**
+     * Constructs a servedPatient object from a patient object to extract all the information
+     * necessary for printing a document.
+     *
+     * @param patient A valid patient.
+     */</span>
+    <span class="directive">public</span> ServedPatient(Patient patient) {
+        requireNonNull(patient);
+        medicineAllocated = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;&gt;();
+        <span class="local-variable">this</span>.patient = patient;
+        <span class="local-variable">this</span>.noteContent = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
+        <span class="local-variable">this</span>.referralContent = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
+        <span class="local-variable">this</span>.mcContent = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
+    }
+
+    <span class="directive">public</span> <span class="predefined-type">Name</span> getName() {
+        <span class="keyword">return</span> patient.getName();
+    }
+
+    <span class="directive">public</span> IcNumber getIcNumber() {
+        <span class="keyword">return</span> patient.getIcNumber();
+    }
+
+    <span class="directive">public</span> <span class="predefined-type">String</span> getNoteContent() {
+        <span class="keyword">return</span> <span class="local-variable">this</span>.noteContent;
+    }
+
+    <span class="directive">public</span> <span class="predefined-type">String</span> getMcContent() {
+        <span class="keyword">return</span> <span class="local-variable">this</span>.mcContent;
+    }
+
+    <span class="directive">public</span> <span class="predefined-type">String</span> getReferralContent() {
+        <span class="keyword">return</span> <span class="local-variable">this</span>.referralContent;
+    }
+
+    <span class="directive">public</span> <span class="predefined-type">Map</span>&lt;Medicine, QuantityToDispense&gt; getMedicineAllocated() {
+        <span class="keyword">return</span> medicineAllocated;
+    }
+
+    <span class="directive">public</span> <span class="predefined-type">String</span> addNoteContent(<span class="predefined-type">String</span> content) {
+        <span class="keyword">return</span> noteContent = content;
+    }
+
+    <span class="directive">public</span> <span class="predefined-type">String</span> addReferralContent(<span class="predefined-type">String</span> content) {
+        <span class="keyword">return</span> referralContent = content;
+    }
+
+    <span class="directive">public</span> <span class="predefined-type">String</span> addMcContent(<span class="predefined-type">String</span> content) {
+        <span class="keyword">return</span> mcContent = content;
+    }
+
+    <span class="comment">/**
+     * Add specified quantity of medicine to patient.
+     * @param medicine to be added.
+     * @param quantity of medicine to be added.
+     * @return string representation of medicine added.
+     */</span>
+    <span class="directive">public</span> <span class="predefined-type">String</span> addMedicine(Medicine medicine, QuantityToDispense quantity) {
+        medicineAllocated.put(medicine, quantity);
+        <span class="keyword">return</span> medicine.toString();
+    }
+
+    <span class="comment">/**
+     * Creates a note from the noteContent and dispensedMedicines and saves to the patient's medicalRecord.
+     */</span>
+    <span class="directive">public</span> Patient createNewPatientWithUpdatedMedicalRecord() {
+        Note noteToSave = <span class="keyword">new</span> Note(<span class="local-variable">this</span>.noteContent, <span class="local-variable">this</span>.medicineAllocated);
+        Patient editedPatient = <span class="keyword">new</span> Patient(<span class="local-variable">this</span>.patient, <span class="local-variable">this</span>.patient.getMedicalRecord());
+        editedPatient.addNoteMedicalRecord(noteToSave);
+        <span class="keyword">return</span> editedPatient;
+    }
+
+    <span class="comment">/**
+     * Checks whether current is a specified patient.
+     * @return true if queue contains patient.
+     */</span>
+    <span class="directive">public</span> <span class="type">boolean</span> isPatient(Patient patient) {
+        <span class="keyword">return</span> (<span class="local-variable">this</span>.patient).isSamePerson(patient);
+    }
+
+    <span class="comment">/**
+     * Update the patient if any information changes.
+     */</span>
+    <span class="directive">public</span> <span class="type">void</span> updatePatient(Patient patient) {
+        <span class="local-variable">this</span>.patient = patient;
+    }
+
+    <span class="comment">/**
+     * @return a console-friendly representation of the patient.
+     */</span>
+    <span class="directive">public</span> <span class="predefined-type">String</span> toNameAndIc() {
+        <span class="keyword">return</span> patient.toNameAndIc();
+    }
+
+    <span class="directive">public</span> Patient getPatient() {
+        <span class="keyword">return</span> <span class="local-variable">this</span>.patient;
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> <span class="type">boolean</span> equals(<span class="predefined-type">Object</span> obj) {
+        <span class="comment">// short circuit if same object</span>
+        <span class="keyword">if</span> (obj == <span class="local-variable">this</span>) {
+            <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+        }
+
+        <span class="comment">// instanceof handles nulls</span>
+        <span class="keyword">if</span> (!(obj <span class="keyword">instanceof</span> ServedPatient)) {
+            <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+        }
+
+        <span class="comment">// state check</span>
+        ServedPatient other = (ServedPatient) obj;
+
+        <span class="keyword">return</span> <span class="local-variable">this</span>.patient.equals(other.patient)
+                &amp;&amp; <span class="local-variable">this</span>.mcContent.equals(other.mcContent)
+                &amp;&amp; <span class="local-variable">this</span>.referralContent.equals(other.referralContent)
+                &amp;&amp; <span class="local-variable">this</span>.noteContent.equals(other.noteContent)
+                &amp;&amp; <span class="local-variable">this</span>.medicineAllocated.equals(other.medicineAllocated);
+    }
+}</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram shows how the <code>register</code> command works:</p>
@@ -548,10 +762,13 @@ Given below is an example usage scenario and how the PQMS is used in each step.<
 <div class="content">
 <img src="../images/RegisterSequenceDiagram.png" alt="RegisterSequenceDiagram" width="1000">
 </div>
-<div class="title">Figure 8. Register Sequence Diagram</div>
+<div class="title">Figure 14. Register Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The other commands roughly follow the same sequence as <code>Register</code> command but can interact with <code>CurrentPatient</code> or <code>ServedPatientList</code> instead of <code>PatientQueue</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the PQMS is used in each step.</p>
 </div>
 <div class="paragraph">
 <p>Step 1. Three patients visits the clinic, the user executes the <code>register</code> command for each patient.</p>
@@ -560,7 +777,7 @@ Given below is an example usage scenario and how the PQMS is used in each step.<
 <div class="content">
 <img src="../images/PQMSPatientQueue.png" alt="650" width="250">
 </div>
-<div class="title">Figure 9. Registering 3 patients</div>
+<div class="title">Figure 15. Registering 3 patients</div>
 </div>
 <div class="paragraph">
 <p>Step 2. It is a patient&#8217;s turn for consultation. The user executes the <code>serve</code> command to serve the first patient in the queue.
@@ -570,21 +787,21 @@ The patient is now the <code>CurrentPatient</code>.</p>
 <div class="content">
 <img src="../images/PQMSCurrentPatient.png" alt="650" width="250">
 </div>
-<div class="title">Figure 10. Serve patient</div>
+<div class="title">Figure 16. Serve patient</div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes various commands to add information to the <code>CurrentPatient</code>. These information will be used for document
+<p>Step 3. The user executes the <code>DocumentAdd</code> command to add information to the <code>CurrentPatient</code>. These information will be used for document
 processing later on.</p>
 </div>
 <div class="paragraph">
 <p>Step 4. The <code>CurrentPatient</code> is done with the consultation. The user executes the <code>finish</code> command to transfer this patient to
-the <code>ServedPatientQueue</code>. Afterwards, the user executes <code>serve</code> to get the next patient.</p>
+the <code>ServedPatientQueue</code>. Afterwards, the user executes <code>serve</code> to serve the next patient in <code>PatientQueue</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/PQMSServedPatientQueue.png" alt="650" width="250">
 </div>
-<div class="title">Figure 11. Finish serving patient</div>
+<div class="title">Figure 17. Finish serving patient</div>
 </div>
 <div class="paragraph">
 <p>Step 5. The user executes various commands to generate necessary documents for the served patient.</p>
@@ -593,6 +810,51 @@ the <code>ServedPatientQueue</code>. Afterwards, the user executes <code>serve</
 <p>Step 6. The user finally executes <code>payment</code> command to generate the receipt and ends the patient&#8217;s visit to the clinic, removing
 him from the <code>ServedPatientQueue</code>.</p>
 </div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-proper-oop-practice"><a class="link" href="#aspect-proper-oop-practice">Aspect: Proper OOP practice</a></h5>
+<div class="paragraph">
+<p>Relationship between <code>CurrentPatient</code>, <code>ServedPatient</code> and <code>Patient</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current Implementation:</strong> Composition</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>CurrentPatient</code> is composed of <code>ServedPatient</code>. <code>ServedPatient</code> is composed of <code>Patient</code>.</p>
+</li>
+<li>
+<p>Pros: Easy manipulation of composed class.</p>
+</li>
+<li>
+<p>Cons: Weird relationship between the three classes.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative:</strong> Inheritance</p>
+</li>
+<li>
+<p><code>CurrentPatient</code> inherits from <code>ServedPatient</code>. <code>ServedPatient</code> inherits from <code>Patient</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Proper relationship between three classes.</p>
+</li>
+<li>
+<p>Cons: Cannot cast <code>Patient</code> to <code>ServedPatient</code> or <code>CurrentPatient</code> for usage in PQMS.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 14:49:38 UTC</div></div></div></body></html>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 18:22:06 UTC</div></div></div></body></html>
