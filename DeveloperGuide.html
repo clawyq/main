@@ -999,15 +999,16 @@ creates a new medicine entry in the inventory. <code>editMedicine</code> Command
 <p>Scenario 1. A new medicine arrives. The user uses the <code>addMedicine</code> command to add the stock into the records.</p>
 </div>
 <div class="paragraph">
-<p>Scenario 2. A new shipment of medicine has arrived. The user uses <code>editMedicine</code> command
+<p>Scenario 2. A new shipment of medicine has arrived. The user uses <code>restock</code> command
 to update the new stock levels of exiting medicine.</p>
 </div>
 <div class="paragraph">
-<p>Scenario 3. When a patient is allocated medicine, during payment a <code>receipt</code> command is executed by the user to fetch the prices
-for the medicine that is allocated, in addition, the stock level of the medicine is updated too.</p>
+<p>Scenario 3. When a patient is allocated medicine, the 'dispensemedicine' command is entered.
+During payment a <code>receipt</code> command is executed by the user to fetch the prices
+for the medicine that is allocated, in addition, the stock level of the medicine is updated.</p>
 </div>
 <div class="paragraph">
-<p>Scenario 4. During closing or whenever needed, the user checks for the stock level. The user executes the <code>checkStock</code> command
+<p>Scenario 4. The user needs to check for the stock level of every medicine. The user executes the <code>checkStock</code> command
 which lists the medicine that are below their Minimum Stock Quantity.</p>
 </div>
 </div>
@@ -1022,7 +1023,7 @@ which lists the medicine that are below their Minimum Stock Quantity.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Similar format with the list with patients.</p>
+<p>Pros: Consistent format with the list with patients.</p>
 </li>
 <li>
 <p>Cons: Need to search through the list to find a medicine.</p>
@@ -1038,7 +1039,7 @@ which lists the medicine that are below their Minimum Stock Quantity.</p>
 <p>Pros: Quick reference for object given index.</p>
 </li>
 <li>
-<p>Cons: Messy implementation with long methods everywhere.</p>
+<p>Cons: Difficult to sort the medicine.</p>
 </li>
 </ul>
 </div>
@@ -3002,4 +3003,4 @@ Expected: No medicine is added. Error details shown in the status message. Statu
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 16:57:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 04:38:57 UTC</div></div></div></body></html>
