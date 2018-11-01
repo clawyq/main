@@ -140,6 +140,7 @@ Interested? Continue scrolling to hop onboard with us and get started!<br></p>
 <div class="content">
 <img src="images/Ui.png" alt="Ui" width="790">
 </div>
+<div class="title">Figure 1. Prototype of UI</div>
 </div>
 </li>
 <li>
@@ -827,6 +828,16 @@ Registers the patient at the specified <code>INDEX</code>. The index refers to t
 <code>register 3</code><br>
 Registers the 3rd patient in the database.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Register3Command.png" alt="Register3Command" width="750">
+</div>
+<div class="title">Figure 2. After executing the <code>register 3</code> command</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>find david</code><br>
 <code>reg 1</code><br>
@@ -868,12 +879,28 @@ Removes the patient at the specified <code>INDEX</code>. The index refers to the
 <div class="ulist">
 <ul>
 <li>
-<p><code>remove 5</code><br>
-Removes the 5th patient in the Waiting Queue.</p>
+<p><code>remove 3</code><br>
+Removes the 3rd patient in the queue.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/BeforeRemove3Command.png" alt="BeforeRemove3Command" width="750">
+</div>
+<div class="title">Figure 3. Before <code>remove 3</code> command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AfterRemove3Command.png" alt="AfterRemove3Command" width="750">
+</div>
+<div class="title">Figure 4. After <code>remove 3</code> command</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>rem 9</code><br>
-Removes the 9th patient in the Waiting Queue.</p>
+<p><code>rem 3</code><br>
+Removes the 2nd patient in the queue.</p>
 </li>
 </ul>
 </div>
@@ -897,6 +924,19 @@ Inserts the patient at the specified <code>INDEX</code> in the displayed patient
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If the <code>POSITION</code> value supplied exceeds the queue length, then the patient will just be added to the back of the queue. If the queue length is 1 and the <code>POSITION</code> value is 5, the patient will be added
+to the 2nd position.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
@@ -904,12 +944,28 @@ Inserts the patient at the specified <code>INDEX</code> in the displayed patient
 <ul>
 <li>
 <p><code>list</code><br>
-<code>insert 4 p/5</code><br>
-Inserts the 4th patient in the database into the 5th position in the Waiting Queue.</p>
+<code>insert 4 p/2</code><br>
+Inserts the 4th patient in the database into the 2nd position in the patient queue.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/BeforeInsert2Command.png" alt="BeforeInsert2Command" width="750">
+</div>
+<div class="title">Figure 5. Before <code>insert 4 p/2</code> command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AfterInsert2Command.png" alt="AfterInsert2Command" width="750">
+</div>
+<div class="title">Figure 6. After <code>insert 4 p/2</code> command</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>ins 3 p/7</code><br>
-Inserts the 3rd patient in the database into the 7th position in the Waiting Queue.</p>
+<p><code>ins 3 p/5</code><br>
+Inserts the 3rd patient into the 5th position in the patient queue.</p>
 </li>
 </ul>
 </div>
@@ -920,6 +976,18 @@ Inserts the 3rd patient in the database into the 7th position in the Waiting Que
 <p>Serves the first patient in the Waiting Queue. The patient being served is now the Current Patient.<br>
 Alias: <code>ser</code><br>
 Format: <code>serve</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/BeforeServeCommand.png" alt="BeforeServeCommand" width="750">
+</div>
+<div class="title">Figure 7. Before <code>serve</code> command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AfterServeCommand.png" alt="AfterServeCommand" width="750">
+</div>
+<div class="title">Figure 8. After <code>serve</code> command</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1667,4 +1735,4 @@ There is no need to save manually.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 05:29:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 14:49:38 UTC</div></div></div></body></html>

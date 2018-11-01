@@ -10,20 +10,21 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>CLInic is a desktop application made for clinics. The CLI in CLInic stands for Command Line Interface, which is the main method to use this application.
-CLInic also has a Graphical User Interface (GUI) to display information in a structured and user-friendly manner. This application uses Java as the
-programming language and uses JavaFX, HTML and CSS for the GUI.</p>
+<p>This project portfolio serves to document my contributions to CLInic, a CS2103T (Introduction to Software Engineering) project as part of my
+Computer Science curriculum in NUS.</p>
 </div>
 <div class="paragraph">
-<p>My task in CLInic is to implement a <strong>Patient Queue Management System</strong>, as well as to integrate the changes of my team to ensure CLInic works
-after every enhancement or change.</p>
+<p>CLInic is a desktop application made for clinics. The CLI in CLInic stands for Command Line Interface, which is the main method to use this application.
+CLInic also has a Graphical User Interface (GUI) to display information in a structured and user-friendly manner. This application uses Java as the
+primary programming language and uses JavaFX, HTML and CSS for the GUI.</p>
 </div>
 <div class="paragraph">
 <p>The project scope for CLInic is to morph the given <code>addressbook-level4</code> into a clinic management application that allows users to manage patient
 and medicine information and additionally manage the clinic queue.</p>
 </div>
 <div class="paragraph">
-<p>The team consists of four year-2 and one year-3 student in School of Computing, NUS.</p>
+<p>My task in CLInic is to implement a <strong>Patient Queue Management System</strong>, as well as to integrate the changes of my team to ensure CLInic works
+after every enhancement or change.</p>
 </div>
 </div>
 </div>
@@ -143,6 +144,16 @@ Registers the patient at the specified <code>INDEX</code>. The index refers to t
 <code>register 3</code><br>
 Registers the 3rd patient in the database.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Register3Command.png" alt="Register3Command" width="750">
+</div>
+<div class="title">Figure 1. After executing the <code>register 3</code> command</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>find david</code><br>
 <code>reg 1</code><br>
@@ -184,12 +195,28 @@ Removes the patient at the specified <code>INDEX</code>. The index refers to the
 <div class="ulist">
 <ul>
 <li>
-<p><code>remove 5</code><br>
-Removes the 5th patient in the Waiting Queue.</p>
+<p><code>remove 3</code><br>
+Removes the 3rd patient in the queue.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BeforeRemove3Command.png" alt="BeforeRemove3Command" width="750">
+</div>
+<div class="title">Figure 2. Before <code>remove 3</code> command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AfterRemove3Command.png" alt="AfterRemove3Command" width="750">
+</div>
+<div class="title">Figure 3. After <code>remove 3</code> command</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>rem 9</code><br>
-Removes the 9th patient in the Waiting Queue.</p>
+<p><code>rem 3</code><br>
+Removes the 2nd patient in the queue.</p>
 </li>
 </ul>
 </div>
@@ -213,6 +240,19 @@ Inserts the patient at the specified <code>INDEX</code> in the displayed patient
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If the <code>POSITION</code> value supplied exceeds the queue length, then the patient will just be added to the back of the queue. If the queue length is 1 and the <code>POSITION</code> value is 5, the patient will be added
+to the 2nd position.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
@@ -220,12 +260,28 @@ Inserts the patient at the specified <code>INDEX</code> in the displayed patient
 <ul>
 <li>
 <p><code>list</code><br>
-<code>insert 4 p/5</code><br>
-Inserts the 4th patient in the database into the 5th position in the Waiting Queue.</p>
+<code>insert 4 p/2</code><br>
+Inserts the 4th patient in the database into the 2nd position in the patient queue.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BeforeInsert2Command.png" alt="BeforeInsert2Command" width="750">
+</div>
+<div class="title">Figure 4. Before <code>insert 4 p/2</code> command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AfterInsert2Command.png" alt="AfterInsert2Command" width="750">
+</div>
+<div class="title">Figure 5. After <code>insert 4 p/2</code> command</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>ins 3 p/7</code><br>
-Inserts the 3rd patient in the database into the 7th position in the Waiting Queue.</p>
+<p><code>ins 3 p/5</code><br>
+Inserts the 3rd patient into the 5th position in the patient queue.</p>
 </li>
 </ul>
 </div>
@@ -236,6 +292,18 @@ Inserts the 3rd patient in the database into the 7th position in the Waiting Que
 <p>Serves the first patient in the Waiting Queue. The patient being served is now the Current Patient.<br>
 Alias: <code>ser</code><br>
 Format: <code>serve</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BeforeServeCommand.png" alt="BeforeServeCommand" width="750">
+</div>
+<div class="title">Figure 6. Before <code>serve</code> command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AfterServeCommand.png" alt="AfterServeCommand" width="750">
+</div>
+<div class="title">Figure 7. After <code>serve</code> command</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -480,7 +548,7 @@ Given below is an example usage scenario and how the PQMS is used in each step.<
 <div class="content">
 <img src="../images/RegisterSequenceDiagram.png" alt="RegisterSequenceDiagram" width="1000">
 </div>
-<div class="title">Figure 1. Register Sequence Diagram</div>
+<div class="title">Figure 8. Register Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The other commands roughly follow the same sequence as <code>Register</code> command but can interact with <code>CurrentPatient</code> or <code>ServedPatientList</code> instead of <code>PatientQueue</code>.</p>
@@ -492,7 +560,7 @@ Given below is an example usage scenario and how the PQMS is used in each step.<
 <div class="content">
 <img src="../images/PQMSPatientQueue.png" alt="650" width="250">
 </div>
-<div class="title">Figure 2. Registering 3 patients</div>
+<div class="title">Figure 9. Registering 3 patients</div>
 </div>
 <div class="paragraph">
 <p>Step 2. It is a patient&#8217;s turn for consultation. The user executes the <code>serve</code> command to serve the first patient in the queue.
@@ -502,7 +570,7 @@ The patient is now the <code>CurrentPatient</code>.</p>
 <div class="content">
 <img src="../images/PQMSCurrentPatient.png" alt="650" width="250">
 </div>
-<div class="title">Figure 3. Serve patient</div>
+<div class="title">Figure 10. Serve patient</div>
 </div>
 <div class="paragraph">
 <p>Step 3. The user executes various commands to add information to the <code>CurrentPatient</code>. These information will be used for document
@@ -516,7 +584,7 @@ the <code>ServedPatientQueue</code>. Afterwards, the user executes <code>serve</
 <div class="content">
 <img src="../images/PQMSServedPatientQueue.png" alt="650" width="250">
 </div>
-<div class="title">Figure 4. Finish serving patient</div>
+<div class="title">Figure 11. Finish serving patient</div>
 </div>
 <div class="paragraph">
 <p>Step 5. The user executes various commands to generate necessary documents for the served patient.</p>
@@ -527,4 +595,4 @@ him from the <code>ServedPatientQueue</code>.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 05:29:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 14:49:38 UTC</div></div></div></body></html>
