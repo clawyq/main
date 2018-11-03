@@ -535,7 +535,7 @@ Selects the 1st patient in the resulting list of the <code>find</code> command.<
 <div class="paragraph">
 <p>Updates the medical records of a patient.<br>
 Alias: <code>amr</code><br>
-Format: <code>addMedicalRecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASES]&#8230;&#8203; [da/DRUG_ALLERGY]&#8230;&#8203; [m/NOTE]&#8230;&#8203;</code></p>
+Format: <code>addmedicalrecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASES]&#8230;&#8203; [da/DRUG_ALLERGY]&#8230;&#8203; [m/NOTE]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -580,7 +580,7 @@ Newly input values will be appended to the existing values of the patient, excep
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Adding a <code>Note</code> with this command will yield a <code>Note</code> with an empty <code>Prescription</code>. A <code>Prescription</code> can only be added via the <code>dispenseMedicine</code> command.
+Adding a <code>Note</code> with this command will yield a <code>Note</code> with an empty <code>Prescription</code>. A <code>Prescription</code> can only be added via the <code>dispensemedicine</code> command.
 </td>
 </tr>
 </table>
@@ -594,11 +594,27 @@ Adding a <code>Note</code> with this command will yield a <code>Note</code> with
 <p><code>addmedicalrecord 5 da/Paracetamol d/Diabetes</code><br>
 Adds <code>Paracetamol</code> (under <em>Drug Allergy</em>) and <code>Diabetes</code> (under <em>Past Diseases</em>) to the <code>MedicalRecord</code> of the 5th patient.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/addmedicalrecord-example-1.png" alt="addmedicalrecord example 1" width="650">
+</div>
+<div class="title">Figure 2. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>amr 3 b/B+</code><br>
 Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</code> of the 3rd patient.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/addmedicalrecord-example-2.png" alt="addmedicalrecord example 2" width="650">
+</div>
+<div class="title">Figure 3. After <code>amr 3 b/B+</code> command</div>
 </div>
 </div>
 </div>
@@ -834,7 +850,7 @@ Registers the 3rd patient in the database.</p>
 <div class="content">
 <img src="images/Register3Command.png" alt="Register3Command" width="750">
 </div>
-<div class="title">Figure 2. After executing the <code>register 3</code> command</div>
+<div class="title">Figure 4. After executing the <code>register 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -888,13 +904,13 @@ Removes the 3rd patient in the queue.</p>
 <div class="content">
 <img src="images/BeforeRemove3Command.png" alt="BeforeRemove3Command" width="750">
 </div>
-<div class="title">Figure 3. Before <code>remove 3</code> command</div>
+<div class="title">Figure 5. Before <code>remove 3</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterRemove3Command.png" alt="AfterRemove3Command" width="750">
 </div>
-<div class="title">Figure 4. After <code>remove 3</code> command</div>
+<div class="title">Figure 6. After <code>remove 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -953,13 +969,13 @@ Inserts the 4th patient in the database into the 2nd position in the patient que
 <div class="content">
 <img src="images/BeforeInsert2Command.png" alt="BeforeInsert2Command" width="750">
 </div>
-<div class="title">Figure 5. Before <code>insert 4 p/2</code> command</div>
+<div class="title">Figure 7. Before <code>insert 4 p/2</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterInsert2Command.png" alt="AfterInsert2Command" width="750">
 </div>
-<div class="title">Figure 6. After <code>insert 4 p/2</code> command</div>
+<div class="title">Figure 8. After <code>insert 4 p/2</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -993,13 +1009,13 @@ Upon successful call of this command, the medicine list will be displayed.
 <div class="content">
 <img src="images/BeforeServeCommand.png" alt="BeforeServeCommand" width="750">
 </div>
-<div class="title">Figure 7. Before <code>serve</code> command</div>
+<div class="title">Figure 9. Before <code>serve</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterServeCommand.png" alt="AfterServeCommand" width="750">
 </div>
-<div class="title">Figure 8. After <code>serve</code> command</div>
+<div class="title">Figure 10. After <code>serve</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1096,13 +1112,13 @@ Adds MC duration and notes to the Current Patient.</p>
 <div class="content">
 <img src="images/BeforeAddDocumentCommand.png" alt="BeforeAddDocumentCommand" width="750">
 </div>
-<div class="title">Figure 9. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 11. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterAddDocumentCommand.png" alt="AfterAddDocumentCommand" width="750">
 </div>
-<div class="title">Figure 10. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 12. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1155,13 +1171,13 @@ Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current P
 <div class="content">
 <img src="images/BeforeDispenseMedicineCommand.png" alt="BeforeDispenseMedicineCommand" width="750">
 </div>
-<div class="title">Figure 11. Before <code>dispensemedicine 1 amt/10</code></div>
+<div class="title">Figure 13. Before <code>dispensemedicine 1 amt/10</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterDispenseMedicineCommand.png" alt="AfterDispenseMedicineCommand" width="750">
 </div>
-<div class="title">Figure 12. After <code>dispensemedicine 1 amt/10</code></div>
+<div class="title">Figure 14. After <code>dispensemedicine 1 amt/10</code></div>
 </div>
 <div class="ulist">
 <ul>
@@ -1237,13 +1253,13 @@ Removes the 3rd patient from the Served Patient Queue.</p>
 <div class="content">
 <img src="images/BeforePaymentCommand.png" alt="BeforePaymentCommand" width="750">
 </div>
-<div class="title">Figure 13. Before <code>payment 3</code> command</div>
+<div class="title">Figure 15. Before <code>payment 3</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterPaymentCommand.png" alt="AfterPaymentCommand" width="750">
 </div>
-<div class="title">Figure 14. After <code>payment 3</code> command</div>
+<div class="title">Figure 16. After <code>payment 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1791,4 +1807,4 @@ There is no need to save manually.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 03:19:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-03 15:29:10 UTC</div></div></div></body></html>

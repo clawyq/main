@@ -152,7 +152,7 @@ It required the creation of an <code>XmlAdapted-</code> version of each model ob
 <div class="paragraph">
 <p>Updates the medical records of a patient.<br>
 Alias: <code>amr</code><br>
-Format: <code>addMedicalRecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASES]&#8230;&#8203; [da/DRUG_ALLERGY]&#8230;&#8203; [m/NOTE]&#8230;&#8203;</code></p>
+Format: <code>addmedicalrecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASES]&#8230;&#8203; [da/DRUG_ALLERGY]&#8230;&#8203; [m/NOTE]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -197,7 +197,7 @@ Newly input values will be appended to the existing values of the patient, excep
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Adding a <code>Note</code> with this command will yield a <code>Note</code> with an empty <code>Prescription</code>. A <code>Prescription</code> can only be added via the <code>dispenseMedicine</code> command.
+Adding a <code>Note</code> with this command will yield a <code>Note</code> with an empty <code>Prescription</code>. A <code>Prescription</code> can only be added via the <code>dispensemedicine</code> command.
 </td>
 </tr>
 </table>
@@ -211,11 +211,27 @@ Adding a <code>Note</code> with this command will yield a <code>Note</code> with
 <p><code>addmedicalrecord 5 da/Paracetamol d/Diabetes</code><br>
 Adds <code>Paracetamol</code> (under <em>Drug Allergy</em>) and <code>Diabetes</code> (under <em>Past Diseases</em>) to the <code>MedicalRecord</code> of the 5th patient.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/addmedicalrecord-example-1.png" alt="addmedicalrecord example 1" width="650">
+</div>
+<div class="title">Figure 1. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>amr 3 b/B+</code><br>
 Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</code> of the 3rd patient.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/addmedicalrecord-example-2.png" alt="addmedicalrecord example 2" width="650">
+</div>
+<div class="title">Figure 2. After <code>amr 3 b/B+</code> command</div>
 </div>
 </div>
 </div>
@@ -268,23 +284,20 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 <div class="paragraph">
 <p>Step 1. The user creates a new <code>Patient</code> object using the <code>AddCommand</code>. While the user has not provided any arguments for the <code>MedicalRecord</code> of this <code>Patient</code>, a empty <code>MedicalRecord</code> object has been initialised internally and assigned to this created <code>Patient</code>. Contents of this empty <code>MedicalRecord</code> is as detailed above.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/addmedicalrecord-addingnewpatient-example.png" alt="addmedicalrecord addingnewpatient example" width="700">
-</div>
-<div class="title">Figure 1. Adding a new Patient.</div>
-</div>
 <div class="paragraph">
 <p>Step 2. The user wishes to add a <code>MedicalRecord</code> containing only the <code>BloodType</code> of the <code>Patient</code>, and will do so with the <code>AddMedicalRecord</code> command, and only specifiying the <code>b/</code> prefix for <code>BloodType</code>. Note that <code>BloodType</code> here can only be in a specific format (A[+-], B[+-], O[+-] or AB[+-]).</p>
 </div>
+<div class="paragraph">
+<p>When this command is executed, the program creates a new <code>MedicalRecord</code> object with just the <code>BloodType</code> specified, takes the old <code>MedicalRecord</code> object of the <code>Patient</code> (which is empty), and does a merging of the two objects, returning a new <code>MedicalRecord</code> object. The <code>Patient</code> is then updated with this new combined <code>MedicalRecord</code>. The following figure shows the sequence diagram for this command.</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/addmedicalrecord-addingbloodtype-example.png" alt="addmedicalrecord addingbloodtype example" width="700">
+<img src="../images/addMedicalRecord-SequenceDiagram.png" alt="addMedicalRecord SequenceDiagram" width="650">
 </div>
-<div class="title">Figure 2. Adding a new MedicalRecord with only BloodType specified.</div>
+<div class="title">Figure 3. Sequence diagram for AddMedicalRecordCommand</div>
 </div>
 <div class="paragraph">
-<p>When this command is executed, the program creates a new <code>MedicalRecord</code> object with just the <code>BloodType</code> specified, takes the old <code>MedicalRecord</code> object of the <code>Patient</code> (which is empty), and does a merging of the two objects, returning a new <code>MedicalRecord</code> object. The <code>Patient</code> is then updated with this new combined <code>MedicalRecord</code>. The following figure shows the code section which performs this merging.</p>
+<p>The following figure shows the code section which performs this merging.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -370,5 +383,158 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="application-gui"><a class="link" href="#application-gui">Application GUI</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current Implementation</a></h4>
+<div class="paragraph">
+<p>As an extension to the original addressbook-level4 application, more UI elements were added to the application window to serve as visual aid for the user of the application.</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 03:19:37 UTC</div></div></div></body></html>
+<div class="paragraph">
+<p>In particular, the real-time status of the Patient Queue Management System (PQMS) is reflected to the user via a small window near the top of the application. This is depicted in the figure below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/PQMS-GUI.png" alt="PQMS GUI" width="650">
+</div>
+<div class="title">Figure 4. GUI for the PQMS</div>
+</div>
+<div class="paragraph">
+<p>After <code>QueueCommands</code> such as <code>register</code>, <code>serve</code>, etc., the GUI will automatically update itself as the user enters these commands to reflect the situation of the PQMS at that exact point in time.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/PQMS-GUI-2.png" alt="PQMS GUI 2" width=""650">
+</div>
+<div class="title">Figure 5. GUI for the PQMS after several commands</div>
+</div>
+<div class="paragraph">
+<p>This UI element is implemented using JavaFX&#8217;s <code>WebView</code> and a local HTML file. The sequence of events for how the <code>WebView</code> is updated is as follows:</p>
+</div>
+<div class="paragraph">
+<p>Step 1. On a fresh start-up of the application, the <code>WebView</code> is intialized with the local HTML file <code>QueueDisplay.html</code> that draws the labels and boxes onto the <code>WebView</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. After each <code>QueueCommand</code>, a <code>QueueUpdatedEvent</code> is posted and the subscribed class <code>QueueDisplay</code> invokes the <code>runScript()</code> method on the <code>WebViewScript</code> object within the class.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. <code>WebViewScript.runScript()</code> simply calls an <code>executeScript()</code> method that subsequently executes some JavaScript code on the HTML file that will render the appropriate illustration to be displayed on the <code>WebView</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. On each subsequent <code>QueueCommand</code>, steps 2 to 3 are repeated to update the display.</p>
+</div>
+<div class="paragraph">
+<p>The following figure show the code section of the 2 methods that are responsible for the display:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">/**
+ * File: QueueDisplay.java
+ * Loads a HTML file representing the queue display.
+ */</span>
+<span class="directive">private</span> <span class="type">void</span> loadQueueDisplay(PatientQueue patientQueue, ServedPatientList servedPatientList, CurrentPatient currentPatient) {
+    <span class="predefined-type">List</span>&lt;Patient&gt; patientQueueList = patientQueue == <span class="predefined-constant">null</span> ? <span class="predefined-constant">null</span> : patientQueue.getPatientsAsList();
+    <span class="predefined-type">String</span> currentPatientString;
+    <span class="keyword">if</span> (currentPatient == <span class="predefined-constant">null</span>) {
+        currentPatientString = <span class="string"><span class="delimiter">&quot;</span><span class="content">empty</span><span class="delimiter">&quot;</span></span>;
+    } <span class="keyword">else</span> {
+        <span class="keyword">try</span> {
+            currentPatientString = currentPatient.getPatient().getName().fullName;
+        } <span class="keyword">catch</span> (<span class="exception">NullPointerException</span> npe) {
+            currentPatientString = <span class="string"><span class="delimiter">&quot;</span><span class="content">empty</span><span class="delimiter">&quot;</span></span>;
+        }
+    }
+    <span class="predefined-type">List</span>&lt;ServedPatient&gt; servedPatients = servedPatientList == <span class="predefined-constant">null</span> ? <span class="predefined-constant">null</span> : servedPatientList.getPatientsAsList();
+
+    <span class="predefined-type">String</span> queueDisplayPage = MainApp.class.getResource(FXML_FILE_FOLDER + DEFAULT_PAGE).toExternalForm();
+    <span class="local-variable">this</span>.webViewScript.runScript(getScriptForQueueDisplay(patientQueueList, currentPatientString, servedPatients));
+    loadPage(queueDisplayPage);
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">/**
+ * File: WebViewScriptManager.java
+ * This function will run script that is passed as argument.
+ * @param script script to run.
+ */</span>
+<span class="directive">public</span> <span class="type">void</span> runScript(<span class="predefined-type">String</span> script) {
+    <span class="type">int</span> currentCounter = <span class="local-variable">this</span>.counter;
+    <span class="local-variable">this</span>.webView.getEngine().getLoadWorker().stateProperty().addListener((ObservableValue&lt;? <span class="directive">extends</span> Worker.State&gt; observable, Worker.State oldValue, Worker.State newValue) -&gt; {
+        <span class="keyword">if</span> (newValue == Worker.State.SUCCEEDED &amp;&amp; currentCounter == <span class="local-variable">this</span>.counter) {
+            Platform.runLater(() -&gt; <span class="local-variable">this</span>.webView.getEngine().executeScript(script));
+            <span class="local-variable">this</span>.counter++;
+        }
+    });
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-implementation-approach"><a class="link" href="#aspect-implementation-approach">Aspect: Implementation approach</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice)</strong>: Using a <code>WebView</code> to display HTML code<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Easy to implement, since the code to render the display is a completely separate code. Abstraction barrier is maintained.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Might face lagging issues for prolonged time usage, since one new <code>Listener</code> object is created for each update.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2</strong>: Using JavaFX to render the shapes and UI.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Less likely to face efficiency issues since changing of the UI elements happens locally.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Hard to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-03 15:29:10 UTC</div></div></div></body></html>
