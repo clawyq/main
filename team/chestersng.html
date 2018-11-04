@@ -255,20 +255,17 @@ Format: <code>insert INDEX p/POSITION</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Inserts the patient at the specified <code>INDEX</code> in the displayed patient list into the specified <code>POSITION</code> in the Waiting Queue. Both the index and position <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Inserts the patient at the specified <code>INDEX</code> in the displayed patient list into the specified <code>POSITION</code> in the Waiting Queue. Both the index and position <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+<li>
+<p>If the <code>POSITION</code> value supplied exceeds the queue length, then the patient will just be added to the back of the queue. If the queue length is 1 and the <code>POSITION</code> value is 5, the patient will be added
+to the 2nd position.</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If the <code>POSITION</code> value supplied exceeds the queue length, then the patient will just be added to the back of the queue. If the queue length is 1 and the <code>POSITION</code> value is 5, the patient will be added
-to the 2nd position.
 </td>
 </tr>
 </table>
@@ -352,55 +349,25 @@ Format: <code>adddocument [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-There must be a Current Patient. Use the <a href="#serve"><code>serve</code></a> command first.
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>There must be a Current Patient. Use the <a href="#serve"><code>serve</code></a> command first.</p>
+</li>
+<li>
+<p>At least one of the optional parameters must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated with the newly input values of the corresponding field.</p>
+</li>
+<li>
+<p>You can remove any of the patient&#8217;s document contents by typing the prefixes <code>mc/</code> <code>n/</code> <code>r/</code> without specifying any contents after the prefix.</p>
+</li>
+<li>
+<p>At least the note field must be added before executing the <a href="#finish"><code>finish</code></a> command.</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-At least one of the optional parameters must be provided.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Existing values will be updated with the newly input values of the corresponding field.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You can remove any of the patient&#8217;s document contents by typing the prefixes <code>mc/</code> <code>n/</code> <code>r/</code> without specifying any contents after the prefix.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-At least the note field must be added before executing the <a href="#finish"><code>finish</code></a> command.
 </td>
 </tr>
 </table>
@@ -521,19 +488,16 @@ Format: <code>finish</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-This command cannot be called if no notes have been added to the patient. Use <a href="#adddocument"><code>adddocument</code></a> command with prefix <code>n/</code> to add <code>NOTES</code>.
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>This command cannot be called if no notes have been added to the patient. Use <a href="#adddocument"><code>adddocument</code></a> command with prefix <code>n/</code> to add <code>NOTES</code>.</p>
+</li>
+<li>
+<p>Upon successful call of this command, the patient list will be displayed.</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Upon successful call of this command, the patient list will be displayed.
 </td>
 </tr>
 </table>
@@ -857,4 +821,4 @@ him from the <code>ServedPatientQueue</code>.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 08:03:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 13:30:10 UTC</div></div></div></body></html>

@@ -161,43 +161,22 @@ Format: <code>addmedicalrecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASES]&#8230;&#82
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Updates the medical records of a patient based on the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Updates the medical records of a patient based on the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+<li>
+<p>At least one of the optional parameters must be provided.</p>
+</li>
+<li>
+<p>Newly input values will be appended to the existing values of the patient, except <code>BloodType</code>. <code>BloodType</code> cannot be changed, you can only add <code>BloodType</code> to a patient once, and it will be permanent.</p>
+</li>
+<li>
+<p>Adding a <code>Note</code> with this command will yield a <code>Note</code> with an empty <code>Prescription</code>. A <code>Prescription</code> can only be added via the <code>dispensemedicine</code> command.</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-At least one of the optional parameters must be provided.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Newly input values will be appended to the existing values of the patient, except <code>BloodType</code>. <code>BloodType</code> cannot be changed, you can only add <code>BloodType</code> to a patient once, and it will be permanent.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Adding a <code>Note</code> with this command will yield a <code>Note</code> with an empty <code>Prescription</code>. A <code>Prescription</code> can only be added via the <code>dispensemedicine</code> command.
 </td>
 </tr>
 </table>
@@ -537,4 +516,4 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 08:03:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 13:30:10 UTC</div></div></div></body></html>

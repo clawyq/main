@@ -16,9 +16,9 @@
 <li><a href="#patient-record-management">3.1. Patient Record Management</a>
 <ul class="sectlevel3">
 <li><a href="#adding-a-patient-code-add-code">3.1.1. Adding a patient: <code>add</code></a></li>
-<li><a href="#listing-all-patients-code-list-code">3.1.2. Listing all patients: <code>list</code></a></li>
-<li><a href="#editing-a-patient-code-edit-code">3.1.3. Editing a patient: <code>edit</code></a></li>
-<li><a href="#locating-a-patient-by-name-code-find-code">3.1.4. Locating a patient by name: <code>find</code></a></li>
+<li><a href="#editing-a-patient-code-edit-code">3.1.2. Editing a patient: <code>edit</code></a></li>
+<li><a href="#locating-a-patient-by-name-code-find-code">3.1.3. Locating a patient by name: <code>find</code></a></li>
+<li><a href="#listing-all-patients-code-list-code">3.1.4. Listing all patients: <code>list</code></a></li>
 <li><a href="#deleting-a-patient-code-delete-code">3.1.5. Deleting a patient: <code>delete</code></a></li>
 <li><a href="#selecting-a-patient-code-select-code">3.1.6. Selecting a patient: <code>select</code></a></li>
 <li><a href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">3.1.7. Adding medical records of a patient: <code>addmedicalrecord</code></a></li>
@@ -84,7 +84,8 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Welcome to <strong>CLInic</strong>! <strong>CLInic</strong> is a desktop application designed to streamline and expedite operations in clinics.
+<p><strong>Ding Dong!</strong> Welcome to <strong>CLInic</strong>!<br>
+<strong>CLInic</strong> is a desktop application designed to streamline and expedite operations in clinics.
 Regardless of whether you are a doctor or a receptionist at a clinic , merely having an average to high typing
 speed is the only pre-requisite required to reap its numerous benefits, which includes:</p>
 </div>
@@ -176,61 +177,105 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="sect1">
 <h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
 <div class="sectionbody">
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph">
 <p><strong>Command Formats</strong></p>
 </div>
 <div class="paragraph">
 <p>In this user guide, you will find information about how commands are to be used explained in the form of command formats. These command formats will tell you what the <code>COMMAND_WORD</code> for the command is.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Some commands have an alias, which you can also use to execute the command<br>
-e.g. to add a person to the address book, you can type either <code>add n/John Doe</code> or <code>a n/John Doe</code>.</p>
+<p>Some commands have an alias, which you can also use to execute the command<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>To add a person to the address book, you can type either <code>add n/John Doe</code> or <code>a n/John Doe</code>.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user<br>
-e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Items in square brackets are optional<br>
-e.g. <code>[b/BLOOD_TYPE] [da/DRUG_ALLERGY]</code> can be used as <code>b/A+ da/Panadol</code> or as <code>b/A+</code>.</p>
+<p>Items in <kbd>[</kbd><strong>square brackets</strong> <kbd>]</kbd> are optional<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[b/BLOOD_TYPE] [da/DRUG_ALLERGY]</code> can be used as <code>b/A+ da/Panadol</code> or as <code>b/A+</code>.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times<br>
-e.g. <code>[da/DRUG_ALLERGY]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>da/Panadol</code>, <code>da/Panadol da/Zyrtec</code> etc.</p>
+<p>Parameters followed by an ellipsis <code>…</code>​ can be used multiple times, including zero times<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[da/DRUG_ALLERGY]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>da/Panadol</code>, <code>da/Panadol da/Zyrtec</code> etc.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Parameters can be in any order<br>
-e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><code>INDEX</code> refers to the index number shown in the current displayed patient or medicine list.</p>
 </li>
 <li>
-<p>The display will either display <code>medicine</code> or <code>patient</code> information. It will change according to which commands are used.
-e.g. <code>addMedicine</code> will change the displayed list to the medicine list. <code>add</code> will change the displayed list to the patient list.</p>
+<p>The display will either display <code>medicine</code> or <code>patient</code> information. It will change according to which commands are used.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addMedicine</code> will change the displayed list to the medicine list. <code>add</code> will change the displayed list to the patient list.</p>
 </li>
 </ul>
 </div>
+</li>
+</ul>
 </div>
+</td>
+</tr>
+</table>
 </div>
 <div class="sect2">
 <h3 id="patient-record-management"><a class="link" href="#patient-record-management">3.1. Patient Record Management</a></h3>
 <div class="sect3">
 <h4 id="adding-a-patient-code-add-code"><a class="link" href="#adding-a-patient-code-add-code">3.1.1. Adding a patient: <code>add</code></a></h4>
 <div class="paragraph">
-<p>Adds a patient to the CLInic database.<br>
+<p>Did someone just walked in, wanting to see the doctor?<br>
+Add him to CLInic&#8217;s patient database using the <code>add</code> command!<br>
 Alias: <code>a</code><br>
 Format: <code>add n/NAME ic/IC_NUMBER p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
 </div>
-<div class="admonitionblock tip">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 A patient can have any number of tags (including 0).
@@ -263,44 +308,71 @@ Omission of <strong>any</strong> mandatory parameters will result in the failure
 </table>
 </div>
 <div class="paragraph">
+<p>Upon successful execution, you should see the patient represented by the parameters added to the patient list on the right.</p>
+</div>
+<div class="paragraph">
 <p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe ic/S9185306A p/98765432 e/johnd@example.com a/John Street, block 123, #01-01</code><br>
-Adds a patient named <code>John Doe</code>, with IC number <code>S9185306A</code>, phone number <code>98765432</code>, email <code>johnd@example.com</code> and address of <code>John Street, block 123, #01-01</code> to the clinic&#8217;s patient database.</p>
-</li>
-<li>
-<p><code>a n/Betsy Crowe e/betsycrowe@example.com a/Newgate Drive p/97730430 ic/S9664214A</code>
-Adds a patient named <code>Betsy Crowe</code>, with IC number <code>S9664214A</code>, phone number <code>97730430</code>, email <code>betsycrowe@example.com</code> and address of <code>Newgate Drive</code> to the clinic&#8217;s patient database.</p>
+<p><code>add n/Clinton Law ic/S9638902L p/97947435 e/clintonlaw@cs2103t.com a/Tembusu College</code><br>
+Adds a patient named <code>Clinton Law</code>, with IC number <code>S9638902L</code>, phone number <code>97947435</code>, email <code>clintonlaw@cs2103t.com</code> and address of <code>Tembusu College</code> to CLInic&#8217;s patient database, as shown below.</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddEx1.png" alt="AddEx1" width="650">
+</div>
+<div class="title">Figure 2. After executing the <code>add</code> command specified above.</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>a n/Kang Tze ic/S9612345L p/97931111 e/kangtze@cs2103t.com a/Eusoff Hall</code><br>
+Adds a patient named <code>Kang Tze</code>, with IC number <code>S9612345L</code>, phone number <code>97931111</code>, email <code>kangtze@cs2103t.com</code> and address of <code>Eusoff Hall</code> to CLInic&#8217;s patient database, as shown below.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddEx2.png" alt="AddEx2" width="650">
+</div>
+<div class="title">Figure 3. After executing the <code>add</code> command specified above  via its alias <code>a</code> <strong>and</strong> left clicking <code>Kang Tze&#8217;s</code> patient card in the patient list on the right, indicated by the black cursor.</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-patients-code-list-code"><a class="link" href="#listing-all-patients-code-list-code">3.1.2. Listing all patients: <code>list</code></a></h4>
+<h4 id="editing-a-patient-code-edit-code"><a class="link" href="#editing-a-patient-code-edit-code">3.1.2. Editing a patient: <code>edit</code></a></h4>
 <div class="paragraph">
-<p>Shows a list of all patients in the CLInic patient database.<br>
-Alias: <code>l</code><br>
-Format: <code>list</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-a-patient-code-edit-code"><a class="link" href="#editing-a-patient-code-edit-code">3.1.3. Editing a patient: <code>edit</code></a></h4>
-<div class="paragraph">
-<p>Edits an existing patient record in the CLInic database.<br>
+<p>Uhoh! Made a mistake keying in a patient&#8217;s particulars? Or perhaps a patient just recently changed his handphone number or email?<br>
+Fret not! Simply update his particulars using the <code>edit</code> command!<br>
 Alias: <code>e</code><br>
 Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
 </div>
-<div class="admonitionblock tip">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Edits the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list.</p>
+</li>
+<li>
+<p>At least one of the optional parameters must be provided.</p>
+</li>
+<li>
+<p>Existing values will be <strong>overwritten</strong> by the newly input values of the corresponding field.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the patient will be removed i.e. adding of tags is not cumulative.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -312,46 +384,25 @@ Edits the patient at the specified <code>INDEX</code>. The index refers to the i
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-At least one of the optional parameters must be provided.
+You can remove <strong>all</strong> of the patient&#8217;s tags by typing <code>t/</code> without specifying any tags after the prefix.
 </td>
 </tr>
 </table>
 </div>
-<div class="admonitionblock tip">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Existing values will be updated with the newly input values of the corresponding field.
+The <code>INDEX</code> given must be a <strong>non zero, positive integer</strong> (eg. 1, 2, 3&#8230;&#8203;)!
 </td>
 </tr>
 </table>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-When editing tags, the existing tags of the patient will be removed i.e. adding of tags is not cumulative.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You can remove all the patient&#8217;s tags by typing <code>t/</code> without specifying any tags after the prefix.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Upon successful execution, you should see the patient&#8217;s details updated in the patient list on the right.</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -359,32 +410,67 @@ You can remove all the patient&#8217;s tags by typing <code>t/</code> without sp
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Updates the phone number and e-mail address of the 1st patient in the list to <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
-</li>
-<li>
-<p><code>e 2 n/Betsy Crowe t/</code><br>
-Updates the name of the 2nd patient in the list to <code>Betsy Crowe</code> while clearing all existing tags tied to the 2nd patient.</p>
+<p><code>edit 5 p/98534228 e/clawyq@cs2101.com</code><br>
+Updates the phone number and e-mail address of the 5th patient in the list to <code>98534228 ` and `<a href="mailto:clawyq@cs2101.com">clawyq@cs2101.com</a></code> respectively, as shown below.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditEx1.png" alt="EditEx1" width="1024">
+</div>
+<div class="title">Figure 4. Before and after executing the <code>edit</code> command specified above.</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="locating-a-patient-by-name-code-find-code"><a class="link" href="#locating-a-patient-by-name-code-find-code">3.1.4. Locating a patient by name: <code>find</code></a></h4>
+<h4 id="locating-a-patient-by-name-code-find-code"><a class="link" href="#locating-a-patient-by-name-code-find-code">3.1.3. Locating a patient by name: <code>find</code></a></h4>
 <div class="paragraph">
-<p>Finds a patient whose name contains any of the given keywords.<br>
+<p>Can&#8217;t find the patient you&#8217;re looking for amidst the other patient records?<br>
+Simply search for the desired patient using the <code>find</code> command!
 Alias: <code>f</code><br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
-<div class="admonitionblock tip">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The search is case insensitive<br>
-e.g. <code>hans</code> will match <code>Hans</code>.
+<div class="ulist">
+<ul>
+<li>
+<p>Finds a patient whose name contains any of the given keywords.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Patients matching at least one keyword will be returned.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Only the patient&#8217;s name is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Han</code> will not match <code>Hans</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -396,49 +482,36 @@ e.g. <code>hans</code> will match <code>Hans</code>.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The order of the keywords does not matter<br>
-e.g. <code>Hans Bo</code> will match <code>Bo Hans</code>.
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Bryan</code> will match <code>bryaN</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The order of the keywords does not matter.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Sng Chester</code> will match <code>Chester Sng</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Only the patient&#8217;s name is searched
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Only full words will be matched<br>
-e.g. <code>Han</code> will not match <code>Hans</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Patients matching at least one keyword will be returned<br>
-e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code>.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Upon successful execution, you should only see all the patients who have the specified keyword in their names in the patient list on the right.</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -446,14 +519,24 @@ e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</c
 <div class="ulist">
 <ul>
 <li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
-</li>
-<li>
-<p><code>f Betsy Tim John</code><br>
-Returns any patient having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+<p><code>f yu</code><br>
+Sieves out all the patients who have <code>yu</code> in their names.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FindEx1.png" alt="FindEx1" width="1024">
+</div>
+<div class="title">Figure 5. Before and after executing the <code>find</code> command specified above via its alias <code>f</code>.</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-all-patients-code-list-code"><a class="link" href="#listing-all-patients-code-list-code">3.1.4. Listing all patients: <code>list</code></a></h4>
+<div class="paragraph">
+<p>Displays a list of all patients in CLInic&#8217;s patient database.<br>
+Alias: <code>l</code><br>
+Format: <code>list</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -544,43 +627,22 @@ Format: <code>addmedicalrecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASES]&#8230;&#82
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Updates the medical records of a patient based on the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Updates the medical records of a patient based on the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+<li>
+<p>At least one of the optional parameters must be provided.</p>
+</li>
+<li>
+<p>Newly input values will be appended to the existing values of the patient, except <code>BloodType</code>. <code>BloodType</code> cannot be changed, you can only add <code>BloodType</code> to a patient once, and it will be permanent.</p>
+</li>
+<li>
+<p>Adding a <code>Note</code> with this command will yield a <code>Note</code> with an empty <code>Prescription</code>. A <code>Prescription</code> can only be added via the <code>dispensemedicine</code> command.</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-At least one of the optional parameters must be provided.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Newly input values will be appended to the existing values of the patient, except <code>BloodType</code>. <code>BloodType</code> cannot be changed, you can only add <code>BloodType</code> to a patient once, and it will be permanent.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Adding a <code>Note</code> with this command will yield a <code>Note</code> with an empty <code>Prescription</code>. A <code>Prescription</code> can only be added via the <code>dispensemedicine</code> command.
 </td>
 </tr>
 </table>
@@ -600,7 +662,7 @@ Adds <code>Paracetamol</code> (under <em>Drug Allergy</em>) and <code>Diabetes</
 <div class="content">
 <img src="images/addmedicalrecord-example-1.png" alt="addmedicalrecord example 1" width="650">
 </div>
-<div class="title">Figure 2. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
+<div class="title">Figure 6. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -614,7 +676,7 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 <div class="content">
 <img src="images/addmedicalrecord-example-2.png" alt="addmedicalrecord example 2" width="650">
 </div>
-<div class="title">Figure 3. After <code>amr 3 b/B+</code> command</div>
+<div class="title">Figure 7. After <code>amr 3 b/B+</code> command</div>
 </div>
 </div>
 </div>
@@ -662,18 +724,6 @@ Adds a medicine <em>named</em> <code>asprin</code> with <em>minimum stock quanti
 Alias: <code>em</code><br>
 Format: <code>editmedicine INDEX [mn/MEDICINE_NAME] [msq/MINIMUM_STOCK_QUANTITY] [ppu/PRICE_PER_UNIT] [sn/SERIAL_NUMBER] [s/STOCK]</code></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The serial number of a medicine <strong>must</strong> be a 5 digit integer!
-</td>
-</tr>
-</table>
-</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -681,43 +731,34 @@ The serial number of a medicine <strong>must</strong> be a 5 digit integer!
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Edits the medicine details at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the medicine details at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+<li>
+<p>At least one of the optional parameters must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated with the newly input values of the corresponding field.</p>
+</li>
+<li>
+<p>You can remove any of the medicine details by typing the prefixes <code>msq/</code> <code>ppu/</code> <code>sn/</code> <code>s/</code> without specifying any contents after the prefix.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
 </div>
-<div class="admonitionblock tip">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-At least one of the optional parameters must be provided.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Existing values will be updated with the newly input values of the corresponding field.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You can remove any of the medicine details by typing the prefixes <code>msq/</code> <code>ppu/</code> <code>sn/</code> <code>s/</code> without specifying any contents after the prefix.
+The <code>serial number</code> of a medicine <strong>must</strong> be a 5 digit integer!
 </td>
 </tr>
 </table>
@@ -850,7 +891,7 @@ Registers the 3rd patient in the database.</p>
 <div class="content">
 <img src="images/Register3Command.png" alt="Register3Command" width="750">
 </div>
-<div class="title">Figure 4. After executing the <code>register 3</code> command</div>
+<div class="title">Figure 8. After executing the <code>register 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -904,13 +945,13 @@ Removes the 3rd patient in the queue.</p>
 <div class="content">
 <img src="images/BeforeRemove3Command.png" alt="BeforeRemove3Command" width="750">
 </div>
-<div class="title">Figure 5. Before <code>remove 3</code> command</div>
+<div class="title">Figure 9. Before <code>remove 3</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterRemove3Command.png" alt="AfterRemove3Command" width="750">
 </div>
-<div class="title">Figure 6. After <code>remove 3</code> command</div>
+<div class="title">Figure 10. After <code>remove 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -935,20 +976,17 @@ Format: <code>insert INDEX p/POSITION</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Inserts the patient at the specified <code>INDEX</code> in the displayed patient list into the specified <code>POSITION</code> in the Waiting Queue. Both the index and position <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Inserts the patient at the specified <code>INDEX</code> in the displayed patient list into the specified <code>POSITION</code> in the Waiting Queue. Both the index and position <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+<li>
+<p>If the <code>POSITION</code> value supplied exceeds the queue length, then the patient will just be added to the back of the queue. If the queue length is 1 and the <code>POSITION</code> value is 5, the patient will be added
+to the 2nd position.</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If the <code>POSITION</code> value supplied exceeds the queue length, then the patient will just be added to the back of the queue. If the queue length is 1 and the <code>POSITION</code> value is 5, the patient will be added
-to the 2nd position.
 </td>
 </tr>
 </table>
@@ -969,13 +1007,13 @@ Inserts the 4th patient in the database into the 2nd position in the patient que
 <div class="content">
 <img src="images/BeforeInsert2Command.png" alt="BeforeInsert2Command" width="750">
 </div>
-<div class="title">Figure 7. Before <code>insert 4 p/2</code> command</div>
+<div class="title">Figure 11. Before <code>insert 4 p/2</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterInsert2Command.png" alt="AfterInsert2Command" width="750">
 </div>
-<div class="title">Figure 8. After <code>insert 4 p/2</code> command</div>
+<div class="title">Figure 12. After <code>insert 4 p/2</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1009,13 +1047,13 @@ Upon successful call of this command, the medicine list will be displayed.
 <div class="content">
 <img src="images/BeforeServeCommand.png" alt="BeforeServeCommand" width="750">
 </div>
-<div class="title">Figure 9. Before <code>serve</code> command</div>
+<div class="title">Figure 13. Before <code>serve</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterServeCommand.png" alt="AfterServeCommand" width="750">
 </div>
-<div class="title">Figure 10. After <code>serve</code> command</div>
+<div class="title">Figure 14. After <code>serve</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1032,55 +1070,25 @@ Format: <code>adddocument [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-There must be a Current Patient. Use the <a href="#serve"><code>serve</code></a> command first.
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>There must be a Current Patient. Use the <a href="#serve"><code>serve</code></a> command first.</p>
+</li>
+<li>
+<p>At least one of the optional parameters must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated with the newly input values of the corresponding field.</p>
+</li>
+<li>
+<p>You can remove any of the patient&#8217;s document contents by typing the prefixes <code>mc/</code> <code>n/</code> <code>r/</code> without specifying any contents after the prefix.</p>
+</li>
+<li>
+<p>At least the note field must be added before executing the <a href="#finish"><code>finish</code></a> command.</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-At least one of the optional parameters must be provided.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Existing values will be updated with the newly input values of the corresponding field.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You can remove any of the patient&#8217;s document contents by typing the prefixes <code>mc/</code> <code>n/</code> <code>r/</code> without specifying any contents after the prefix.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-At least the note field must be added before executing the <a href="#finish"><code>finish</code></a> command.
 </td>
 </tr>
 </table>
@@ -1112,13 +1120,13 @@ Adds MC duration and notes to the Current Patient.</p>
 <div class="content">
 <img src="images/BeforeAddDocumentCommand.png" alt="BeforeAddDocumentCommand" width="750">
 </div>
-<div class="title">Figure 11. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 15. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterAddDocumentCommand.png" alt="AfterAddDocumentCommand" width="750">
 </div>
-<div class="title">Figure 12. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 16. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1171,13 +1179,13 @@ Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current P
 <div class="content">
 <img src="images/BeforeDispenseMedicineCommand.png" alt="BeforeDispenseMedicineCommand" width="750">
 </div>
-<div class="title">Figure 13. Before <code>dispensemedicine 1 amt/10</code></div>
+<div class="title">Figure 17. Before <code>dispensemedicine 1 amt/10</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterDispenseMedicineCommand.png" alt="AfterDispenseMedicineCommand" width="750">
 </div>
-<div class="title">Figure 14. After <code>dispensemedicine 1 amt/10</code></div>
+<div class="title">Figure 18. After <code>dispensemedicine 1 amt/10</code></div>
 </div>
 <div class="ulist">
 <ul>
@@ -1201,19 +1209,16 @@ Format: <code>finish</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-This command cannot be called if no notes have been added to the patient. Use <a href="#adddocument"><code>adddocument</code></a> command with prefix <code>n/</code> to add <code>NOTES</code>.
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>This command cannot be called if no notes have been added to the patient. Use <a href="#adddocument"><code>adddocument</code></a> command with prefix <code>n/</code> to add <code>NOTES</code>.</p>
+</li>
+<li>
+<p>Upon successful call of this command, the patient list will be displayed.</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Upon successful call of this command, the patient list will be displayed.
 </td>
 </tr>
 </table>
@@ -1253,13 +1258,13 @@ Removes the 3rd patient from the Served Patient Queue.</p>
 <div class="content">
 <img src="images/BeforePaymentCommand.png" alt="BeforePaymentCommand" width="750">
 </div>
-<div class="title">Figure 15. Before <code>payment 3</code> command</div>
+<div class="title">Figure 19. Before <code>payment 3</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterPaymentCommand.png" alt="AfterPaymentCommand" width="750">
 </div>
-<div class="title">Figure 16. After <code>payment 3</code> command</div>
+<div class="title">Figure 20. After <code>payment 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1807,4 +1812,4 @@ There is no need to save manually.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 08:03:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 13:30:10 UTC</div></div></div></body></html>

@@ -179,18 +179,6 @@ Adds a medicine <em>named</em> <code>asprin</code> with <em>minimum stock quanti
 Alias: <code>em</code><br>
 Format: <code>editmedicine INDEX [mn/MEDICINE_NAME] [msq/MINIMUM_STOCK_QUANTITY] [ppu/PRICE_PER_UNIT] [sn/SERIAL_NUMBER] [s/STOCK]</code></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The serial number of a medicine <strong>must</strong> be a 5 digit integer!
-</td>
-</tr>
-</table>
-</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -198,43 +186,34 @@ The serial number of a medicine <strong>must</strong> be a 5 digit integer!
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Edits the medicine details at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the medicine details at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
+</li>
+<li>
+<p>At least one of the optional parameters must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated with the newly input values of the corresponding field.</p>
+</li>
+<li>
+<p>You can remove any of the medicine details by typing the prefixes <code>msq/</code> <code>ppu/</code> <code>sn/</code> <code>s/</code> without specifying any contents after the prefix.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
 </div>
-<div class="admonitionblock tip">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-At least one of the optional parameters must be provided.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Existing values will be updated with the newly input values of the corresponding field.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You can remove any of the medicine details by typing the prefixes <code>msq/</code> <code>ppu/</code> <code>sn/</code> <code>s/</code> without specifying any contents after the prefix.
+The <code>serial number</code> of a medicine <strong>must</strong> be a 5 digit integer!
 </td>
 </tr>
 </table>
@@ -412,4 +391,4 @@ which lists the medicine that are below their Minimum Stock Quantity.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 08:03:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 13:30:10 UTC</div></div></div></body></html>
