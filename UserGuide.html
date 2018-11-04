@@ -271,31 +271,16 @@ Add him to CLInic&#8217;s patient database using the <code>add</code> command!<b
 Alias: <code>a</code><br>
 Format: <code>add n/NAME ic/IC_NUMBER p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Thing(s) to note:</div>
-A patient can have any number of tags (including 0).
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
+<div class="ulist TIP">
 <div class="title">Pro tip(s):</div>
-Mandatory parameters can be keyed in any order.
-</td>
-</tr>
-</table>
+<ul class="TIP">
+<li>
+<p>A patient can have any number of tags (including 0).</p>
+</li>
+<li>
+<p>Mandatory parameters can be keyed in any order.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -350,16 +335,13 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list.</p>
+<p>The <code>INDEX</code> refers to the index number shown in the displayed patient list. It must be a <strong>non zero, positive integer</strong> (eg. 1, 2, 3&#8230;&#8203;)!</p>
 </li>
 <li>
 <p>At least one of the optional parameters must be provided.</p>
 </li>
 <li>
 <p>Existing values will be <strong>overwritten</strong> by the newly input values of the corresponding field.</p>
-</li>
-<li>
-<p>When editing tags, the existing tags of the patient will be removed i.e. adding of tags is not cumulative.</p>
 </li>
 </ul>
 </div>
@@ -376,19 +358,6 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <td class="content">
 <div class="title">Pro tip(s):</div>
 You can remove <strong>all</strong> of the patient&#8217;s tags by typing <code>t/</code> without specifying any tags after the prefix.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="title">Important:</div>
-The <code>INDEX</code> given must be a <strong>non zero, positive integer</strong> (eg. 1, 2, 3&#8230;&#8203;)!
 </td>
 </tr>
 </table>
@@ -433,11 +402,7 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Finds a patient whose name contains any of the given keywords.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Patients matching at least one keyword will be returned.</p>
+<p>Only the patient&#8217;s name is considered in the search. Patients whose name contains at least one of the given keywords will be returned.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -446,14 +411,8 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </ul>
 </div>
 </li>
-</ul>
-</div>
-</li>
 <li>
-<p>Only the patient&#8217;s name is searched.</p>
-</li>
-<li>
-<p>Only full words will be matched.</p>
+<p>Only full words will be matched. This is to prevent too general keywords from fetching too many results, thus making <code>find</code> ineffective.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -520,7 +479,7 @@ Sieves out all the patients who have <code>yu</code> in their names.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/FindEx1.png" alt="FindEx1" width="][height="350"">
+<img src="images/FindEx1.png" alt="FindEx1" width="650">
 </div>
 <div class="title">Figure 4. Before and after executing the <code>find</code> command specified above via its alias <code>f</code>.</div>
 </div>
@@ -744,21 +703,11 @@ Format: <code>editmedicine INDEX [mn/MEDICINE_NAME] [msq/MINIMUM_STOCK_QUANTITY]
 <li>
 <p>You can remove any of the medicine details by typing the prefixes <code>msq/</code> <code>ppu/</code> <code>sn/</code> <code>s/</code> without specifying any contents after the prefix.</p>
 </li>
+<li>
+<p>The <code>serial number</code> of a medicine <strong>must</strong> be a 5 digit integer!</p>
+</li>
 </ul>
 </div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="title">Important:</div>
-The <code>serial number</code> of a medicine <strong>must</strong> be a 5 digit integer!
 </td>
 </tr>
 </table>
@@ -1093,21 +1042,11 @@ Format: <code>adddocument [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p>
 <li>
 <p>At least the note field must be added before executing the <a href="#finish"><code>finish</code></a> command.</p>
 </li>
+<li>
+<p>The parameter for <code>mc/</code> must be a <strong>non-zero, positive integer</strong>!</p>
+</li>
 </ul>
 </div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="title">Important:</div>
-The parameter for <code>mc/</code> must be a <strong>non-zero, positive integer</strong>!
 </td>
 </tr>
 </table>
@@ -1827,4 +1766,4 @@ There is no need to save manually.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 14:22:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 14:43:51 UTC</div></div></div></body></html>
