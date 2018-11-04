@@ -278,6 +278,7 @@ Format: <code>add n/NAME ic/IC_NUMBER p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
+<div class="title">Thing(s) to note:</div>
 A patient can have any number of tags (including 0).
 </td>
 </tr>
@@ -290,6 +291,7 @@ A patient can have any number of tags (including 0).
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Mandatory parameters can be keyed in any order.
 </td>
 </tr>
@@ -302,6 +304,7 @@ Mandatory parameters can be keyed in any order.
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
+<div class="title">Important:</div>
 Omission of <strong>any</strong> mandatory parameters will result in the failure of adding the patient to the database.
 </td>
 </tr>
@@ -316,8 +319,8 @@ Omission of <strong>any</strong> mandatory parameters will result in the failure
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/Clinton Law ic/S9638902L p/97947435 e/clintonlaw@cs2103t.com a/Tembusu College</code><br>
-Adds a patient named <code>Clinton Law</code>, with IC number <code>S9638902L</code>, phone number <code>97947435</code>, email <code>clintonlaw@cs2103t.com</code> and address of <code>Tembusu College</code> to CLInic&#8217;s patient database, as shown below.</p>
+<p><code>add n/Clinton Law ic/S9638902L p/97947435 e/clinton@cs2103t.com a/Tembusu College</code><br>
+Adds a patient named <code>Clinton Law</code>, with IC number <code>S9638902L</code>, phone number <code>97947435</code>, email <code>clinton@cs2103t.com</code> and address of <code>Tembusu College</code> to CLInic&#8217;s patient database, as shown below.</p>
 </li>
 </ul>
 </div>
@@ -325,21 +328,7 @@ Adds a patient named <code>Clinton Law</code>, with IC number <code>S9638902L</c
 <div class="content">
 <img src="images/AddEx1.png" alt="AddEx1" width="650">
 </div>
-<div class="title">Figure 2. After executing the <code>add</code> command specified above.</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>a n/Kang Tze ic/S9612345L p/97931111 e/kangtze@cs2103t.com a/Eusoff Hall</code><br>
-Adds a patient named <code>Kang Tze</code>, with IC number <code>S9612345L</code>, phone number <code>97931111</code>, email <code>kangtze@cs2103t.com</code> and address of <code>Eusoff Hall</code> to CLInic&#8217;s patient database, as shown below.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AddEx2.png" alt="AddEx2" width="650">
-</div>
-<div class="title">Figure 3. After executing the <code>add</code> command specified above  via its alias <code>a</code> <strong>and</strong> left clicking <code>Kang Tze&#8217;s</code> patient card in the patient list on the right, indicated by the black cursor.</div>
+<div class="title">Figure 2. After executing the <code>add</code> command specified above <strong>and</strong> left clicking <code>Clinton&#8217;s</code> patient card in the patient list on the right, indicated by the black cursor.</div>
 </div>
 </div>
 <div class="sect3">
@@ -357,6 +346,7 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
+<div class="title">Thing(s) to note:</div>
 <div class="ulist">
 <ul>
 <li>
@@ -384,6 +374,7 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 You can remove <strong>all</strong> of the patient&#8217;s tags by typing <code>t/</code> without specifying any tags after the prefix.
 </td>
 </tr>
@@ -396,6 +387,7 @@ You can remove <strong>all</strong> of the patient&#8217;s tags by typing <code>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
+<div class="title">Important:</div>
 The <code>INDEX</code> given must be a <strong>non zero, positive integer</strong> (eg. 1, 2, 3&#8230;&#8203;)!
 </td>
 </tr>
@@ -417,9 +409,9 @@ Updates the phone number and e-mail address of the 5th patient in the list to <c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/EditEx1.png" alt="EditEx1" width="1024">
+<img src="images/EditEx1.png" alt="EditEx1" width="650">
 </div>
-<div class="title">Figure 4. Before and after executing the <code>edit</code> command specified above.</div>
+<div class="title">Figure 3. Before and after executing the <code>edit</code> command specified above.</div>
 </div>
 </div>
 <div class="sect3">
@@ -437,6 +429,7 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
+<div class="title">Thing(s) to note:</div>
 <div class="ulist">
 <ul>
 <li>
@@ -482,6 +475,7 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 <div class="ulist">
 <ul>
 <li>
@@ -526,9 +520,9 @@ Sieves out all the patients who have <code>yu</code> in their names.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/FindEx1.png" alt="FindEx1" width="1024">
+<img src="images/FindEx1.png" alt="FindEx1" width="][height="350"">
 </div>
-<div class="title">Figure 5. Before and after executing the <code>find</code> command specified above via its alias <code>f</code>.</div>
+<div class="title">Figure 4. Before and after executing the <code>find</code> command specified above via its alias <code>f</code>.</div>
 </div>
 </div>
 <div class="sect3">
@@ -553,6 +547,7 @@ Format: <code>delete INDEX</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Deletes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
 </td>
 </tr>
@@ -590,6 +585,7 @@ Format: <code>select INDEX</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Selects the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
 </td>
 </tr>
@@ -627,6 +623,7 @@ Format: <code>addmedicalrecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASES]&#8230;&#82
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 <div class="ulist">
 <ul>
 <li>
@@ -662,7 +659,7 @@ Adds <code>Paracetamol</code> (under <em>Drug Allergy</em>) and <code>Diabetes</
 <div class="content">
 <img src="images/addmedicalrecord-example-1.png" alt="addmedicalrecord example 1" width="650">
 </div>
-<div class="title">Figure 6. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
+<div class="title">Figure 5. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -676,7 +673,7 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 <div class="content">
 <img src="images/addmedicalrecord-example-2.png" alt="addmedicalrecord example 2" width="650">
 </div>
-<div class="title">Figure 7. After <code>amr 3 b/B+</code> command</div>
+<div class="title">Figure 6. After <code>amr 3 b/B+</code> command</div>
 </div>
 </div>
 </div>
@@ -696,6 +693,7 @@ Format: <code>addmedicine mn/MEDICINE_NAME msq/MINIMUM_STOCK_QUANTITY ppu/PRICE_
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
+<div class="title">Thing(s) to note:</div>
 The serial number of a medicine <strong>must</strong> be a 5 digit integer!
 </td>
 </tr>
@@ -731,6 +729,7 @@ Format: <code>editmedicine INDEX [mn/MEDICINE_NAME] [msq/MINIMUM_STOCK_QUANTITY]
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 <div class="ulist">
 <ul>
 <li>
@@ -758,6 +757,7 @@ Format: <code>editmedicine INDEX [mn/MEDICINE_NAME] [msq/MINIMUM_STOCK_QUANTITY]
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
+<div class="title">Important:</div>
 The <code>serial number</code> of a medicine <strong>must</strong> be a 5 digit integer!
 </td>
 </tr>
@@ -793,6 +793,7 @@ Format: <code>restock INDEX amt/AMOUNT</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Restocks the medicine at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
 </td>
 </tr>
@@ -870,6 +871,7 @@ Format: <code>register INDEX</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Registers the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
 </td>
 </tr>
@@ -891,7 +893,7 @@ Registers the 3rd patient in the database.</p>
 <div class="content">
 <img src="images/Register3Command.png" alt="Register3Command" width="750">
 </div>
-<div class="title">Figure 8. After executing the <code>register 3</code> command</div>
+<div class="title">Figure 7. After executing the <code>register 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -925,6 +927,7 @@ Format: <code>remove INDEX</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Removes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The <code>INDEX</code> <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
 </td>
 </tr>
@@ -945,13 +948,13 @@ Removes the 3rd patient in the queue.</p>
 <div class="content">
 <img src="images/BeforeRemove3Command.png" alt="BeforeRemove3Command" width="750">
 </div>
-<div class="title">Figure 9. Before <code>remove 3</code> command</div>
+<div class="title">Figure 8. Before <code>remove 3</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterRemove3Command.png" alt="AfterRemove3Command" width="750">
 </div>
-<div class="title">Figure 10. After <code>remove 3</code> command</div>
+<div class="title">Figure 9. After <code>remove 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -976,6 +979,7 @@ Format: <code>insert INDEX p/POSITION</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1007,13 +1011,13 @@ Inserts the 4th patient in the database into the 2nd position in the patient que
 <div class="content">
 <img src="images/BeforeInsert2Command.png" alt="BeforeInsert2Command" width="750">
 </div>
-<div class="title">Figure 11. Before <code>insert 4 p/2</code> command</div>
+<div class="title">Figure 10. Before <code>insert 4 p/2</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterInsert2Command.png" alt="AfterInsert2Command" width="750">
 </div>
-<div class="title">Figure 12. After <code>insert 4 p/2</code> command</div>
+<div class="title">Figure 11. After <code>insert 4 p/2</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1038,6 +1042,7 @@ Format: <code>serve</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Upon successful call of this command, the medicine list will be displayed.
 </td>
 </tr>
@@ -1047,13 +1052,13 @@ Upon successful call of this command, the medicine list will be displayed.
 <div class="content">
 <img src="images/BeforeServeCommand.png" alt="BeforeServeCommand" width="750">
 </div>
-<div class="title">Figure 13. Before <code>serve</code> command</div>
+<div class="title">Figure 12. Before <code>serve</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterServeCommand.png" alt="AfterServeCommand" width="750">
 </div>
-<div class="title">Figure 14. After <code>serve</code> command</div>
+<div class="title">Figure 13. After <code>serve</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1070,6 +1075,7 @@ Format: <code>adddocument [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1100,6 +1106,7 @@ Format: <code>adddocument [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
+<div class="title">Important:</div>
 The parameter for <code>mc/</code> must be a <strong>non-zero, positive integer</strong>!
 </td>
 </tr>
@@ -1120,13 +1127,13 @@ Adds MC duration and notes to the Current Patient.</p>
 <div class="content">
 <img src="images/BeforeAddDocumentCommand.png" alt="BeforeAddDocumentCommand" width="750">
 </div>
-<div class="title">Figure 15. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 14. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterAddDocumentCommand.png" alt="AfterAddDocumentCommand" width="750">
 </div>
-<div class="title">Figure 16. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 15. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1159,6 +1166,7 @@ Format <code>dispensemedicine MEDICINE_INDEX amt/AMOUNT</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current Patient. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
 </td>
 </tr>
@@ -1179,13 +1187,13 @@ Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current P
 <div class="content">
 <img src="images/BeforeDispenseMedicineCommand.png" alt="BeforeDispenseMedicineCommand" width="750">
 </div>
-<div class="title">Figure 17. Before <code>dispensemedicine 1 amt/10</code></div>
+<div class="title">Figure 16. Before <code>dispensemedicine 1 amt/10</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterDispenseMedicineCommand.png" alt="AfterDispenseMedicineCommand" width="750">
 </div>
-<div class="title">Figure 18. After <code>dispensemedicine 1 amt/10</code></div>
+<div class="title">Figure 17. After <code>dispensemedicine 1 amt/10</code></div>
 </div>
 <div class="ulist">
 <ul>
@@ -1209,6 +1217,7 @@ Format: <code>finish</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1238,6 +1247,7 @@ Format: <code>payment INDEX</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Removes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient Queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
 </td>
 </tr>
@@ -1258,13 +1268,13 @@ Removes the 3rd patient from the Served Patient Queue.</p>
 <div class="content">
 <img src="images/BeforePaymentCommand.png" alt="BeforePaymentCommand" width="750">
 </div>
-<div class="title">Figure 19. Before <code>payment 3</code> command</div>
+<div class="title">Figure 18. Before <code>payment 3</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AfterPaymentCommand.png" alt="AfterPaymentCommand" width="750">
 </div>
-<div class="title">Figure 20. After <code>payment 3</code> command</div>
+<div class="title">Figure 19. After <code>payment 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1291,6 +1301,7 @@ Format: <code>mc INDEX</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Generates a medical certificate for the patient at the specified <code>INDEX</code> of the Served Patient Queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
 </td>
 </tr>
@@ -1322,6 +1333,7 @@ Format: <code>receipt INDEX</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Generates a receipt for the patient at the specified <code>INDEX</code> of the Served Patient Queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
 </td>
 </tr>
@@ -1355,6 +1367,7 @@ Alias: <code>ref</code><br></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Generates a referral letter for the patient at the specified <code>INDEX</code> of the Served Patient Queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
 </td>
 </tr>
@@ -1395,6 +1408,7 @@ Format: <code>history</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
+<div class="title">Pro tip(s):</div>
 Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.
 </td>
 </tr>
@@ -1415,6 +1429,7 @@ Format: <code>undo</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
+<div class="title">Thing(s) to note:</div>
 <div class="paragraph">
 <p>Undoable commands: those commands that modify the database&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).
 This includes all commands that change the <code>Patient</code> or <code>Medicine</code> class but <strong>not</strong> <a href="#pqms">PQMS-related</a> commands.</p>
@@ -1812,4 +1827,4 @@ There is no need to save manually.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 13:30:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 14:22:17 UTC</div></div></div></body></html>
