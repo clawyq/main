@@ -1274,87 +1274,224 @@ him from the <code>ServedPatientQueue</code>.</p>
 <div class="sect2">
 <h3 id="Document"><a class="link" href="#Document">4.5. Document</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.5.1. Current Implementation</a></h4>
+<h4 id="implementation-of-code-document-code"><a class="link" href="#implementation-of-code-document-code">4.5.1. Implementation of <code>Document</code></a></h4>
 <div class="paragraph">
-<p>The <code>Document</code>  class represents all documents that can be issued by the clinic. The <code>Receipt</code>, <code>MedicalCertificate</code> and <code>ReferralLetter</code> classes all inherit from it.<br>
-It specifies what general information these documents should have and how they should be formatted. It can be thought of as the formatting template for all the information
-belonging to its inheriting classes.</p>
+<p>The <code>Document</code> abstract class represents all the documents that can be issued by the clinic. The <code>Receipt</code>,
+<code>MedicalCertificate</code> and <code>ReferralLetter</code> concrete classes, which respective <strong>commands</strong> will be referred
+to henceforth as <em>document related commands</em>, all inherit from it. It specifies what general information
+ these documents should have and how they should be formatted. It can hence be thought of as a
+ <strong>formatting template</strong>.</p>
 </div>
+<div class="paragraph">
+<p>As the template on which the documents depend on, the <code>Document</code> class itself <strong>cannot</strong> be instantiated, hence
+implemented as an <code>abstract class</code>. The <code>Document</code> class has the following key features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>contains a <code>name</code> and <code>icNumber</code> attribute, extracted from the <code>ServedPatient</code> from which the document is constructed.</p>
+</li>
+<li>
+<p>has common methods like <code>generateContent</code> to standardise the way in which the contents of the <code>Document</code> are formatted.</p>
+</li>
+<li>
+<p>has the <code>formatInformation</code> <code>abstract method</code> which the extending classes have to implement.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarises what happens internally when a <em>document related command</em> is called.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DocumentActivityDiagram.png" alt="DocumentActivityDiagram" width="800">
+</div>
+<div class="title">Figure 23. Flow of activities when a <em>document related command</em> is executed. Only the methods that are <strong>implemented</strong> within <code>Document</code> itself are labelled in the diagram.</div>
+</div>
+<div class="paragraph">
+<p>As seen in the above activity diagram, upon executing a <em>document related command</em>, the corresponding document will be constructed from the <code>ServedPatient</code> object specified by the <code>index</code> that was passed in with the command.<br>
+Step 1. The resulting <code>Document</code> object will call the <code>generateFile()</code> method, which will first make a unique <code>fileName</code> for the file to be created, identified by the type of <code>Document</code>, <code>ServedPatient&#8217;s</code> <code>name</code> and <code>icNumber</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="Java">    <span class="directive">private</span> <span class="predefined-type">String</span> makeFileName() {
+        <span class="keyword">return</span> (fileType + FILE_NAME_DELIMITER + <span class="string"><span class="delimiter">&quot;</span><span class="content">For</span><span class="delimiter">&quot;</span></span> + FILE_NAME_DELIMITER + name.toString()
+                + FILE_NAME_DELIMITER + icNumber.toString())
+                .replaceAll(<span class="string"><span class="delimiter">&quot;</span><span class="char">\\</span><span class="content">s</span><span class="delimiter">&quot;</span></span>, FILE_NAME_DELIMITER)
+                .replaceAll(<span class="string"><span class="delimiter">&quot;</span><span class="content">(_)+</span><span class="delimiter">&quot;</span></span>, FILE_NAME_DELIMITER);
+    }</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The FILE_NAME_DELIMITER is abstracted so as to allow users to change the delimiter to a string of their choice.
+It is used as a means of separating fields of information in file names.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 2.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="implementation-of-code-receipt-code"><a class="link" href="#implementation-of-code-receipt-code">Implementation of <code>Receipt</code></a></h5>
+<h5 id="aspect-implementation-of-the-document"><a class="link" href="#aspect-implementation-of-the-document">Aspect: Implementation of the Document</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice)</strong>: Using an <code>abstract class</code> to implement <code>Document</code>.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows <code>inheriting</code> classes to use a standardised method to format common information while granting them the
+flexibility of structuring the contents unique to its document type.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Prevents <code>inheriting</code> classes from <code>inheriting</code> from other useful classes or becoming an <code>enum</code> as <code>Java</code> does not support <code>multiple inheritance</code>.</p>
+</li>
+<li>
+<p>More computationally expensive than using an <code>interface</code> due to the overhead incurred looking up <code>inherited methods</code> and various <code>class members</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2</strong>: Using an <code>interface</code> to implement <code>Document</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Can convert <code>inheriting</code> classes to <code>enums</code>, ensuring that the inputs fed to these classes are valid.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><code>Enums</code> can prevent the issuing of a <code>Medical Certificate</code> that excuses a person from work/school for 10 <strong>years</strong>!</p>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Unable to standardise the way the <code>inheriting</code> classes implement the <code>generateHeader</code> method.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Potentially allow the <code>inheriting</code> classes to omit certain header fields that are relevant to the printing of a document, such as <code>date</code> and <code>time</code> of the consultation.</p>
+</li>
+<li>
+<p>Information might be formatted differently.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-of-code-receipt-code"><a class="link" href="#implementation-of-code-receipt-code">4.5.3. Implementation of <code>Receipt</code></a></h4>
 <div class="paragraph">
 <p>The <code>Receipt</code> class structure is as follows:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>has attributes of the <code>Served Patient</code> it is generated from, which includes the served patient&#8217;s <code>name</code> and <code>IcNumber</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>These attributes are marked as <code>final</code> as they should not be changed.</p>
-</li>
-</ul>
-</div>
+<p>contains a <code>Map&lt;Medicine, MedicineQuantity&gt;</code> attribute to record the quantity dispensed of each type of <code>Medicine</code> to the <code>Served Patient</code> from which the <code>Receipt</code> was constructed from.</p>
 </li>
 <li>
-<p>contains all the <code>Medicine</code> and their associated <code>MedicineQuantity</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>These are the medicines and their quantities respectively, prescribed by the doctor to the patient during his consultation.</p>
+<p>contains a <code>HashSet&lt;Service&gt;</code> attribute to record the <code>Services</code> administered to the patient.</p>
 </li>
-</ul>
-</div>
+<li>
+<p>has an attribute <code>totalPrice</code> which stores the total price of all the <code>Services</code> and <code>Medicines</code> received by the patient.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Users can generate a <code>Receipt</code> for a specific <code>ServedPatient</code> by invoking the <code>ReceiptCommand</code> accompanied by the served patient&#8217;s index in the <code>ServedPatientList</code>.<br></p>
+<p>Users can generate a <code>Receipt</code> for a specific <code>ServedPatient</code> by invoking the <code>ReceiptCommand</code> accompanied by the served patient&#8217;s index in the <code>ServedPatientList</code>. The below sequence diagram illustrates how the <code>ReceiptCommand</code> works.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and explanation for the inner workings of the <code>ReceiptCommand</code>.</p>
+<p>When the <code>ReceiptCommand</code> is executed, it will construct a new <code>Receipt</code> object and extracts the relevant information from the <code>ServedPatient</code> specified by the <code>index</code>.
+Shown below is how the <code>Map&lt;Medicine, MedicineQuantity&gt;</code> of a <code>ServedPatient</code> is unpacked to sieve out the individual table entries for the cost of different medicines.</p>
 </div>
-<div class="paragraph">
-<p>Step 1. The user executes the <code>serve</code> command to serve the first <code>Patient</code> in the <code>PatientQueue</code>.<br>
-This creates a new <code>ServedPatient</code> object that is added to the <code>ServedPatientList</code>.</p>
-</div>
-<div class="imageblock">
+<div class="listingblock">
 <div class="content">
-<img src="images/ServePatient.png" alt="ServePatient" width="650">
-</div>
-<div class="title">Figure 23. Serving a <code>Patient</code> in the <code>PatientQueue</code>. Note that the <code>Patient</code> <strong>Bryan Lew</strong> is the only <code>Patient</code> in the <code>ServedPatientList</code> and hence has an index of <code>1</code>.<br></div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>receipt 1</code> command to generate a <code>Receipt</code> with the relevant object. Up till this milestone v1.2, the contents of the <code>Receipt</code> will be reflected in the <code>ResultDisplay</code> as shown below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ReceiptExamplePrintOut.png" alt="ReceiptExamplePrintOut" width="650">
-</div>
-<div class="title">Figure 24. Contents of the <code>Receipt</code> generated for the <code>Patient</code> Bryan Lew.<br></div>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Executing <code>receipt</code> with an invalid index will <strong>not</strong> result in the generation of a <code>Receipt</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ServedPatientListEmptyReceipt.png" alt="ServedPatientListEmptyReceipt" width="650">
-</div>
-<div class="title">Figure 25. Result of executing <code>receipt</code> with an invalid index.</div>
+<pre class="CodeRay highlight"><code data-lang="Java">    <span class="directive">private</span> <span class="predefined-type">String</span> unpackMedicineAllocation(<span class="predefined-type">Map</span>&lt;Medicine, QuantityToDispense&gt; medicineAllocated) {
+        <span class="predefined-type">StringBuilder</span> stringBuilder = <span class="keyword">new</span> <span class="predefined-type">StringBuilder</span>();
+        <span class="type">int</span> quantity;
+        <span class="type">float</span> pricePerUnit;
+        <span class="type">float</span> totalPriceForSpecificMedicine;
+        <span class="predefined-type">String</span> medicineName;
+        <span class="keyword">for</span> (<span class="predefined-type">Map</span>.Entry&lt;Medicine, QuantityToDispense&gt; entry : medicineAllocated.entrySet()) {
+            Medicine medicine = entry.getKey();
+            medicineName = medicine.getMedicineName().toString();
+            quantity = entry.getValue().getValue();
+            pricePerUnit = <span class="predefined-type">Float</span>.parseFloat(medicine.getPricePerUnit().toString());
+            totalPriceForSpecificMedicine = pricePerUnit * quantity;
+            increaseTotalPriceBy(totalPriceForSpecificMedicine);
+
+            stringBuilder.append(<span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;tr&gt;&lt;td&gt;</span><span class="delimiter">&quot;</span></span>)
+                    .append(medicineName)
+                    .append(<span class="local-variable">super</span>.HTML_TABLE_DATA_DIVIDER)
+                    .append(quantity)
+                    .append(<span class="local-variable">super</span>.HTML_TABLE_DATA_DIVIDER)
+                    .append(<span class="predefined-type">String</span>.format(<span class="string"><span class="delimiter">&quot;</span><span class="content">%.02f</span><span class="delimiter">&quot;</span></span>, pricePerUnit))
+                    .append(<span class="local-variable">super</span>.HTML_TABLE_DATA_DIVIDER)
+                    .append(<span class="predefined-type">String</span>.format(<span class="string"><span class="delimiter">&quot;</span><span class="content">%.02f</span><span class="delimiter">&quot;</span></span>, totalPriceForSpecificMedicine))
+                    .append(<span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;/td&gt;&lt;/tr&gt;</span><span class="delimiter">&quot;</span></span>);
+        }
+        <span class="keyword">return</span> stringBuilder.toString();
+    }</code></pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="implementation-of-code-medicalcertificate-code"><a class="link" href="#implementation-of-code-medicalcertificate-code">Implementation of <code>MedicalCertificate</code></a></h5>
+</div>
+<div class="sect3">
+<h4 id="implementation-of-code-medicalcertificate-code"><a class="link" href="#implementation-of-code-medicalcertificate-code">4.5.4. Implementation of <code>MedicalCertificate</code></a></h4>
 <div class="paragraph">
 <p>The <code>MedicalCertificate</code> class structure is as follows:</p>
 </div>
@@ -1390,7 +1527,7 @@ This creates a new <code>ServedPatient</code> object that is added to the <code>
 <div class="content">
 <img src="images/ServePatient.png" alt="ServePatient" width="650">
 </div>
-<div class="title">Figure 26. Serving a <code>Patient</code> in the <code>PatientQueue</code>. Note that the <code>Patient</code> <strong>Bryan Lew</strong> is the only <code>Patient</code> in the <code>ServedPatientList</code> and hence has an index of <code>1</code>.</div>
+<div class="title">Figure 24. Serving a <code>Patient</code> in the <code>PatientQueue</code>. Note that the <code>Patient</code> <strong>Bryan Lew</strong> is the only <code>Patient</code> in the <code>ServedPatientList</code> and hence has an index of <code>1</code>.</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>mc 1</code> command to generate a <code>MedicalCertificate</code> with the relevant object. Up till this milestone v1.2, the contents of the <code>MedicalCertificate</code> will be reflected in the <code>ResultDisplay</code> as shown below.</p>
@@ -1408,8 +1545,8 @@ Executing <code>mc</code> with an invalid index will <strong>not</strong> result
 </table>
 </div>
 </div>
-<div class="sect4">
-<h5 id="implementation-of-code-referralletter-code"><a class="link" href="#implementation-of-code-referralletter-code">Implementation of <code>ReferralLetter</code></a></h5>
+<div class="sect3">
+<h4 id="implementation-of-code-referralletter-code"><a class="link" href="#implementation-of-code-referralletter-code">4.5.5. Implementation of <code>ReferralLetter</code></a></h4>
 <div class="paragraph">
 <p>The <code>ReferralLetter</code> class structure is as follows:</p>
 </div>
@@ -1444,7 +1581,7 @@ This creates a new <code>ServedPatient</code> object that is added to the <code>
 <div class="content">
 <img src="images/ServePatient.png" alt="ServePatient" width="650">
 </div>
-<div class="title">Figure 27. Serving a <code>Patient</code> in the <code>PatientQueue</code>. Note that the <code>Patient</code> <strong>Bryan Lew</strong> is the only <code>Patient</code> in the <code>ServedPatientList</code> and hence has an index of <code>1</code>.</div>
+<div class="title">Figure 25. Serving a <code>Patient</code> in the <code>PatientQueue</code>. Note that the <code>Patient</code> <strong>Bryan Lew</strong> is the only <code>Patient</code> in the <code>ServedPatientList</code> and hence has an index of <code>1</code>.</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>refer 1</code> command to generate a <code>ReferralLetter</code> with the relevant object. Up till this milestone v1.2, the contents of the <code>ReferralLetter</code> will be reflected in the <code>ResultDisplay</code> as shown below.</p>
@@ -1463,103 +1600,10 @@ Executing <code>refer</code> with an invalid index will <strong>not</strong> res
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-implementation-of-the-document"><a class="link" href="#aspect-implementation-of-the-document">Aspect: Implementation of the Document</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice)</strong>: Using a typical <code>class</code> to implement <code>Document</code>.<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Allows all classes <code>inheriting</code> from <code>Document</code> to use a standardised method to format the relevant information that appears in every document that is issued by the clinic.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Cons:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Java</code> does not support <code>multiple inheritance</code>; therefore, it prevents the classes that are <code>inheriting</code> from <code>Document</code> from inheriting from other useful classes or becoming an <code>enum</code>.</p>
-</li>
-<li>
-<p>Comparatively, <code>inheriting</code> from classes is more computationally expensive than using <code>interfaces</code> due to the overhead incurred looking up <code>methods</code> and various <code>class members</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2</strong>: Using an <code>interface</code> to implement <code>Document</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The classes implementing <code>Document</code> can be converted to <code>enums</code>, which ensures that the inputs fed to these classes are valid.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>For example, an <code>enum</code> will prevent the issuing of a <code>Medical Certificate</code> that excuses a person from work/school for 10 <strong>years</strong>!</p>
-</div>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Cons:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Unable to standardise the way the classes that <code>inherit</code> from <code>Document</code> implement the <code>generate</code> method.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>This can potentially allow the <code>inheriting</code> classes to omit certain fields that are relevant to the printing of a document, such as <code>date</code> and <code>time</code> of the consultation.</p>
-</li>
-<li>
-<p>Even if all the information are present, they might be formatted differently.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 <div class="sect2">
 <h3 id="application-gui"><a class="link" href="#application-gui">4.6. Application GUI</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.6.1. Current Implementation</a></h4>
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.6.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>As an extension to the original addressbook-level4 application, more UI elements were added to the application window to serve as visual aid for the user of the application.</p>
 </div>
@@ -1570,7 +1614,7 @@ Executing <code>refer</code> with an invalid index will <strong>not</strong> res
 <div class="content">
 <img src="images/PQMS-gui.png" alt="PQMS gui" width="650">
 </div>
-<div class="title">Figure 28. GUI for the PQMS</div>
+<div class="title">Figure 26. GUI for the PQMS</div>
 </div>
 <div class="paragraph">
 <p>After <code>QueueCommands</code> such as <code>register</code>, <code>serve</code>, etc., the GUI will automatically update itself as the user enters these commands to reflect the situation of the PQMS at that exact point in time.</p>
@@ -1579,7 +1623,7 @@ Executing <code>refer</code> with an invalid index will <strong>not</strong> res
 <div class="content">
 <img src="images/PQMS-GUI-2.png" alt="PQMS GUI 2" width=""650">
 </div>
-<div class="title">Figure 29. GUI for the PQMS after several commands</div>
+<div class="title">Figure 27. GUI for the PQMS after several commands</div>
 </div>
 <div class="paragraph">
 <p>This UI element is implemented using JavaFX&#8217;s <code>WebView</code> and a local HTML file. The sequence of events for how the <code>WebView</code> is updated is as follows:</p>
@@ -1822,7 +1866,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 30. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 28. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -3322,4 +3366,4 @@ Expected: No medicine is added. Error details shown in the status message. Statu
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-05 19:15:14 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 05:34:58 UTC</div></div></div></body></html>

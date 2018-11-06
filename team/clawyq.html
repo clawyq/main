@@ -15,15 +15,10 @@ students from NUS School Of Computing as part of the <code>CS2103T Software Engi
 features of the application are coded in <code>Java</code> while the GUI is handled by <code>JavaFX</code>, <code>HTML</code> and <code>CSS</code>.</p>
 </div>
 <div class="paragraph">
-<p><code>CLInic</code> is a desktop application made to manage and expedite operations in clinics. It was inspired by
-the Command Line Interface (CLI), which allowed users to type commands to the computer efficently.
-However, the CLI&#8217;s non-visual display and walls of cryptic text makes it intimidating to the general,
-non-tech-savvy populous.</p>
-</div>
-<div class="paragraph">
-<p>These reasons were the main impetus behind <code>CLInic</code>, which marries the <strong>simplistic design</strong> and
-<strong>efficient command issuing mechanism</strong> of the CLI with an <strong>intuitive</strong> Graphical User Interface (GUI).
-This culminated in an application that is easy for <strong>anyone</strong> to use, all while providing the powerful
+<p><code>CLInic</code> is a desktop application made to manage and expedite operations in clinics. The efficiency of typing commands
+yet cryptic walls of intimidating text of the CLI were the main impetus behind <code>CLInic</code>. <code>CLInic</code> marries the
+<strong>simplistic design</strong> and <strong>efficient command issuing mechanism</strong> of the CLI with an <strong>intuitive</strong> Graphical User
+Interface (GUI). This culminated in an application that is easy for <strong>anyone</strong> to use, all while providing the powerful
  functionalities and efficiencies offered by a CLI. Below are some of the key features provided by <code>CLInic</code>:</p>
 </div>
 <div class="ulist">
@@ -53,8 +48,8 @@ them to work.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: Implementation of the <code>Document</code> class, its accompanying HTML template and
-extending classes, which include <code>Receipt</code>, <code>MedicalCertificate</code> and <code>ReferralLetter</code>.</p>
+<p><strong>Major enhancement</strong>: Implemented the <code>Document</code> class, its accompanying HTML template and
+extending classes, which includes the <code>Receipt</code>, <code>MedicalCertificate</code> and <code>ReferralLetter</code> classes.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -63,14 +58,14 @@ generates a <code>HTML</code> file for it.</p>
 </li>
 <li>
 <p>Justification: This functionality simplifies the generation of documents that are required by the clinic.
-This makes the administrative tasks in the clinic easier and faster, boosting the productivity of its users
-translating into shorter wait times at the clinic for the patients.</p>
+This makes the administrative tasks in the clinic easier and faster, <strong>boosting the productivity of its users</strong>,
+ translating into <strong>shorter wait times at the clinic for the patients</strong>.</p>
 </li>
 <li>
-<p>Highlights: This functionality allows for seamless transfer of information from doctors to receptionists
+<p>Highlights: This functionality allows for <strong>seamless transfer of information from doctors to receptionists</strong>
 of the clinic during consultation, which when coupled with the fast retrieval of information from the
-application&#8217;s database of <code>Patient</code> and <code>Medicine</code> information, makes for efficient generation of relevant
-documents.</p>
+application&#8217;s database of <code>Patient</code> and <code>Medicine</code> information, makes for <strong>efficient generation of relevant
+documents</strong>.</p>
 </li>
 </ul>
 </div>
@@ -81,19 +76,19 @@ documents.</p>
 <ul>
 <li>
 <p>Improved and helped with the implementation of <code>ServedPatient</code> and <code>ServedPatientListManager</code>, which are intermediate
-abstractions that helped 'finalise' the information to be used for the generation of <code>Document</code>.</p>
+abstractions(placeholders) that help to 'finalise' the information to be used for the generation of <code>Document</code>.</p>
 </li>
 <li>
 <p>Integrated <code>MedicalCertificate</code> with the <code>DocumentAddContentCommand</code>.</p>
 </li>
 <li>
-<p>Implemented the <code>HTML</code> template which all the classes that extend <code>Document</code> use to format their own information.</p>
+<p>Designed the <code>HTML</code> template which all the classes that extend <code>Document</code> use to format their information.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p><strong>Code contributed</strong>: <a href="https://github.com/CS2103-AY1819S1-W16-4/main/tree/master/src/main/java/seedu/address/model/document">Implementation of Document and its relevant classes</a>, and their <a href="https://github.com/CS2103-AY1819S1-W16-4/main/tree/master/src/test/java/seedu/address/logic">associated test codes.</a></p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -161,9 +156,9 @@ abstractions that helped 'finalise' the information to be used for the generatio
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="implementation-of-the-patient-record-management-system"><a class="link" href="#implementation-of-the-patient-record-management-system">Implementation of the Patient Record Management System</a></h3>
-<hr>
+<div class="paragraph">
+<p><span class="big underline"><strong>Implementation of the Patient Record Management System</strong></span></p>
+</div>
 <div class="sect3">
 <h4 id="adding-a-patient-code-add-code"><a class="link" href="#adding-a-patient-code-add-code">Adding a patient: <code>add</code></a></h4>
 <div class="paragraph">
@@ -295,101 +290,6 @@ Updates the phone number and e-mail address of the 5th patient in the list to <c
 <div class="title">Figure 2. Before and after executing the <code>edit</code> command specified above.</div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="locating-a-patient-by-name-code-find-code"><a class="link" href="#locating-a-patient-by-name-code-find-code">Locating a patient by name: <code>find</code></a></h4>
-<div class="paragraph">
-<p>Can&#8217;t find the patient you&#8217;re looking for amidst the other patient records?<br>
-Simply search for the desired patient using the <code>find</code> command!
-Alias: <code>f</code><br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Thing(s) to note:</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Only the patient&#8217;s name is considered in the search. Patients whose name contains at least one of the given keywords will be returned.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Only full words will be matched. This is to prevent too general keywords from fetching too many results, thus making <code>find</code> ineffective.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Han</code> will not match <code>Hans</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">Pro tip(s):</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The search is case insensitive.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Bryan</code> will match <code>bryaN</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>The order of the keywords does not matter.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Upon successful execution, you should only see all the patients who have the specified keyword in their names in the patient list on the right.</p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>f yu</code><br>
-Sieves out all the patients who have <code>yu</code> in their names.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/FindEx1.png" alt="FindEx1" width="650">
-</div>
-<div class="title">Figure 3. Before and after executing the <code>find</code> command specified above via its alias <code>f</code>.</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -406,82 +306,76 @@ Sieves out all the patients who have <code>yu</code> in their names.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p><span class="big underline"><strong>Implementation of the <code>Receipt</code> class</strong></span></p>
+<p><span class="big underline"><strong>Implementation of the Document class</strong></span></p>
 </div>
-<div class="sect4">
-<h5 id="implementation-of-code-receipt-code"><a class="link" href="#implementation-of-code-receipt-code">Implementation of <code>Receipt</code></a></h5>
+<div class="sect2">
+<h3 id="Document"><a class="link" href="#Document">Document</a></h3>
+<div class="sect3">
+<h4 id="implementation-of-code-document-code"><a class="link" href="#implementation-of-code-document-code">Implementation of <code>Document</code></a></h4>
 <div class="paragraph">
-<p>The <code>Receipt</code> class structure is as follows:</p>
+<p>The <code>Document</code> abstract class represents all the documents that can be issued by the clinic. The <code>Receipt</code>,
+<code>MedicalCertificate</code> and <code>ReferralLetter</code> concrete classes, which respective <strong>commands</strong> will be referred
+to henceforth as <em>document related commands</em>, all inherit from it. It specifies what general information
+ these documents should have and how they should be formatted. It can hence be thought of as a
+ <strong>formatting template</strong>.</p>
+</div>
+<div class="paragraph">
+<p>As the template on which the documents depend on, the <code>Document</code> class itself <strong>cannot</strong> be instantiated, hence
+implemented as an <code>abstract class</code>. The <code>Document</code> class has the following key features:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>has attributes of the <code>Served Patient</code> it is generated from, which includes the served patient&#8217;s <code>name</code> and <code>IcNumber</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>These attributes are marked as <code>final</code> as they should not be changed.</p>
-</li>
-</ul>
-</div>
+<p>contains a <code>name</code> and <code>icNumber</code> attribute, extracted from the <code>ServedPatient</code> from which the document is constructed.</p>
 </li>
 <li>
-<p>contains all the <code>Medicine</code> and their associated <code>MedicineQuantity</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>These are the medicines and their quantities respectively, prescribed by the doctor to the patient during his consultation.</p>
+<p>has common methods like <code>generateContent</code> to standardise the way in which the contents of the <code>Document</code> are formatted.</p>
 </li>
-</ul>
-</div>
+<li>
+<p>has the <code>formatInformation</code> <code>abstract method</code> which the extending classes have to implement.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Users can generate a <code>Receipt</code> for a specific <code>ServedPatient</code> by invoking the <code>ReceiptCommand</code> accompanied by the served patient&#8217;s index in the <code>ServedPatientList</code>.<br></p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and explanation for the inner workings of the <code>ReceiptCommand</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user executes the <code>serve</code> command to serve the first <code>Patient</code> in the <code>PatientQueue</code>.<br>
-This creates a new <code>ServedPatient</code> object that is added to the <code>ServedPatientList</code>.</p>
+<p>The following activity diagram summarises what happens internally when a <em>document related command</em> is called.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/ServePatient.png" alt="ServePatient" width="650">
+<img src="../images/DocumentActivityDiagram.png" alt="DocumentActivityDiagram" width="800">
 </div>
-<div class="title">Figure 4. Serving a <code>Patient</code> in the <code>PatientQueue</code>. Note that the <code>Patient</code> <strong>Bryan Lew</strong> is the only <code>Patient</code> in the <code>ServedPatientList</code> and hence has an index of <code>1</code>.<br></div>
+<div class="title">Figure 3. Flow of activities when a <em>document related command</em> is executed. Only the methods that are <strong>implemented</strong> within <code>Document</code> itself are labelled in the diagram.</div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>receipt 1</code> command to generate a <code>Receipt</code> with the relevant object. Up till this milestone v1.2, the contents of the <code>Receipt</code> will be reflected in the <code>ResultDisplay</code> as shown below.</p>
+<p>As seen in the above activity diagram, upon executing a <em>document related command</em>, the corresponding document will be constructed from the <code>ServedPatient</code> object specified by the <code>index</code> that was passed in with the command.<br>
+Step 1. The resulting <code>Document</code> object will call the <code>generateFile()</code> method, which will first make a unique <code>fileName</code> for the file to be created, identified by the type of <code>Document</code>, <code>ServedPatient&#8217;s</code> <code>name</code> and <code>icNumber</code>.</p>
 </div>
-<div class="imageblock">
+<div class="listingblock">
 <div class="content">
-<img src="../images/ReceiptExamplePrintOut.png" alt="ReceiptExamplePrintOut" width="650">
+<pre class="CodeRay highlight"><code data-lang="Java">    <span class="directive">private</span> <span class="predefined-type">String</span> makeFileName() {
+        <span class="keyword">return</span> (fileType + FILE_NAME_DELIMITER + <span class="string"><span class="delimiter">&quot;</span><span class="content">For</span><span class="delimiter">&quot;</span></span> + FILE_NAME_DELIMITER + name.toString()
+                + FILE_NAME_DELIMITER + icNumber.toString())
+                .replaceAll(<span class="string"><span class="delimiter">&quot;</span><span class="char">\\</span><span class="content">s</span><span class="delimiter">&quot;</span></span>, FILE_NAME_DELIMITER)
+                .replaceAll(<span class="string"><span class="delimiter">&quot;</span><span class="content">(_)+</span><span class="delimiter">&quot;</span></span>, FILE_NAME_DELIMITER);
+    }</code></pre>
 </div>
-<div class="title">Figure 5. Contents of the <code>Receipt</code> generated for the <code>Patient</code> Bryan Lew.<br></div>
 </div>
-<div class="admonitionblock warning">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Executing <code>receipt</code> with an invalid index will <strong>not</strong> result in the generation of a <code>Receipt</code>.
+<div class="paragraph">
+<p>The FILE_NAME_DELIMITER is abstracted so as to allow users to change the delimiter to a string of their choice.
+It is used as a means of separating fields of information in file names.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ServedPatientListEmptyReceipt.png" alt="ServedPatientListEmptyReceipt" width="650">
-</div>
-<div class="title">Figure 6. Result of executing <code>receipt</code> with an invalid index.</div>
-</div>
 <div class="paragraph">
-<p><span class="big underline"><strong>Design considerations of the <code>Document</code> class</strong></span></p>
+<p>Step 2.</p>
 </div>
 </div>
 <div class="sect3">
@@ -491,7 +385,7 @@ Executing <code>receipt</code> with an invalid index will <strong>not</strong> r
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice)</strong>: Using a typical <code>class</code> to implement <code>Document</code>.<br></p>
+<p><strong>Alternative 1 (current choice)</strong>: Using an <code>abstract class</code> to implement <code>Document</code>.<br></p>
 <div class="ulist">
 <ul>
 <li>
@@ -499,7 +393,8 @@ Executing <code>receipt</code> with an invalid index will <strong>not</strong> r
 <div class="ulist">
 <ul>
 <li>
-<p>Allows all classes <code>inheriting</code> from <code>Document</code> to use a standardised method to format the relevant information that appears in every document that is issued by the clinic.</p>
+<p>Allows <code>inheriting</code> classes to use a standardised method to format common information while granting them the
+flexibility of structuring the contents unique to its document type.</p>
 </li>
 </ul>
 </div>
@@ -509,10 +404,10 @@ Executing <code>receipt</code> with an invalid index will <strong>not</strong> r
 <div class="ulist">
 <ul>
 <li>
-<p><code>Java</code> does not support <code>multiple inheritance</code>; therefore, it prevents the classes that are <code>inheriting</code> from <code>Document</code> from inheriting from other useful classes or becoming an <code>enum</code>.</p>
+<p>Prevents <code>inheriting</code> classes from <code>inheriting</code> from other useful classes or becoming an <code>enum</code> as <code>Java</code> does not support <code>multiple inheritance</code>.</p>
 </li>
 <li>
-<p>Comparatively, <code>inheriting</code> from classes is more computationally expensive than using <code>interfaces</code> due to the overhead incurred looking up <code>methods</code> and various <code>class members</code>.</p>
+<p>More computationally expensive than using an <code>interface</code> due to the overhead incurred looking up <code>inherited methods</code> and various <code>class members</code>.</p>
 </li>
 </ul>
 </div>
@@ -529,7 +424,7 @@ Executing <code>receipt</code> with an invalid index will <strong>not</strong> r
 <div class="ulist">
 <ul>
 <li>
-<p>The classes implementing <code>Document</code> can be converted to <code>enums</code>, which ensures that the inputs fed to these classes are valid.</p>
+<p>Can convert <code>inheriting</code> classes to <code>enums</code>, ensuring that the inputs fed to these classes are valid.</p>
 </li>
 </ul>
 </div>
@@ -542,7 +437,7 @@ Executing <code>receipt</code> with an invalid index will <strong>not</strong> r
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>For example, an <code>enum</code> will prevent the issuing of a <code>Medical Certificate</code> that excuses a person from work/school for 10 <strong>years</strong>!</p>
+<p><code>Enums</code> can prevent the issuing of a <code>Medical Certificate</code> that excuses a person from work/school for 10 <strong>years</strong>!</p>
 </div>
 </div>
 </div>
@@ -553,7 +448,7 @@ Executing <code>receipt</code> with an invalid index will <strong>not</strong> r
 <div class="ulist">
 <ul>
 <li>
-<p>Unable to standardise the way the classes that <code>inherit</code> from <code>Document</code> implement the <code>generate</code> method.</p>
+<p>Unable to standardise the way the <code>inheriting</code> classes implement the <code>generateHeader</code> method.</p>
 </li>
 </ul>
 </div>
@@ -565,16 +460,76 @@ Executing <code>receipt</code> with an invalid index will <strong>not</strong> r
 <div class="ulist">
 <ul>
 <li>
-<p>This can potentially allow the <code>inheriting</code> classes to omit certain fields that are relevant to the printing of a document, such as <code>date</code> and <code>time</code> of the consultation.</p>
+<p>Potentially allow the <code>inheriting</code> classes to omit certain header fields that are relevant to the printing of a document, such as <code>date</code> and <code>time</code> of the consultation.</p>
 </li>
 <li>
-<p>Even if all the information are present, they might be formatted differently.</p>
+<p>Information might be formatted differently.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p><span class="big underline"><strong>Implementation of the Receipt class</strong></span></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-05 19:15:14 UTC</div></div></div></body></html>
+<div class="sect3">
+<h4 id="implementation-of-code-receipt-code"><a class="link" href="#implementation-of-code-receipt-code">Implementation of <code>Receipt</code></a></h4>
+<div class="paragraph">
+<p>The <code>Receipt</code> class structure is as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>contains a <code>Map&lt;Medicine, MedicineQuantity&gt;</code> attribute to record the quantity dispensed of each type of <code>Medicine</code> to the <code>Served Patient</code> from which the <code>Receipt</code> was constructed from.</p>
+</li>
+<li>
+<p>contains a <code>HashSet&lt;Service&gt;</code> attribute to record the <code>Services</code> administered to the patient.</p>
+</li>
+<li>
+<p>has an attribute <code>totalPrice</code> which stores the total price of all the <code>Services</code> and <code>Medicines</code> received by the patient.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Users can generate a <code>Receipt</code> for a specific <code>ServedPatient</code> by invoking the <code>ReceiptCommand</code> accompanied by the served patient&#8217;s index in the <code>ServedPatientList</code>. The below sequence diagram illustrates how the <code>ReceiptCommand</code> works.</p>
+</div>
+<div class="paragraph">
+<p>When the <code>ReceiptCommand</code> is executed, it will construct a new <code>Receipt</code> object and extracts the relevant information from the <code>ServedPatient</code> specified by the <code>index</code>.
+Shown below is how the <code>Map&lt;Medicine, MedicineQuantity&gt;</code> of a <code>ServedPatient</code> is unpacked to sieve out the individual table entries for the cost of different medicines.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="Java">    <span class="directive">private</span> <span class="predefined-type">String</span> unpackMedicineAllocation(<span class="predefined-type">Map</span>&lt;Medicine, QuantityToDispense&gt; medicineAllocated) {
+        <span class="predefined-type">StringBuilder</span> stringBuilder = <span class="keyword">new</span> <span class="predefined-type">StringBuilder</span>();
+        <span class="type">int</span> quantity;
+        <span class="type">float</span> pricePerUnit;
+        <span class="type">float</span> totalPriceForSpecificMedicine;
+        <span class="predefined-type">String</span> medicineName;
+        <span class="keyword">for</span> (<span class="predefined-type">Map</span>.Entry&lt;Medicine, QuantityToDispense&gt; entry : medicineAllocated.entrySet()) {
+            Medicine medicine = entry.getKey();
+            medicineName = medicine.getMedicineName().toString();
+            quantity = entry.getValue().getValue();
+            pricePerUnit = <span class="predefined-type">Float</span>.parseFloat(medicine.getPricePerUnit().toString());
+            totalPriceForSpecificMedicine = pricePerUnit * quantity;
+            increaseTotalPriceBy(totalPriceForSpecificMedicine);
+
+            stringBuilder.append(<span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;tr&gt;&lt;td&gt;</span><span class="delimiter">&quot;</span></span>)
+                    .append(medicineName)
+                    .append(<span class="local-variable">super</span>.HTML_TABLE_DATA_DIVIDER)
+                    .append(quantity)
+                    .append(<span class="local-variable">super</span>.HTML_TABLE_DATA_DIVIDER)
+                    .append(<span class="predefined-type">String</span>.format(<span class="string"><span class="delimiter">&quot;</span><span class="content">%.02f</span><span class="delimiter">&quot;</span></span>, pricePerUnit))
+                    .append(<span class="local-variable">super</span>.HTML_TABLE_DATA_DIVIDER)
+                    .append(<span class="predefined-type">String</span>.format(<span class="string"><span class="delimiter">&quot;</span><span class="content">%.02f</span><span class="delimiter">&quot;</span></span>, totalPriceForSpecificMedicine))
+                    .append(<span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;/td&gt;&lt;/tr&gt;</span><span class="delimiter">&quot;</span></span>);
+        }
+        <span class="keyword">return</span> stringBuilder.toString();
+    }</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 05:34:58 UTC</div></div></div></body></html>
