@@ -494,23 +494,15 @@ Sieves out all the patients who have <code>yu</code> in their names.</p>
 <div class="sect3">
 <h4 id="listing-all-patients-code-list-code"><a class="link" href="#listing-all-patients-code-list-code">3.1.4. Listing all patients: <code>list</code></a></h4>
 <div class="paragraph">
-<p>Need to list all patients in the database?<br>
-Do this easily with the <code>list</code> command.<br>
+<p>Displays a list of all patients in CLInic&#8217;s patient database.<br>
 Alias: <code>l</code><br>
 Format: <code>list</code></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/list-command-example.png" alt="list command example" width="650">
-</div>
-<div class="title">Figure 5. Before and after executing the <code>list</code> command</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="deleting-a-patient-code-delete-code"><a class="link" href="#deleting-a-patient-code-delete-code">3.1.5. Deleting a patient: <code>delete</code></a></h4>
 <div class="paragraph">
-<p>What if we need to remove a patient&#8217;s details from the database?<br>
-You can do so with the <code>delete</code> command, which will clear the user&#8217;s details from the database completely.<br>
+<p>Deletes the specified patient from the CLInic database.<br>
 Alias: <code>d</code><br>
 Format: <code>delete INDEX</code></p>
 </div>
@@ -557,17 +549,11 @@ Deletes the patient at the specified <code>INDEX</code>. The index refers to the
 Deletes the 2nd patient in the database.</p>
 </li>
 <li>
-<p><code>find Bryan</code><br>
+<p><code>find Betsy</code><br>
 <code>d 1</code><br>
 Deletes the 1st patient in the resulting list of the <code>find</code> command.</p>
 </li>
 </ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/delete-command-example.png" alt="delete command example" width=""650">
-</div>
-<div class="title">Figure 6. Before and after executing the <code>find Bryan</code> and <code>d 1</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -601,17 +587,11 @@ Selects the patient at the specified <code>INDEX</code>. The index refers to the
 Selects the 2nd patient in the whole database.</p>
 </li>
 <li>
-<p><code>find Bryan</code><br>
+<p><code>find Betsy</code><br>
 <code>s 1</code><br>
 Selects the 1st patient in the resulting list of the <code>find</code> command.</p>
 </li>
 </ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/select-command-example.png" alt="select command example" width="650">
-</div>
-<div class="title">Figure 7. Before and after executing the <code>find Bryan</code> and <code>s 1</code> command.</div>
 </div>
 </div>
 <div class="sect3">
@@ -664,7 +644,7 @@ Adds <code>Paracetamol</code> (under <em>Drug Allergy</em>) and <code>Diabetes</
 <div class="content">
 <img src="images/addmedicalrecord-example-1.png" alt="addmedicalrecord example 1" width="650">
 </div>
-<div class="title">Figure 8. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
+<div class="title">Figure 5. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -678,7 +658,7 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 <div class="content">
 <img src="images/addmedicalrecord-example-2.png" alt="addmedicalrecord example 2" width="650">
 </div>
-<div class="title">Figure 9. After <code>amr 3 b/B+</code> command</div>
+<div class="title">Figure 6. After <code>amr 3 b/B+</code> command</div>
 </div>
 </div>
 </div>
@@ -901,7 +881,7 @@ Registers the 3rd patient in the database.</p>
 <div class="content">
 <img src="images/registercommand.png" alt="registercommand" width="750">
 </div>
-<div class="title">Figure 10. After executing the <code>register 3</code> command</div>
+<div class="title">Figure 7. After executing the <code>register 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -956,13 +936,13 @@ Removes the 3rd patient in the queue.</p>
 <div class="content">
 <img src="images/beforeremove.png" alt="beforeremove" width="750">
 </div>
-<div class="title">Figure 11. Before <code>remove 3</code> command</div>
+<div class="title">Figure 8. Before <code>remove 3</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterremove.png" alt="afterremove" width="750">
 </div>
-<div class="title">Figure 12. After <code>remove 3</code> command</div>
+<div class="title">Figure 9. After <code>remove 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1019,13 +999,13 @@ Inserts the 4th patient in the database into the 2nd position in the patient que
 <div class="content">
 <img src="images/beforeinsert.png" alt="beforeinsert" width="750">
 </div>
-<div class="title">Figure 13. Before <code>insert 4 p/2</code> command</div>
+<div class="title">Figure 10. Before <code>insert 4 p/2</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterinsert.png" alt="afterinsert" width="750">
 </div>
-<div class="title">Figure 14. After <code>insert 4 p/2</code> command</div>
+<div class="title">Figure 11. After <code>insert 4 p/2</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1060,13 +1040,13 @@ Upon successful call of this command, the medicine list will be displayed.
 <div class="content">
 <img src="images/beforeserve.png" alt="beforeserve" width="750">
 </div>
-<div class="title">Figure 15. Before <code>serve</code> command</div>
+<div class="title">Figure 12. Before <code>serve</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterserve.png" alt="afterserve" width="750">
 </div>
-<div class="title">Figure 16. After <code>serve</code> command</div>
+<div class="title">Figure 13. After <code>serve</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1125,13 +1105,13 @@ Adds MC duration and notes to the Current Patient.</p>
 <div class="content">
 <img src="images/beforeadddocument.png" alt="beforeadddocument" width="750">
 </div>
-<div class="title">Figure 17. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 14. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afteradddocument.png" alt="afteradddocument" width="750">
 </div>
-<div class="title">Figure 18. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 15. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1185,13 +1165,13 @@ Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current P
 <div class="content">
 <img src="images/beforedispensemedicine.png" alt="beforedispensemedicine" width="750">
 </div>
-<div class="title">Figure 19. Before <code>dispensemedicine 1 amt/10</code></div>
+<div class="title">Figure 16. Before <code>dispensemedicine 1 amt/10</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterdispensemedicine.png" alt="afterdispensemedicine" width="750">
 </div>
-<div class="title">Figure 20. After <code>dispensemedicine 1 amt/10</code></div>
+<div class="title">Figure 17. After <code>dispensemedicine 1 amt/10</code></div>
 </div>
 <div class="ulist">
 <ul>
@@ -1266,13 +1246,13 @@ Removes the 3rd patient from the Served Patient Queue.</p>
 <div class="content">
 <img src="images/beforepayment.png" alt="beforepayment" width="750">
 </div>
-<div class="title">Figure 21. Before <code>payment 3</code> command</div>
+<div class="title">Figure 18. Before <code>payment 3</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterpayment.png" alt="afterpayment" width="750">
 </div>
-<div class="title">Figure 22. After <code>payment 3</code> command</div>
+<div class="title">Figure 19. After <code>payment 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1831,4 +1811,4 @@ There is no need to save manually.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 11:27:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 11:27:36 UTC</div></div></div></body></html>

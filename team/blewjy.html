@@ -13,21 +13,20 @@
 <p>This project portfolio presents my contributions towards this project, including the features implemented, technologies used and documentation written.</p>
 </div>
 <div class="paragraph">
-<p>This project was undertaken during a software engineering module (CS2103T) offered in National University of Singapore (NUS).
-The objective of this project was to enhance a given 'address book' application by adding more features, tests, and to apply the software engineering practices that we are taught during the module.</p>
-</div>
-<div class="paragraph">
-<p>My team decided to morph the address book application into a clinic management system.</p>
-</div>
-<div class="paragraph">
-<p>Aptly named 'CLInic', it focuses on optimising efficiency for its users through the use of a Command Line Interface (hence the 'CLI' in 'CLInic')
-Alongside the CLI is the Graphical User Interface (GUI), which mainly serves as visual aids for the user with icons and coloured text in a user-friendly manner.
-This application uses Java as the main programming language and uses JavaFX, HTML and CSS for the GUI.</p>
+<p>CLInic is a desktop application made for clinics. The CLI in CLInic stands for Command Line Interface, which is the main method to use this application.
+CLInic also has a Graphical User Interface (GUI) to display information in a structured and user-friendly manner. This application uses Java as the
+programming language and uses JavaFX, HTML and CSS for the GUI.</p>
 </div>
 <div class="paragraph">
 <p>My main responsibility for this project was to implement the UI and storage for the application, amidst some other smaller tasks,
-such as the development of the <code>MedicalRecord</code> attribute of the <code>Patient</code>.
-I played the key role of adding the various UI elements to the application window and connecting them with the application logic.</p>
+such as the development of the <code>MedicalRecord</code> attribute of the <code>Patient</code>.</p>
+</div>
+<div class="paragraph">
+<p>The project scope for CLInic is to morph the given addressbook-level4 into a clinic management application that allows users to manage patient
+information and medicine information and additionally manage the clinic queue.</p>
+</div>
+<div class="paragraph">
+<p>The team consists of four year-2 and one year-3 student in School of Computing, NUS.</p>
 </div>
 </div>
 </div>
@@ -37,7 +36,7 @@ I played the key role of adding the various UI elements to the application windo
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement 1</strong>: Added the <strong>GUI for the Patient Queue Management System (PQMS)</strong></p>
+<p><strong>Major enhancement</strong>: Added the <strong>GUI for the Patient Queue Management System (PQMS)</strong></p>
 <div class="ulist">
 <ul>
 <li>
@@ -51,14 +50,11 @@ I played the key role of adding the various UI elements to the application windo
 It required a lot of synchronization between the command results, model objects and the display.
 This was largely handled with some event handling and scripting.</p>
 </li>
-<li>
-<p>More details: Please refer to the <a href="../DeveloperGuide.html#application-gui">Developer Guide, Section 4.6</a> for a detailed explanation.</p>
-</li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Major enhancement 2</strong>: Added <strong>storage capabilities</strong> for the <code>MedicalRecord</code> model and the <code>Medicine</code> model.</p>
+<p><strong>Major enhancement</strong>: Added <strong>storage capabilities</strong> for the <code>MedicalRecord</code> model and the <code>Medicine</code> model.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -71,9 +67,6 @@ We wanted the user to be able to save these information for future use as well.<
 <li>
 <p>Highlights: This feature was implemented with the use of XML, similar to how <code>Patient</code> objects were saved to the file in the original <em>addressbook-level4</em> application.
 It required the creation of an <code>XmlAdapted-</code> version of each model object as well as careful handling of the adding and retrieval for each model object.</p>
-</li>
-<li>
-<p>More details: Please refer to the <a href="../DeveloperGuide.html#Design-Storage">Developer Guide, Section 3.5</a> for a detailed explanation.</p>
 </li>
 </ul>
 </div>
@@ -136,6 +129,9 @@ It required the creation of an <code>XmlAdapted-</code> version of each model ob
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p><em>{you can add/remove categories in the list above}</em></p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -151,129 +147,6 @@ It required the creation of an <code>XmlAdapted-</code> version of each model ob
 </tr>
 </tbody>
 </table>
-<div class="sect3">
-<h4 id="listing-all-patients-code-list-code"><a class="link" href="#listing-all-patients-code-list-code">Listing all patients: <code>list</code></a></h4>
-<div class="paragraph">
-<p>Need to list all patients in the database?<br>
-Do this easily with the <code>list</code> command.<br>
-Alias: <code>l</code><br>
-Format: <code>list</code></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/list-command-example.png" alt="list command example" width="650">
-</div>
-<div class="title">Figure 1. Before and after executing the <code>list</code> command</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-patient-code-delete-code"><a class="link" href="#deleting-a-patient-code-delete-code">Deleting a patient: <code>delete</code></a></h4>
-<div class="paragraph">
-<p>What if we need to remove a patient&#8217;s details from the database?<br>
-You can do so with the <code>delete</code> command, which will clear the user&#8217;s details from the database completely.<br>
-Alias: <code>d</code><br>
-Format: <code>delete INDEX</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Thing(s) to note:</div>
-<div class="ulist">
-<ul>
-<li>
-<p>You cannot delete a patient that is currently in queue.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">Pro tip(s):</div>
-Deletes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd patient in the database.</p>
-</li>
-<li>
-<p><code>find Bryan</code><br>
-<code>d 1</code><br>
-Deletes the 1st patient in the resulting list of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/delete-command-example.png" alt="delete command example" width=""650">
-</div>
-<div class="title">Figure 2. Before and after executing the <code>find Bryan</code> and <code>d 1</code> command</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="selecting-a-patient-code-select-code"><a class="link" href="#selecting-a-patient-code-select-code">Selecting a patient: <code>select</code></a></h4>
-<div class="paragraph">
-<p>Selects a patient to view his profile.<br>
-Alias: <code>s</code><br>
-Format: <code>select INDEX</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">Pro tip(s):</div>
-Selects the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>select 2</code><br>
-Selects the 2nd patient in the whole database.</p>
-</li>
-<li>
-<p><code>find Bryan</code><br>
-<code>s 1</code><br>
-Selects the 1st patient in the resulting list of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/select-command-example.png" alt="select command example" width="650">
-</div>
-<div class="title">Figure 3. Before and after executing the <code>find Bryan</code> and <code>s 1</code> command.</div>
-</div>
-</div>
 <div class="sect3">
 <h4 id="adding-medical-records-of-a-patient-code-addmedicalrecord-code"><a class="link" href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">Adding medical records of a patient: <code>addmedicalrecord</code></a></h4>
 <div class="paragraph">
@@ -324,7 +197,7 @@ Adds <code>Paracetamol</code> (under <em>Drug Allergy</em>) and <code>Diabetes</
 <div class="content">
 <img src="../images/addmedicalrecord-example-1.png" alt="addmedicalrecord example 1" width="650">
 </div>
-<div class="title">Figure 4. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
+<div class="title">Figure 1. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -338,7 +211,7 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 <div class="content">
 <img src="../images/addmedicalrecord-example-2.png" alt="addmedicalrecord example 2" width="650">
 </div>
-<div class="title">Figure 5. After <code>amr 3 b/B+</code> command</div>
+<div class="title">Figure 2. After <code>amr 3 b/B+</code> command</div>
 </div>
 </div>
 </div>
@@ -399,9 +272,9 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/addMedicalRecord-SequenceDiagram.png" alt="addMedicalRecord SequenceDiagram" width="850">
+<img src="../images/addMedicalRecord-SequenceDiagram.png" alt="addMedicalRecord SequenceDiagram" width="650">
 </div>
-<div class="title">Figure 6. Sequence diagram for AddMedicalRecordCommand</div>
+<div class="title">Figure 3. Sequence diagram for AddMedicalRecordCommand</div>
 </div>
 <div class="paragraph">
 <p>The following figure shows the code section which performs this merging.</p>
@@ -502,9 +375,9 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/PQMS-gui.png" alt="PQMS gui" width="850">
+<img src="../images/PQMS-gui.png" alt="PQMS gui" width="650">
 </div>
-<div class="title">Figure 7. GUI for the PQMS</div>
+<div class="title">Figure 4. GUI for the PQMS</div>
 </div>
 <div class="paragraph">
 <p>After <code>QueueCommands</code> such as <code>register</code>, <code>serve</code>, etc., the GUI will automatically update itself as the user enters these commands to reflect the situation of the PQMS at that exact point in time.</p>
@@ -513,7 +386,7 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 <div class="content">
 <img src="../images/PQMS-GUI-2.png" alt="PQMS GUI 2" width=""650">
 </div>
-<div class="title">Figure 8. GUI for the PQMS after several commands</div>
+<div class="title">Figure 5. GUI for the PQMS after several commands</div>
 </div>
 <div class="paragraph">
 <p>This UI element is implemented using JavaFX&#8217;s <code>WebView</code> and a local HTML file. The sequence of events for how the <code>WebView</code> is updated is as follows:</p>
@@ -644,4 +517,4 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 11:27:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 11:27:36 UTC</div></div></div></body></html>
