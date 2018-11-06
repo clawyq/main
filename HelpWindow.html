@@ -55,6 +55,26 @@
 <li><a href="#generating-referral-letter-code-refer-code">3.4.3. Generating referral letter: <code>refer</code></a></li>
 </ul>
 </li>
+<li><a href="#miscellaneous">3.5. Miscellaneous</a>
+<ul class="sectlevel3">
+<li><a href="#viewing-help-code-help-code">3.5.1. Viewing help: <code>help</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">3.5.2. Listing entered commands: <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.5.3. Undoing previous command: <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.5.4. Redoing the previously undone command: <code>redo</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.5.5. Exiting the program: <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.5.6. Saving the data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#faq">4. FAQ</a></li>
+<li><a href="#command-summary">5. Command Summary</a>
+<ul class="sectlevel2">
+<li><a href="#patient">5.1. Patient</a></li>
+<li><a href="#medicine-2">5.2. Medicine</a></li>
+<li><a href="#queue-management">5.3. Queue Management</a></li>
+<li><a href="#document-generation-2">5.4. Document Generation</a></li>
+<li><a href="#miscellaneous-2">5.5. Miscellaneous</a></li>
 </ul>
 </li>
 </ul>
@@ -136,7 +156,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>list</code></strong> : shows a list all patients in the database.</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe ic/S1234567X p/98765432 e/johnd@example.com a/John Street, Block 123, #01-01</code> : adds a patient named <code>John Doe</code> to the database, along with his personal details (more details in <a href="#Patient">[Patient]</a>).</p>
+<p><strong><code>add</code></strong><code>n/John Doe ic/S1234567X p/98765432 e/johnd@example.com a/John Street, Block 123, #01-01</code> : adds a patient named <code>John Doe</code> to the database, along with his personal details (more details in <a href="#patient">Section 5.1, &#8220;Patient&#8221;</a>).</p>
 </li>
 <li>
 <p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd patient shown in the current list.</p>
@@ -334,6 +354,9 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <li>
 <p>Existing values will be <strong>overwritten</strong> by the newly input values of the corresponding field.</p>
 </li>
+<li>
+<p>You cannot edit the record of a patient that is currently in queue.</p>
+</li>
 </ul>
 </div>
 </td>
@@ -471,17 +494,44 @@ Sieves out all the patients who have <code>yu</code> in their names.</p>
 <div class="sect3">
 <h4 id="listing-all-patients-code-list-code"><a class="link" href="#listing-all-patients-code-list-code">3.1.4. Listing all patients: <code>list</code></a></h4>
 <div class="paragraph">
-<p>Displays a list of all patients in CLInic&#8217;s patient database.<br>
+<p>Need to list all patients in the database?<br>
+Do this easily with the <code>list</code> command.<br>
 Alias: <code>l</code><br>
 Format: <code>list</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/list-command-example.png" alt="list command example" width="650">
+</div>
+<div class="title">Figure 5. Before and after executing the <code>list</code> command</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="deleting-a-patient-code-delete-code"><a class="link" href="#deleting-a-patient-code-delete-code">3.1.5. Deleting a patient: <code>delete</code></a></h4>
 <div class="paragraph">
-<p>Deletes the specified patient from the CLInic database.<br>
+<p>What if we need to remove a patient&#8217;s details from the database?<br>
+You can do so with the <code>delete</code> command, which will clear the user&#8217;s details from the database completely.<br>
 Alias: <code>d</code><br>
 Format: <code>delete INDEX</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Thing(s) to note:</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You cannot delete a patient that is currently in queue.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -507,11 +557,17 @@ Deletes the patient at the specified <code>INDEX</code>. The index refers to the
 Deletes the 2nd patient in the database.</p>
 </li>
 <li>
-<p><code>find Betsy</code><br>
+<p><code>find Bryan</code><br>
 <code>d 1</code><br>
 Deletes the 1st patient in the resulting list of the <code>find</code> command.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/delete-command-example.png" alt="delete command example" width=""650">
+</div>
+<div class="title">Figure 6. Before and after executing the <code>find Bryan</code> and <code>d 1</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -545,11 +601,17 @@ Selects the patient at the specified <code>INDEX</code>. The index refers to the
 Selects the 2nd patient in the whole database.</p>
 </li>
 <li>
-<p><code>find Betsy</code><br>
+<p><code>find Bryan</code><br>
 <code>s 1</code><br>
 Selects the 1st patient in the resulting list of the <code>find</code> command.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/select-command-example.png" alt="select command example" width="650">
+</div>
+<div class="title">Figure 7. Before and after executing the <code>find Bryan</code> and <code>s 1</code> command.</div>
 </div>
 </div>
 <div class="sect3">
@@ -602,7 +664,7 @@ Adds <code>Paracetamol</code> (under <em>Drug Allergy</em>) and <code>Diabetes</
 <div class="content">
 <img src="images/addmedicalrecord-example-1.png" alt="addmedicalrecord example 1" width="650">
 </div>
-<div class="title">Figure 5. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
+<div class="title">Figure 8. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -616,7 +678,7 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 <div class="content">
 <img src="images/addmedicalrecord-example-2.png" alt="addmedicalrecord example 2" width="650">
 </div>
-<div class="title">Figure 6. After <code>amr 3 b/B+</code> command</div>
+<div class="title">Figure 9. After <code>amr 3 b/B+</code> command</div>
 </div>
 </div>
 </div>
@@ -790,6 +852,19 @@ Format: <code>checkstock</code></p>
 </div>
 <div class="sect2">
 <h3 id="pqms"><a class="link" href="#pqms">3.3. Queue Management</a></h3>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+You cannot <code>edit</code>, <code>delete</code>, <code>addmedicalrecord</code> a patient when the patient is in queue. If an the patient&#8217;s details are changed when
+the patient is in queue, the patient will be removed from queue.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect3">
 <h4 id="registering-a-patient-to-waiting-queue-code-register-code"><a class="link" href="#registering-a-patient-to-waiting-queue-code-register-code">3.3.1. Registering a patient to Waiting Queue: <code>register</code></a></h4>
 <div class="paragraph">
@@ -826,7 +901,7 @@ Registers the 3rd patient in the database.</p>
 <div class="content">
 <img src="images/registercommand.png" alt="registercommand" width="750">
 </div>
-<div class="title">Figure 7. After executing the <code>register 3</code> command</div>
+<div class="title">Figure 10. After executing the <code>register 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -881,13 +956,13 @@ Removes the 3rd patient in the queue.</p>
 <div class="content">
 <img src="images/beforeremove.png" alt="beforeremove" width="750">
 </div>
-<div class="title">Figure 8. Before <code>remove 3</code> command</div>
+<div class="title">Figure 11. Before <code>remove 3</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterremove.png" alt="afterremove" width="750">
 </div>
-<div class="title">Figure 9. After <code>remove 3</code> command</div>
+<div class="title">Figure 12. After <code>remove 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -944,13 +1019,13 @@ Inserts the 4th patient in the database into the 2nd position in the patient que
 <div class="content">
 <img src="images/beforeinsert.png" alt="beforeinsert" width="750">
 </div>
-<div class="title">Figure 10. Before <code>insert 4 p/2</code> command</div>
+<div class="title">Figure 13. Before <code>insert 4 p/2</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterinsert.png" alt="afterinsert" width="750">
 </div>
-<div class="title">Figure 11. After <code>insert 4 p/2</code> command</div>
+<div class="title">Figure 14. After <code>insert 4 p/2</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -985,13 +1060,13 @@ Upon successful call of this command, the medicine list will be displayed.
 <div class="content">
 <img src="images/beforeserve.png" alt="beforeserve" width="750">
 </div>
-<div class="title">Figure 12. Before <code>serve</code> command</div>
+<div class="title">Figure 15. Before <code>serve</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterserve.png" alt="afterserve" width="750">
 </div>
-<div class="title">Figure 13. After <code>serve</code> command</div>
+<div class="title">Figure 16. After <code>serve</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1050,13 +1125,13 @@ Adds MC duration and notes to the Current Patient.</p>
 <div class="content">
 <img src="images/beforeadddocument.png" alt="beforeadddocument" width="750">
 </div>
-<div class="title">Figure 14. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 17. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afteradddocument.png" alt="afteradddocument" width="750">
 </div>
-<div class="title">Figure 15. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 18. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1110,13 +1185,13 @@ Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current P
 <div class="content">
 <img src="images/beforedispensemedicine.png" alt="beforedispensemedicine" width="750">
 </div>
-<div class="title">Figure 16. Before <code>dispensemedicine 1 amt/10</code></div>
+<div class="title">Figure 19. Before <code>dispensemedicine 1 amt/10</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterdispensemedicine.png" alt="afterdispensemedicine" width="750">
 </div>
-<div class="title">Figure 17. After <code>dispensemedicine 1 amt/10</code></div>
+<div class="title">Figure 20. After <code>dispensemedicine 1 amt/10</code></div>
 </div>
 <div class="ulist">
 <ul>
@@ -1191,13 +1266,13 @@ Removes the 3rd patient from the Served Patient Queue.</p>
 <div class="content">
 <img src="images/beforepayment.png" alt="beforepayment" width="750">
 </div>
-<div class="title">Figure 18. Before <code>payment 3</code> command</div>
+<div class="title">Figure 21. Before <code>payment 3</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterpayment.png" alt="afterpayment" width="750">
 </div>
-<div class="title">Figure 19. After <code>payment 3</code> command</div>
+<div class="title">Figure 22. After <code>payment 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1298,8 +1373,10 @@ Alias: <code>ref</code><br></p>
 <p><strong>This command cannot be used if there is no referral content. Use <a href="#adddocument"><code>adddocument</code></a> to add to the Current Patient first.
 *Generates a referral letter for the patient at the specified <code>INDEX</code> of the Served Patient Queue. The index *must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).</p>
 </div>
-<div class="exampleblock">
-<div class="content">
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
@@ -1311,18 +1388,18 @@ Generates a referral letter for the 7th patient in the Served Patient Queue.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>=== Miscellaneous</p>
 </div>
-<div class="paragraph">
-<p>==== Viewing help: <code>help</code></p>
 </div>
+<div class="sect2">
+<h3 id="miscellaneous"><a class="link" href="#miscellaneous">3.5. Miscellaneous</a></h3>
+<div class="sect3">
+<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.5.1. Viewing help: <code>help</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
-<div class="paragraph">
-<p>==== Listing entered commands: <code>history</code></p>
 </div>
+<div class="sect3">
+<h4 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.5.2. Listing entered commands: <code>history</code></a></h4>
 <div class="paragraph">
 <p>Lists all the commands entered, starting from the most recent to the oldest.<br>
 Alias: <code>h</code><br>
@@ -1341,26 +1418,30 @@ Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the pre
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>==== Undoing previous command: <code>undo</code></p>
 </div>
+<div class="sect3">
+<h4 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.5.3. Undoing previous command: <code>undo</code></a></h4>
 <div class="paragraph">
 <p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
 Alias: <code>u</code><br>
 Format: <code>undo</code></p>
 </div>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Thing(s) to note:</div>
+<div class="paragraph">
+<p>Undoable commands: those commands that modify the database&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code>, <code>addmedicalrecord</code> etc).
+This includes all commands that change the <code>Patient</code> or <code>Medicine</code> class but <strong>not</strong> <a href="#pqms">PQMS-related</a> commands.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Undoable commands: those commands that modify the database&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).
-This includes all commands that change the <code>Patient</code> or <code>Medicine</code> class but <strong>not</strong> <a href="#pqms">PQMS-related</a> commands.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph">
 <p>Examples:</p>
 </div>
@@ -1389,9 +1470,9 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>==== Redoing the previously undone command: <code>redo</code></p>
 </div>
+<div class="sect3">
+<h4 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.5.4. Redoing the previously undone command: <code>redo</code></a></h4>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Alias: <code>r</code><br>
@@ -1422,23 +1503,27 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>==== Exiting the program: <code>exit</code></p>
 </div>
+<div class="sect3">
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.5.5. Exiting the program: <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
-<div class="paragraph">
-<p>==== Saving the data</p>
 </div>
+<div class="sect3">
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.5.6. Saving the data</a></h4>
 <div class="paragraph">
 <p>CLInic data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
-<div class="paragraph">
-<p>== FAQ</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another computer?<br>
 <strong>A</strong>: Install the application in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous CLInic folder.</p>
@@ -1447,12 +1532,13 @@ There is no need to save manually.</p>
 <p><strong>Q</strong>: Why can&#8217;t I execute the <code>finish</code> command even if there is a Current Patient?<br>
 <strong>A</strong>: You are required to add notes to the Current Patient before using the <code>finish</code> command, use the <a href="#adddocument"><code>adddocument</code></a> command to add notes.</p>
 </div>
-<div class="paragraph">
-<p>== Command Summary</p>
 </div>
-<div class="paragraph">
-<p>=== Patient</p>
 </div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="patient"><a class="link" href="#patient">5.1. Patient</a></h3>
 <table class="tableblock frame-all grid-all" style="width: 59%;">
 <colgroup>
 <col style="width: 5.0505%;">
@@ -1508,16 +1594,16 @@ There is no need to save manually.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">addmedicalrecord</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>amr</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addMedicalRecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASE]…​ [da/DRUG_ALLERGY]…​ [m/NOTE]…</code>​ or<br>
-                            <code>addMedicalRecord IC_NUMBER [b/BLOOD_TYPE] [d/PAST_DISEASE]…​ [da/DRUG_ALLERGY]…​ [m/NOTE]…​​</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addMedicalRecord 5 b/A+ da/Paracetamol d/Diabetes</code> or<br>
-                            <code>addMedicalRecord S94738123X b/B+</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addmedicalrecord INDEX [b/BLOOD_TYPE] [d/PAST_DISEASE]…​ [da/DRUG_ALLERGY]…​ [m/NOTE]…</code>​ or<br>
+                            <code>addmedicalrecord IC_NUMBER [b/BLOOD_TYPE] [d/PAST_DISEASE]…​ [da/DRUG_ALLERGY]…​ [m/NOTE]…​​</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addmedicalrecord 5 b/A+ da/Paracetamol d/Diabetes</code> or<br>
+                            <code>addmedicalrecord S94738123X b/B+</code></p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>=== Medicine</p>
 </div>
+<div class="sect2">
+<h3 id="medicine-2"><a class="link" href="#medicine-2">5.2. Medicine</a></h3>
 <table class="tableblock frame-all grid-all" style="width: 59%;">
 <colgroup>
 <col style="width: 5.0505%;">
@@ -1537,14 +1623,14 @@ There is no need to save manually.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">addmedicine</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>am</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>​addMedicine mn/MEDICINE_NAME msq/MINIMUM_STOCK_QUANTITY ppu/PRICE_PER_UNIT sn/SERIAL_NUMBER s/STOCK</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addMedicine mn/panadol msq/500 ppu/0.50 sn/1234 s/1000</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>​addmedicine mn/MEDICINE_NAME msq/MINIMUM_STOCK_QUANTITY ppu/PRICE_PER_UNIT sn/SERIAL_NUMBER s/STOCK</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addmedicine mn/panadol msq/500 ppu/0.50 sn/1234 s/1000</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">editmedicine</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>em</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>editMedicine INDEX [mn/MEDICINE_NAME] [msq/MINIMUM_STOCK_QUANTITY] [ppu/PRICE_PER_UNIT] [sn/SERIAL_NUMBER] [s/STOCK]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>editMedicine 1 n/hydrazine s/50022 p/20 min/30</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>editmedicine INDEX [mn/MEDICINE_NAME] [msq/MINIMUM_STOCK_QUANTITY] [ppu/PRICE_PER_UNIT] [sn/SERIAL_NUMBER] [s/STOCK]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>editmedicine 1 n/hydrazine s/50022 p/20 min/30</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">restock</p></td>
@@ -1555,26 +1641,26 @@ There is no need to save manually.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">liststock</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ls</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>listStock</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>liststock</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>listStock</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">findmedicine</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>fm</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>findMedicine SERIAL_NUMBER</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>findMedicine 1001</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>findmedicine SERIAL_NUMBER</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>findmedicine 1001</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">checkstock</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cs</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>checkStock</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>checkctock</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>checkStock</code></p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>=== Queue Management</p>
 </div>
+<div class="sect2">
+<h3 id="queue-management"><a class="link" href="#queue-management">5.3. Queue Management</a></h3>
 <table class="tableblock frame-all grid-all" style="width: 59%;">
 <colgroup>
 <col style="width: 5.0505%;">
@@ -1624,20 +1710,20 @@ There is no need to save manually.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">adddocument</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>da</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>docAdd [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>docAdd mc/3 n/This patient complains of headache for the past 3 days</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>adddocument [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>adddocument mc/3 n/This patient complains of headache for the past 3 days</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">displaydocuments</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dd</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>displayDocuments</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>displayDocuments</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>displaydocuments</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>displaydocuments</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dispensemedicine</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dm</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dispenseMedicine MEDICINE_INDEX amt/AMOUNT</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dispenseMedicine 5 amt/10</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dispensemedicine MEDICINE_INDEX amt/AMOUNT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dispensemedicine 5 amt/10</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">finish</p></td>
@@ -1653,9 +1739,9 @@ There is no need to save manually.</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>=== Document Generation</p>
 </div>
+<div class="sect2">
+<h3 id="document-generation-2"><a class="link" href="#document-generation-2">5.4. Document Generation</a></h3>
 <table class="tableblock frame-all grid-all" style="width: 59%;">
 <colgroup>
 <col style="width: 5.0505%;">
@@ -1692,9 +1778,9 @@ There is no need to save manually.</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>=== Miscellaneous</p>
 </div>
+<div class="sect2">
+<h3 id="miscellaneous-2"><a class="link" href="#miscellaneous-2">5.5. Miscellaneous</a></h3>
 <table class="tableblock frame-all grid-all" style="width: 59%;">
 <colgroup>
 <col style="width: 5.0505%;">
@@ -1745,7 +1831,4 @@ There is no need to save manually.</p>
 </table>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 10:10:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 11:27:17 UTC</div></div></div></body></html>
