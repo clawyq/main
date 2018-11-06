@@ -314,14 +314,20 @@ Updates the phone number and e-mail address of the 5th patient in the list to <c
 <h4 id="implementation-of-code-document-code"><a class="link" href="#implementation-of-code-document-code">Implementation of <code>Document</code></a></h4>
 <div class="paragraph">
 <p>The <code>Document</code> abstract class represents all the documents that can be issued by the clinic. The <code>Receipt</code>,
-<code>MedicalCertificate</code> and <code>ReferralLetter</code> concrete classes, which respective <strong>commands</strong> will be referred
-to henceforth as <em>document related commands</em>, all inherit from it. It specifies what general information
- these documents should have and how they should be formatted. It can hence be thought of as a
- <strong>formatting template</strong>.</p>
+ <code>MedicalCertificate</code> and <code>ReferralLetter</code> concrete classes, which respective <strong>commands</strong> will be referred
+ to henceforth as <em>document related commands</em>, all inherit from it. It can be thought of as a <strong>formatting template</strong>,
+ specifying and organising the common information that all these documents must have. Shown below is a class diagram
+ illustrating how <code>Document</code>, <code>Receipt</code>, <code>MedicalCertificate</code> and <code>ReferralLetter</code> relate to one another.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DocumentClassDiagram.png" alt="DocumentClassDiagram" width="650">
+</div>
+<div class="title">Figure 3. Class diagram representing how the <code>Document</code> and <em>document related</em> classes are implemented.</div>
 </div>
 <div class="paragraph">
-<p>As the template on which the documents depend on, the <code>Document</code> class itself <strong>cannot</strong> be instantiated, hence
-implemented as an <code>abstract class</code>. The <code>Document</code> class has the following key features:</p>
+<p>As the template on which the documents are built from, the <code>Document</code> <code>abstract class</code> itself <strong>cannot</strong> be instantiated.
+ The <code>Document</code> <code>abstract class</code> has the following key features:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -337,37 +343,41 @@ implemented as an <code>abstract class</code>. The <code>Document</code> class h
 </ul>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarises what happens internally when a <em>document related command</em> is called.</p>
+<p>The following activity diagram summarises what happens internally when a <em>document related command</em> is executed.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/DocumentActivityDiagram.png" alt="DocumentActivityDiagram" width="800">
+<img src="../images/DocumentActivityDiagram.png" alt="DocumentActivityDiagram" width="650">
 </div>
-<div class="title">Figure 3. Flow of activities when a <em>document related command</em> is executed. Only the methods that are <strong>implemented</strong> within <code>Document</code> itself are labelled in the diagram.</div>
+<div class="title">Figure 4. Flow of activities when a <em>document related command</em> is executed. Only the methods that are <strong>implemented</strong> within <code>Document</code> itself are labelled in the diagram.</div>
 </div>
 <div class="paragraph">
-<p>As seen in the above activity diagram, upon executing a <em>document related command</em>, the corresponding document will be constructed from the <code>ServedPatient</code> object specified by the <code>index</code> that was passed in with the command.<br>
-Step 1. The resulting <code>Document</code> object will call the <code>generateFile()</code> method, which will first make a unique <code>fileName</code> for the file to be created, identified by the type of <code>Document</code>, <code>ServedPatient&#8217;s</code> <code>name</code> and <code>icNumber</code>.</p>
+<p>As seen in the above activity diagram, upon executing a <em>document related command</em>, the corresponding document will
+be constructed from the <code>ServedPatient</code> object specified by the <code>index</code> that was passed in with the command,
+ as detailed in the following steps.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The resulting <em>document related object</em> will call the <code>generateFile()</code> method, which will first make a unique <code>fileName</code> for the file to be created, identified by the type of <code>Document</code>, <code>ServedPatient&#8217;s</code> <code>name</code> and <code>icNumber</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="Java">    <span class="directive">private</span> <span class="predefined-type">String</span> makeFileName() {
-        <span class="keyword">return</span> (fileType + FILE_NAME_DELIMITER + <span class="string"><span class="delimiter">&quot;</span><span class="content">For</span><span class="delimiter">&quot;</span></span> + FILE_NAME_DELIMITER + name.toString()
-                + FILE_NAME_DELIMITER + icNumber.toString())
-                .replaceAll(<span class="string"><span class="delimiter">&quot;</span><span class="char">\\</span><span class="content">s</span><span class="delimiter">&quot;</span></span>, FILE_NAME_DELIMITER)
-                .replaceAll(<span class="string"><span class="delimiter">&quot;</span><span class="content">(_)+</span><span class="delimiter">&quot;</span></span>, FILE_NAME_DELIMITER);
-    }</code></pre>
+<pre class="CodeRay highlight"><code data-lang="Java"><span class="directive">private</span> <span class="predefined-type">String</span> makeFileName() {
+    <span class="keyword">return</span> (fileType + FILE_NAME_DELIMITER + <span class="string"><span class="delimiter">&quot;</span><span class="content">For</span><span class="delimiter">&quot;</span></span> + FILE_NAME_DELIMITER + name.toString()
+        + FILE_NAME_DELIMITER + icNumber.toString())
+        .replaceAll(<span class="string"><span class="delimiter">&quot;</span><span class="char">\\</span><span class="content">s</span><span class="delimiter">&quot;</span></span>, FILE_NAME_DELIMITER)
+        .replaceAll(<span class="string"><span class="delimiter">&quot;</span><span class="content">(_)+</span><span class="delimiter">&quot;</span></span>, FILE_NAME_DELIMITER);
+}</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The FILE_NAME_DELIMITER is abstracted so as to allow users to change the delimiter to a string of their choice.
+<p>The <code>FILE_NAME_DELIMITER</code> is abstracted so as to allow users to change the delimiter to a <code>string</code> of their choice.
 It is used as a means of separating fields of information in file names.</p>
 </div>
 </td>
@@ -375,7 +385,62 @@ It is used as a means of separating fields of information in file names.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 2.</p>
+<p>Step 2. The <code>DocumentTemplate.html</code> file is then converted into a <code>string</code>. It is a template with placeholder values prefixed by a <code>$</code> that will be replaced with the actual information pertaining to the <code>Served Patient&#8217;s</code> consultation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="Java"><span class="directive">private</span> <span class="predefined-type">String</span> convertHtmlIntoString() {
+    <span class="predefined-type">StringBuilder</span> contentBuilder = <span class="keyword">new</span> <span class="predefined-type">StringBuilder</span>();
+    <span class="keyword">try</span> {
+        <span class="predefined-type">BufferedReader</span> in = <span class="keyword">new</span> <span class="predefined-type">BufferedReader</span>(<span class="keyword">new</span> <span class="predefined-type">FileReader</span>(COMPLETE_TEMPLATE_PATH));
+        <span class="predefined-type">String</span> str;
+        <span class="keyword">while</span> ((str = in.readLine()) != <span class="predefined-constant">null</span>) {
+            contentBuilder.append(str).append(<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+        }
+        in.close();
+    } <span class="keyword">catch</span> (<span class="exception">IOException</span> e) {
+        <span class="predefined-type">System</span>.out.println(TEMPLATE_LOCATE_FAILURE_ERROR_MESSAGE);
+    }
+    <span class="keyword">return</span> contentBuilder.toString();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Step 3. The <code>generateContent</code> method will then be called within the <code>writeContentsIntoDocumentTemplate</code> method.
+The <code>generateContent</code> method will construct a <code>HashMap</code> of <code>string</code> to <code>string</code> key-value pairs. The keys are the aforementioned
+placeholder <code>strings</code> prefixed by <code>$</code> found in the <code>HTML</code> template, while the values are the corresponding information that are to
+substitute the placeholders in the <code>HTML</code> template(keys). The <code>writeContentsIntoDocumentTemplate</code> method will then use the
+key-value pairs found in the <code>HashMap</code> created by the <code>generateContent</code> method to replace the placeholder values in the
+<code>HTML</code> template.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="Java"><span class="directive">private</span> <span class="predefined-type">String</span> writeContentsIntoDocumentTemplate() {
+    <span class="predefined-type">String</span> htmlContent = convertHtmlIntoString();
+    <span class="predefined-type">String</span> title = fileType + <span class="string"><span class="delimiter">&quot;</span><span class="content"> for </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.name;
+    htmlContent = htmlContent.replace(<span class="string"><span class="delimiter">&quot;</span><span class="content">$title</span><span class="delimiter">&quot;</span></span>, title);
+    <span class="predefined-type">HashMap</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">String</span>&gt; fieldValues = <span class="local-variable">this</span>.generateContent();
+    <span class="keyword">for</span> (<span class="predefined-type">Map</span>.Entry&lt;<span class="predefined-type">String</span>, <span class="predefined-type">String</span>&gt; entry : fieldValues.entrySet()) {
+        <span class="predefined-type">String</span> key = entry.getKey();
+        <span class="predefined-type">String</span> value = entry.getValue();
+        htmlContent = htmlContent.replace(key, value);
+    }
+    <span class="keyword">return</span> htmlContent;
+}
+
+<span class="directive">private</span> <span class="predefined-type">HashMap</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">String</span>&gt; generateContent() {
+    <span class="predefined-type">HashMap</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">String</span>&gt; informationFieldPairs = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;&gt;();
+    informationFieldPairs.put(HEADER_PLACEHOLDER, generateHeaders());
+    informationFieldPairs.put(NAME_PLACEHOLDER, name.toString());
+    informationFieldPairs.put(ICNUMBER_PLACEHOLDER, icNumber.toString());
+    informationFieldPairs.put(CONTENT_PLACEHOLDER, formatInformation());
+    <span class="keyword">return</span> informationFieldPairs;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Step 4. Now that the <code>HTML</code> template is a <code>string</code> with the placeholder values replaced by the corresponding information, a <code>BufferedOutputStream</code>
+is used to write the <code>string</code> into the <code>HTML</code> file, concluding the generation of the <code>HTML</code> file.</p>
 </div>
 </div>
 <div class="sect3">
@@ -394,7 +459,7 @@ It is used as a means of separating fields of information in file names.</p>
 <ul>
 <li>
 <p>Allows <code>inheriting</code> classes to use a standardised method to format common information while granting them the
-flexibility of structuring the contents unique to its document type.</p>
+flexibility of structuring the contents unique to its document type by means of <code>abstract methods</code>.</p>
 </li>
 </ul>
 </div>
@@ -404,10 +469,10 @@ flexibility of structuring the contents unique to its document type.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Prevents <code>inheriting</code> classes from <code>inheriting</code> from other useful classes or becoming an <code>enum</code> as <code>Java</code> does not support <code>multiple inheritance</code>.</p>
+<p>Prevents <code>inheriting</code> classes from becoming an <code>Enum</code> as <code>Java</code> does not support <code>multiple inheritance</code>, since all <code>enums</code> implicitly inherit from <code>Enum</code>.</p>
 </li>
 <li>
-<p>More computationally expensive than using an <code>interface</code> due to the overhead incurred looking up <code>inherited methods</code> and various <code>class members</code>.</p>
+<p>More computationally expensive than an <code>interface</code> due to the overhead incurred looking up <code>inherited methods</code> and various <code>class members</code>.</p>
 </li>
 </ul>
 </div>
@@ -448,7 +513,7 @@ flexibility of structuring the contents unique to its document type.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Unable to standardise the way the <code>inheriting</code> classes implement the <code>generateHeader</code> method.</p>
+<p>Unable to standardise the way <code>inheriting</code> classes implement the <code>generateHeader</code> method.</p>
 </li>
 </ul>
 </div>
@@ -493,11 +558,14 @@ flexibility of structuring the contents unique to its document type.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Users can generate a <code>Receipt</code> for a specific <code>ServedPatient</code> by invoking the <code>ReceiptCommand</code> accompanied by the served patient&#8217;s index in the <code>ServedPatientList</code>. The below sequence diagram illustrates how the <code>ReceiptCommand</code> works.</p>
+<p>Users can generate a <code>Receipt</code> for a specific <code>ServedPatient</code> by invoking the <code>ReceiptCommand</code> accompanied by the
+ served patient&#8217;s index in the <code>ServedPatientList</code>. The below sequence diagram illustrates how the <code>ReceiptCommand</code> works.</p>
 </div>
 <div class="paragraph">
-<p>When the <code>ReceiptCommand</code> is executed, it will construct a new <code>Receipt</code> object and extracts the relevant information from the <code>ServedPatient</code> specified by the <code>index</code>.
-Shown below is how the <code>Map&lt;Medicine, MedicineQuantity&gt;</code> of a <code>ServedPatient</code> is unpacked to sieve out the individual table entries for the cost of different medicines.</p>
+<p>When the <code>ReceiptCommand</code> is executed, it will construct a new <code>Receipt</code> object and extract the relevant information
+from the <code>ServedPatient</code> specified by the <code>index</code>.
+Shown below is how the <code>Map&lt;Medicine, MedicineQuantity&gt;</code> of a <code>ServedPatient</code> is unpacked to sieve out the individual
+ table entries for the cost of different medicines.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -532,4 +600,4 @@ Shown below is how the <code>Map&lt;Medicine, MedicineQuantity&gt;</code> of a <
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 09:32:41 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 09:48:11 UTC</div></div></div></body></html>
