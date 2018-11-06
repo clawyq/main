@@ -1284,7 +1284,7 @@ him from the <code>ServedPatientQueue</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DocumentClassDiagram.png" alt="DocumentClassDiagram" width="650">
+<img src="images/DocumentClassDiagram.png" alt="DocumentClassDiagram" width="600">
 </div>
 <div class="title">Figure 23. Class diagram representing how the <code>Document</code> and <em>document related</em> classes are implemented.</div>
 </div>
@@ -1310,7 +1310,7 @@ him from the <code>ServedPatientQueue</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DocumentActivityDiagram.png" alt="DocumentActivityDiagram" width="650">
+<img src="images/DocumentActivityDiagram.png" alt="DocumentActivityDiagram" width="600">
 </div>
 <div class="title">Figure 24. Flow of activities when a <em>document related command</em> is executed. Only the methods that are <strong>implemented</strong> within <code>Document</code> itself are labelled in the diagram.</div>
 </div>
@@ -1531,18 +1531,13 @@ Shown below is how the <code>Map&lt;Medicine, MedicineQuantity&gt;</code> of a <
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="Java">    <span class="directive">private</span> <span class="predefined-type">String</span> unpackMedicineAllocation(<span class="predefined-type">Map</span>&lt;Medicine, QuantityToDispense&gt; medicineAllocated) {
         <span class="predefined-type">StringBuilder</span> stringBuilder = <span class="keyword">new</span> <span class="predefined-type">StringBuilder</span>();
-        <span class="type">int</span> quantity;
-        <span class="type">float</span> pricePerUnit;
-        <span class="type">float</span> totalPriceForSpecificMedicine;
-        <span class="predefined-type">String</span> medicineName;
         <span class="keyword">for</span> (<span class="predefined-type">Map</span>.Entry&lt;Medicine, QuantityToDispense&gt; entry : medicineAllocated.entrySet()) {
             Medicine medicine = entry.getKey();
-            medicineName = medicine.getMedicineName().toString();
-            quantity = entry.getValue().getValue();
-            pricePerUnit = <span class="predefined-type">Float</span>.parseFloat(medicine.getPricePerUnit().toString());
-            totalPriceForSpecificMedicine = pricePerUnit * quantity;
+            <span class="predefined-type">String</span> medicineName = medicine.getMedicineName().toString();
+            <span class="type">int</span> quantity = entry.getValue().getValue();
+            <span class="type">float</span> pricePerUnit = <span class="predefined-type">Float</span>.parseFloat(medicine.getPricePerUnit().toString());
+            <span class="type">float</span> totalPriceForSpecificMedicine = pricePerUnit * quantity;
             increaseTotalPriceBy(totalPriceForSpecificMedicine);
-
             stringBuilder.append(<span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;tr&gt;&lt;td&gt;</span><span class="delimiter">&quot;</span></span>)
                     .append(medicineName)
                     .append(<span class="local-variable">super</span>.HTML_TABLE_DATA_DIVIDER)
@@ -3434,4 +3429,4 @@ Expected: No medicine is added. Error details shown in the status message. Statu
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 09:48:11 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 10:10:07 UTC</div></div></div></body></html>
