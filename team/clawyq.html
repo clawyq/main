@@ -320,12 +320,13 @@ Updates the phone number and e-mail address of the 5th patient in the list to <c
  <code>MedicalCertificate</code> and <code>ReferralLetter</code> concrete classes, which respective <strong>commands</strong> will be referred
  to henceforth as <em>document related commands</em>, all inherit from. It can be thought of as a <strong>formatter</strong> that
  specifies and organises the common information that all these documents must have with the help of the <code>DocumentTemplate.html</code>
- template file. Shown below is a class diagram  illustrating how <code>Document</code>, <code>Receipt</code>, <code>MedicalCertificate</code> and
+ template file.<br>
+ Shown below is a class diagram  illustrating how <code>Document</code>, <code>Receipt</code>, <code>MedicalCertificate</code> and
  <code>ReferralLetter</code> relate to one another.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/DocumentClassDiagram.png" alt="DocumentClassDiagram" width="600">
+<img src="../images/DocumentClassDiagram.png" alt="DocumentClassDiagram" width="900">
 </div>
 <div class="title">Figure 3. Class diagram representing how the <code>Document</code> and <em>document related</em> classes are implemented.</div>
 </div>
@@ -336,7 +337,7 @@ Updates the phone number and e-mail address of the 5th patient in the list to <c
 <div class="ulist">
 <ul>
 <li>
-<p>contains a <code>name</code> and <code>icNumber</code> attribute, extracted from the <code>ServedPatient</code> from which the document is constructed.</p>
+<p>contains the <code>name</code> and <code>icNumber</code> attributes, extracted from the <code>ServedPatient</code> from which the document was constructed from.</p>
 </li>
 <li>
 <p>has common methods like <code>generateContent</code> to standardise the way in which the contents of the <code>Document</code> are formatted.</p>
@@ -445,8 +446,8 @@ key-value pairs found in the <code>HashMap</code> created by the <code>generateC
 </div>
 </div>
 <div class="paragraph">
-<p>Step 4. Now that the <code>HTML</code> template is a <code>string</code> with the placeholder values replaced by the corresponding information, a <code>BufferedOutputStream</code>
-is used to write the <code>string</code> into the <code>HTML</code> file, concluding the generation of the <code>HTML</code> file.</p>
+<p>Step 4. Now that the <code>HTML</code> template is a <code>string</code> with the placeholder values replaced by the correct information, a <code>BufferedOutputStream</code>
+is used to write the updated <code>string</code> into the <code>HTML</code> file, concluding the generation of the <code>Document</code> <code>HTML</code> file.</p>
 </div>
 </div>
 <div class="sect3">
@@ -601,4 +602,4 @@ Shown below is how the <code>Map&lt;Medicine, MedicineQuantity&gt;</code> of a <
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 15:42:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 16:50:59 UTC</div></div></div></body></html>
